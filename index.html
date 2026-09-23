@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>我的导航</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                 "Microsoft YaHei", sans-serif;
+    background: #f5f6f8;
+    color: #222;
+}
+
+header {
+    background: #ffffff;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.header {
+    max-width: 1100px;
+    margin: auto;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav a {
+    color: #555;
+    text-decoration: none;
+    margin-left: 25px;
+}
+
+nav a:hover {
+    color: #1677ff;
+}
+
+.hero {
+    max-width: 1100px;
+    margin: 40px auto 20px;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    color: #777;
+}
+
+.search {
+    max-width: 700px;
+    margin: 25px auto;
+    display: flex;
+}
+
+.search input {
+    flex: 1;
+    padding: 16px;
+    border: 1px solid #ddd;
+    border-radius: 10px 0 0 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search button {
+    width: 100px;
+    border: none;
+    background: #1677ff;
+    color: white;
+    border-radius: 0 10px 10px 0;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+.section {
+    margin-bottom: 35px;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    text-decoration: none;
+    color: #222;
+    border: 1px solid #eee;
+    transition: 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.card h3 {
+    margin: 0 0 8px;
+}
+
+.card p {
+    margin: 0;
+    color: #888;
+    font-size: 14px;
+}
+
+.money {
+    background: linear-gradient(135deg, #fff8e6, #fff);
+    border: 1px solid #f3d27a;
+}
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    color: #999;
+}
+
+@media (max-width: 700px) {
+
+    .header {
+        height: 60px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    nav a {
+        margin-left: 10px;
+        font-size: 14px;
+    }
+
+    .hero {
+        margin-top: 25px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 450px) {
+
+    nav {
+        display: none;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="header">
+        <div class="logo">🌐 我的导航</div>
+
+        <nav>
+            <a href=" ">首页</a >
+            <a href="#ai">AI</a >
+            <a href="#tools">工具</a >
+            <a href="#money">搞钱</a >
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+
+    <h1>发现好用的网站</h1>
+
+    <p>一个简单、实用的网址导航</p >
+
+    <div class="search">
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="搜索网站..."
+        >
+        <button onclick="searchSite()">搜索</button>
+    </div>
+
+</section>
+
+<main class="container">
+
+    <section class="section" id="ai">
+
+        <div class="section-title">🤖 AI 工具</div>
+
+        <div class="grid">
+
+            <a class="card" href="https://chatgpt.com" target="_blank">
+                <h3>ChatGPT</h3>
+                <p>AI聊天、写作、编程</p >
+            </a >
+
+            <a class="card" href="https://gemini.google.com" target="_blank">
+                <h3>Gemini</h3>
+                <p>Google AI 助手</p >
+            </a >
+
+            <a class="card" href="https://www.doubao.com" target="_blank">
+                <h3>豆包</h3>
+                <p>字节跳动 AI 助手</p >
+            </a >
+
+        </div>
+
+    </section>
+
+
+    <section class="section" id="tools">
+
+        <div class="section-title">🛠️ 实用工具</div>
+
+        <div class="grid">
+
+            <a class="card" href="https://github.com" target="_blank">
+                <h3>GitHub</h3>
+                <p>代码托管与开发平台</p >
+            </a >
+
+            <a class="card" href="https://www.canva.com" target="_blank">
+                <h3>Canva</h3>
+                <p>在线设计工具</p >
+            </a >
+
+            <a class="card" href="https://www.remove.bg" target="_blank">
+                <h3>Remove.bg</h3>
+                <p>在线图片抠图</p >
+            </a >
+
+        </div>
+
+    </section>
+
+
+    <section class="section" id="money">
+
+        <div class="section-title">💰 搞钱</div>
+
+        <div class="grid">
+
+            <a class="card money" href="#">
+                <h3>副业项目</h3>
+                <p>以后整理各种低成本副业</p >
+            </a >
+
+            <a class="card money" href="#">
+                <h3>AI 赚钱</h3>
+                <p>AI 工具与商业变现方法</p >
+            </a >
+
+            <a class="card money" href="#">
+                <h3>自媒体</h3>
+                <p>内容创作与流量变现</p >
+            </a >
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+    © 2026 我的导航
+</footer>
+
+
+<script>
+
+function searchSite() {
+
+    const keyword =
+        document.getElementById("searchInput").value.trim();
+
+    if (!keyword) {
+        alert("请输入搜索内容");
+        return;
+    }
+
+    window.open(
+        "https://www.baidu.com/s?wd=" +
+        encodeURIComponent(keyword),
+        "_blank"
+    );
+}
+
+</script>
+
+</body>
+</html>
