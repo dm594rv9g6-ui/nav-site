@@ -1,333 +1,1448 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>我的导航</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>三小仙 · 实用网站导航</title>
+    <meta name="description" content="三小仙，一个发现好用 AI、工具、学习、软件、设计、开发、娱乐和搞钱网站的综合导航平台。">
+    <meta name="theme-color" content="#0b0b10">
+    <style>
+        /* ===== 黑色主题基础 ===== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-<style>
-* {
-    box-sizing: border-box;
-}
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
 
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-                 "Microsoft YaHei", sans-serif;
-    background: #f5f6f8;
-    color: #222;
-}
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #0b0b10;
+            color: #e6e6f0;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
 
-header {
-    background: #ffffff;
-    border-bottom: 1px solid #eee;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-}
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s ease;
+        }
 
-.header {
-    max-width: 1100px;
-    margin: auto;
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 20px;
-}
+        /* ===== 顶部固定栏 ===== */
+        .top-bar {
+            background: #0e0e16;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 300;
+            font-size: 14px;
+            gap: 16px;
+        }
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-}
+        .top-bar-left {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            min-width: 0;
+        }
 
-nav a {
-    color: #555;
-    text-decoration: none;
-    margin-left: 25px;
-}
+        .top-bar-logo {
+            font-size: 22px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #ffffff, #b0b0d0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
 
-nav a:hover {
-    color: #1677ff;
-}
+        .top-bar-links {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
 
-.hero {
-    max-width: 1100px;
-    margin: 40px auto 20px;
-    padding: 0 20px;
-    text-align: center;
-}
+        .top-bar-links a {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #c0c0d5;
+            padding: 7px 12px;
+            border-radius: 8px;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: background 0.18s, color 0.18s;
+        }
 
-.hero h1 {
-    font-size: 38px;
-    margin-bottom: 12px;
-}
+        .top-bar-links a:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+        }
 
-.hero p {
-    color: #777;
-}
+        .top-bar-links a svg {
+            width: 17px;
+            height: 17px;
+            flex-shrink: 0;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
 
-.search {
-    max-width: 700px;
-    margin: 25px auto;
-    display: flex;
-}
+        .top-bar-right {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            flex-shrink: 0;
+        }
 
-.search input {
-    flex: 1;
-    padding: 16px;
-    border: 1px solid #ddd;
-    border-radius: 10px 0 0 10px;
-    font-size: 16px;
-    outline: none;
-}
+        .top-bar-right a {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #c0c0d5;
+            padding: 7px 12px;
+            border-radius: 8px;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: background 0.18s, color 0.18s;
+        }
 
-.search button {
-    width: 100px;
-    border: none;
-    background: #1677ff;
-    color: white;
-    border-radius: 0 10px 10px 0;
-    font-size: 16px;
-}
+        .top-bar-right a:hover {
+            background: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+        }
 
-.container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 20px;
-}
+        .top-bar-right a svg {
+            width: 17px;
+            height: 17px;
+            flex-shrink: 0;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
 
-.section {
-    margin-bottom: 35px;
-}
+        .top-bar-right .icon-wechat svg {
+            stroke: none;
+            fill: currentColor;
+            width: 19px;
+            height: 19px;
+        }
 
-.section-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 18px;
-}
+        /* ===== 主体布局 ===== */
+        .layout {
+            display: flex;
+            flex: 1;
+            min-height: 0;
+        }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-}
+        /* ===== 左侧竖排导航 ===== */
+        .sidebar {
+            position: fixed;
+            top: 60px;
+            left: 0;
+            width: 180px;
+            height: calc(100vh - 60px);
+            background: #0e0e16;
+            border-right: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            flex-direction: column;
+            padding: 20px 0;
+            z-index: 200;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: #2a2a40 #0e0e16;
+        }
 
-.card {
-    background: white;
-    border-radius: 12px;
-    padding: 20px;
-    text-decoration: none;
-    color: #222;
-    border: 1px solid #eee;
-    transition: 0.2s;
-}
+        .sidebar::-webkit-scrollbar {
+            width: 6px;
+        }
 
-.card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-}
+        .sidebar::-webkit-scrollbar-track {
+            background: #0e0e16;
+        }
 
-.card h3 {
-    margin: 0 0 8px;
-}
+        .sidebar::-webkit-scrollbar-thumb {
+            background: #2a2a40;
+            border-radius: 10px;
+        }
 
-.card p {
-    margin: 0;
-    color: #888;
-    font-size: 14px;
-}
+        .sidebar::-webkit-scrollbar-thumb:hover {
+            background: #3a3a5a;
+        }
 
-.money {
-    background: linear-gradient(135deg, #fff8e6, #fff);
-    border: 1px solid #f3d27a;
-}
+        .sidebar-title {
+            font-size: 12px;
+            font-weight: 600;
+            color: #5a5a75;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 0 24px 12px;
+            margin-bottom: 4px;
+        }
 
-footer {
-    text-align: center;
-    padding: 40px 20px;
-    color: #999;
-}
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            padding: 0 12px;
+        }
 
-@media (max-width: 700px) {
+        .sidebar-nav a {
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+            font-weight: 500;
+            color: #a6a6be;
+            padding: 11px 16px;
+            border-radius: 10px;
+            background: transparent;
+            transition: all 0.18s ease;
+            letter-spacing: 0.2px;
+            font-family: inherit;
+            line-height: 1.5;
+        }
 
-    .header {
-        height: 60px;
-    }
+        .sidebar-nav a:hover {
+            background: rgba(255, 255, 255, 0.07);
+            color: #ffffff;
+        }
 
-    .logo {
-        font-size: 20px;
-    }
+        .sidebar-nav a.active {
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            font-weight: 600;
+        }
 
-    nav a {
-        margin-left: 10px;
-        font-size: 14px;
-    }
+        /* ===== 侧边栏辅助菜单 ===== */
+        .sidebar-aux {
+            margin-top: 20px;
+            padding: 16px 12px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
 
-    .hero {
-        margin-top: 25px;
-    }
+        .sidebar-aux-title {
+            font-size: 11px;
+            font-weight: 600;
+            color: #4a4a60;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 0 12px 10px;
+        }
 
-    .hero h1 {
-        font-size: 30px;
-    }
+        .sidebar-aux-links {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
 
-    .grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
+        .sidebar-aux-links a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 450;
+            color: #7a7a95;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: all 0.18s ease;
+            letter-spacing: 0.2px;
+        }
 
-@media (max-width: 450px) {
+        .sidebar-aux-links a:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: #c0c0d5;
+        }
 
-    nav {
-        display: none;
-    }
+        .sidebar-aux-links a svg {
+            width: 14px;
+            height: 14px;
+            flex-shrink: 0;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
 
-    .grid {
-        grid-template-columns: 1fr;
-    }
-}
-</style>
+        /* ===== 右侧主内容区 ===== */
+        .main-wrapper {
+            margin-left: 180px;
+            flex: 1;
+            min-width: 0;
+        }
+
+        /* ===== Hero 区域 ===== */
+        .hero {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 64px 32px 48px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 18px;
+            background: linear-gradient(145deg, #ffffff, #9a9ac0);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            color: #7a7a95;
+            font-size: 17px;
+            margin-bottom: 36px;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+        }
+
+        /* ===== 搜索框 ===== */
+        .search-box {
+            max-width: 660px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            height: 60px;
+            border: 1.5px solid #2a2a3c;
+            border-radius: 20px;
+            padding: 0 26px;
+            font-size: 16px;
+            outline: none;
+            background: #14141f;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
+            transition: border 0.2s, box-shadow 0.3s;
+            color: #e6e6f0;
+            font-weight: 450;
+        }
+
+        .search-box input::placeholder {
+            color: #5a5a75;
+            font-weight: 400;
+        }
+
+        .search-box input:focus {
+            border-color: #5a5a80;
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6), 0 0 0 3px rgba(90, 90, 140, 0.15);
+        }
+
+        /* ===== 主体结构 ===== */
+        main {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px 70px;
+        }
+
+        .section {
+            margin-bottom: 54px;
+            scroll-margin-top: 80px;
+        }
+
+        /* ===== 统一标题行：左侧大标题 + 右侧一排标签按钮 ===== */
+        .section-head {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 22px;
+            flex-wrap: wrap;
+        }
+
+        .section-head h2 {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #f0f0fa;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-shrink: 0;
+            white-space: nowrap;
+            margin: 0;
+        }
+
+        .section-tabs {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .section-tabs a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px 14px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #a6a6be;
+            background: #1a1a28;
+            border: 1px solid #26263a;
+            white-space: nowrap;
+            transition: all 0.18s ease;
+            letter-spacing: 0.2px;
+        }
+
+        .section-tabs a:hover {
+            color: #ffffff;
+            background: #22223a;
+            border-color: #34345a;
+        }
+
+        .section-tabs a.active {
+            color: #ffffff;
+            background: #e8465a;
+            border-color: #e8465a;
+            font-weight: 600;
+            box-shadow: 0 4px 12px rgba(232, 70, 90, 0.3);
+        }
+
+        /* ===== 卡片网格 ===== */
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            background: #14141f;
+            border: 1px solid #222235;
+            border-radius: 20px;
+            padding: 24px 22px 20px;
+            transition: all 0.25s cubic-bezier(0.2, 0, 0, 1);
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 36px rgba(0, 0, 0, 0.5);
+            border-color: #34345a;
+            background: #181826;
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: #1e1e30;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 18px;
+            transition: background 0.2s;
+        }
+
+        .card:hover .card-icon {
+            background: #26263f;
+        }
+
+        .card h3 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            letter-spacing: -0.2px;
+            color: #f0f0fa;
+        }
+
+        .card p {
+            color: #8888a5;
+            font-size: 13px;
+            line-height: 1.55;
+            flex: 1;
+            margin-bottom: 12px;
+            font-weight: 400;
+        }
+
+        .tag {
+            display: inline-block;
+            align-self: flex-start;
+            padding: 5px 10px;
+            background: #1e1e30;
+            color: #9a9ac0;
+            border-radius: 40px;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.2px;
+            transition: background 0.2s;
+        }
+
+        .card:hover .tag {
+            background: #26263f;
+            color: #c0c0e0;
+        }
+
+        /* ===== 搞钱专区 ===== */
+        .money {
+            background: #08080c;
+            border-radius: 28px;
+            padding: 38px 32px 34px;
+            color: #fff;
+            border: 1px solid #1a1a2a;
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.6);
+        }
+
+        .money .section-head h2 {
+            color: #ffffff;
+        }
+
+        .money .cards {
+            margin-top: 26px;
+        }
+
+        .money .card {
+            background: #111119;
+            border-color: #1e1e30;
+            box-shadow: none;
+        }
+
+        .money .card:hover {
+            border-color: #3a3a5a;
+            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.7);
+            background: #151522;
+        }
+
+        .money .card-icon {
+            background: #1a1a2a;
+        }
+
+        .money .card h3 {
+            color: #f0f0fa;
+        }
+
+        .money .card p {
+            color: #7a7a95;
+        }
+
+        .money .tag {
+            background: #1a1a2a;
+            color: #8a8ab0;
+        }
+
+        .money .card:hover .tag {
+            background: #22223a;
+            color: #b0b0d0;
+        }
+
+        .money .card:hover .card-icon {
+            background: #22223a;
+        }
+
+        /* ===== 底部 ===== */
+        footer {
+            border-top: 1px solid #1a1a28;
+            background: #0b0b10;
+            text-align: center;
+            padding: 32px 24px;
+            color: #5a5a75;
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 0.2px;
+        }
+
+        /* ===== 移动端顶部导航替代 ===== */
+        .mobile-topbar {
+            display: none;
+            position: sticky;
+            top: 60px;
+            z-index: 250;
+            background: rgba(11, 11, 16, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 12px 16px;
+        }
+
+        .mobile-nav {
+            display: flex;
+            gap: 6px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+            scrollbar-width: none;
+        }
+
+        .mobile-nav::-webkit-scrollbar {
+            display: none;
+        }
+
+        .mobile-nav a {
+            flex-shrink: 0;
+            font-size: 13px;
+            font-weight: 500;
+            color: #a6a6be;
+            padding: 6px 14px;
+            border-radius: 40px;
+            background: rgba(255, 255, 255, 0.04);
+            white-space: nowrap;
+        }
+
+        .mobile-nav a:hover,
+        .mobile-nav a.active {
+            background: rgba(255, 255, 255, 0.12);
+            color: #ffffff;
+        }
+
+        /* ===== 响应式 ===== */
+        @media (max-width: 1100px) {
+            .cards {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .top-bar-links a span,
+            .top-bar-right a span {
+                display: none;
+            }
+
+            .top-bar-links a,
+            .top-bar-right a {
+                padding: 7px 9px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .sidebar {
+                display: none;
+            }
+
+            .main-wrapper {
+                margin-left: 0;
+            }
+
+            .mobile-topbar {
+                display: block;
+            }
+
+            .hero {
+                padding: 44px 20px 36px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            main {
+                padding: 0 20px 60px;
+            }
+
+            .top-bar {
+                padding: 0 16px;
+                height: 56px;
+                gap: 12px;
+            }
+
+            .top-bar-logo {
+                font-size: 20px;
+            }
+
+            .top-bar-links a svg,
+            .top-bar-right a svg {
+                width: 18px;
+                height: 18px;
+            }
+
+            .top-bar-links a:nth-child(2),
+            .top-bar-links a:nth-child(3) {
+                display: none;
+            }
+
+            .sidebar {
+                top: 56px;
+                height: calc(100vh - 56px);
+            }
+
+            .mobile-topbar {
+                top: 56px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 14px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+                letter-spacing: -0.5px;
+            }
+
+            .hero p {
+                font-size: 15px;
+                margin-bottom: 28px;
+                color: #6b6b88;
+            }
+
+            .search-box input {
+                height: 54px;
+                padding: 0 20px;
+                font-size: 15px;
+                border-radius: 18px;
+                background: #12121c;
+            }
+
+            .section-head {
+                gap: 10px;
+            }
+
+            .section-head h2 {
+                font-size: 21px;
+            }
+
+            .section-tabs {
+                gap: 6px;
+            }
+
+            .section-tabs a {
+                padding: 4px 11px;
+                font-size: 12px;
+                border-radius: 7px;
+            }
+
+            .card {
+                padding: 18px 16px 16px;
+                border-radius: 18px;
+            }
+
+            .card-icon {
+                width: 42px;
+                height: 42px;
+                font-size: 20px;
+                border-radius: 12px;
+                margin-bottom: 14px;
+            }
+
+            .card h3 {
+                font-size: 16px;
+            }
+
+            .money {
+                padding: 28px 20px 24px;
+                border-radius: 24px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .hero {
+                padding: 36px 16px 32px;
+            }
+
+            .search-box input {
+                height: 50px;
+                padding: 0 18px;
+                font-size: 14px;
+            }
+
+            .money {
+                padding: 22px 16px 18px;
+            }
+
+            .top-bar {
+                height: 52px;
+                padding: 0 12px;
+            }
+
+            .top-bar-logo {
+                font-size: 18px;
+            }
+
+            .mobile-topbar {
+                top: 52px;
+            }
+        }
+
+        /* 滚动条深色 */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0b10;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2a2a40;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3a3a5a;
+        }
+
+        ::selection {
+            background: #2a2a50;
+            color: #ffffff;
+        }
+
+        a:focus-visible {
+            outline: 2px solid #5a5a90;
+            outline-offset: 2px;
+            border-radius: 8px;
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-    <div class="header">
-        <div class="logo">🌐 我的导航</div>
-
-        <nav>
-            <a href=" ">首页</a >
-            <a href="#ai">AI</a >
-            <a href="#tools">工具</a >
-            <a href="#money">搞钱</a >
+<!-- ===== 顶部固定栏 ===== -->
+<header class="top-bar">
+    <div class="top-bar-left">
+        <div class="top-bar-logo">三小仙</div>
+        <nav class="top-bar-links">
+            <a href="#">
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 10.5L12 3l9 7.5"/>
+                    <path d="M5 9.5V21h14V9.5"/>
+                </svg>
+                <span>首页</span>
+            </a>
+            <a href="#">
+                <svg viewBox="0 0 24 24">
+                    <rect x="2" y="4" width="20" height="16" rx="2"/>
+                    <path d="M2 8l10 6 10-6"/>
+                </svg>
+                <span>联系站长</span>
+            </a>
+            <a href="#">
+                <svg viewBox="0 0 24 24">
+                    <path d="M3 10v4a1 1 0 0 0 1 1h2l4 4V5L6 9H4a1 1 0 0 0-1 1z"/>
+                    <path d="M15 8a4 4 0 0 1 0 8"/>
+                </svg>
+                <span>站内公告</span>
+            </a>
         </nav>
+    </div>
+    <div class="top-bar-right">
+        <a href="#">
+            <svg viewBox="0 0 24 24">
+                <rect x="2" y="4" width="20" height="16" rx="2"/>
+                <path d="M2 8l10 6 10-6"/>
+            </svg>
+            <span>邮箱</span>
+        </a>
+        <a href="#">
+            <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M12 8v8M8 12h8"/>
+            </svg>
+            <span>网盘</span>
+        </a>
+        <a href="#">
+            <svg viewBox="0 0 24 24">
+                <polygon points="10 8 16 12 10 16 10 8"/>
+                <rect x="3" y="4" width="18" height="16" rx="2"/>
+            </svg>
+            <span>视频</span>
+        </a>
+        <a href="#" class="icon-wechat" aria-label="微信">
+            <svg viewBox="0 0 24 24">
+                <path d="M9.5 4C5.4 4 2 6.9 2 10.5c0 2 1 3.8 2.7 5L4 18l2.6-1.3c.9.3 1.9.4 2.9.4.3 0 .6 0 .9-.1-.2-.6-.3-1.2-.3-1.8 0-3.6 3.1-6.5 7-6.5.3 0 .6 0 .9.1C17.5 6 13.9 4 9.5 4z"/>
+                <path d="M22 15.5c0-2.8-2.7-5-6-5s-6 2.2-6 5 2.7 5 6 5c.7 0 1.4-.1 2-.3l1.8.9-.4-1.6c1.6-1 2.6-2.5 2.6-4z"/>
+            </svg>
+        </a>
     </div>
 </header>
 
-<section class="hero">
+<!-- ===== 主体布局 ===== -->
+<div class="layout">
 
-    <h1>发现好用的网站</h1>
+    <!-- 左侧竖排导航 -->
+    <aside class="sidebar">
+        <div class="sidebar-title">导航菜单</div>
+        <nav class="sidebar-nav">
+            <a href="#" class="active">首页</a>
+            <a href="#drama">免费短剧</a>
+            <a href="#movie">免费影视</a>
+            <a href="#ai">AI</a>
+            <a href="#tools">工具</a>
+            <a href="#learning">学习</a>
+            <a href="#software">软件</a>
+            <a href="#design">设计</a>
+            <a href="#development">开发</a>
+            <a href="#entertainment">娱乐</a>
+            <a href="#money">搞钱</a>
+        </nav>
 
-    <p>一个简单、实用的网址导航</p >
+        <!-- 辅助菜单 -->
+        <div class="sidebar-aux">
+            <div class="sidebar-aux-title">快捷功能</div>
+            <div class="sidebar-aux-links">
+                <a href="#">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M3 10.5L12 3l9 7.5"/>
+                        <path d="M5 9.5V21h14V9.5"/>
+                    </svg>
+                    返回首页
+                </a>
+                <a href="#">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                    </svg>
+                    意见反馈
+                </a>
+                <a href="#">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="4" width="20" height="16" rx="2"/>
+                        <path d="M2 8l10 6 10-6"/>
+                    </svg>
+                    联系站长
+                </a>
+                <a href="#">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M3 10v4a1 1 0 0 0 1 1h2l4 4V5L6 9H4a1 1 0 0 0-1 1z"/>
+                        <path d="M15 8a4 4 0 0 1 0 8"/>
+                    </svg>
+                    站内公告
+                </a>
+                <a href="#">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="9"/>
+                        <path d="M12 8v8M8 12h8"/>
+                    </svg>
+                    友情链接
+                </a>
+                <a href="#">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
+                    </svg>
+                    更新日志
+                </a>
+            </div>
+        </div>
+    </aside>
 
-    <div class="search">
-        <input
-            type="text"
-            id="searchInput"
-            placeholder="搜索网站..."
-        >
-        <button onclick="searchSite()">搜索</button>
+    <!-- 右侧主内容 -->
+    <div class="main-wrapper">
+
+        <!-- 移动端顶部横排导航 -->
+        <div class="mobile-topbar">
+            <div class="mobile-nav">
+                <a href="#" class="active">首页</a>
+                <a href="#drama">免费短剧</a>
+                <a href="#movie">免费影视</a>
+                <a href="#ai">AI</a>
+                <a href="#tools">工具</a>
+                <a href="#learning">学习</a>
+                <a href="#software">软件</a>
+                <a href="#design">设计</a>
+                <a href="#development">开发</a>
+                <a href="#entertainment">娱乐</a>
+                <a href="#money">搞钱</a>
+            </div>
+        </div>
+
+        <!-- 首页大标题 -->
+        <section class="hero">
+            <h1>发现好用的网站</h1>
+            <p>三小仙 · 一个简单、好用的综合网站导航</p>
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="搜索网站、工具、AI、学习资源..."
+                    onkeydown="searchWebsite(event)"
+                    aria-label="搜索网站"
+                >
+            </div>
+        </section>
+
+        <main>
+
+            <!-- 免费短剧 -->
+            <section class="section" id="drama">
+                <div class="section-head">
+                    <h2>🎬 免费短剧</h2>
+                    <div class="section-tabs">
+                        <a href="#drama" class="active">抖音</a>
+                        <a href="#drama">快手</a>
+                        <a href="#drama">芒果</a>
+                        <a href="#drama">爱奇艺</a>
+                        <a href="#drama">优酷</a>
+                        <a href="#drama">腾讯</a>
+                    </div>
+                </div>
+                <div class="cards">
+                    <a class="card" href="https://www.douyin.com" target="_blank" rel="noopener">
+                        <div class="card-icon">📱</div>
+                        <h3>抖音短剧</h3>
+                        <p>抖音官方短剧频道，大量免费短剧在线看。</p>
+                        <span class="tag">短剧</span>
+                    </a>
+                    <a class="card" href="https://www.kuaishou.com" target="_blank" rel="noopener">
+                        <div class="card-icon">⚡</div>
+                        <h3>快手短剧</h3>
+                        <p>快手短剧专区，免费观看热门短剧。</p>
+                        <span class="tag">短剧</span>
+                    </a>
+                    <a class="card" href="https://www.mgtv.com" target="_blank" rel="noopener">
+                        <div class="card-icon">🥭</div>
+                        <h3>芒果TV短剧</h3>
+                        <p>芒果TV短剧频道，大量免费短剧资源。</p>
+                        <span class="tag">短剧</span>
+                    </a>
+                    <a class="card" href="https://www.iqiyi.com" target="_blank" rel="noopener">
+                        <div class="card-icon">🎥</div>
+                        <h3>爱奇艺短剧</h3>
+                        <p>爱奇艺短剧专区，免费短剧在线观看。</p>
+                        <span class="tag">短剧</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- 免费影视 -->
+            <section class="section" id="movie">
+                <div class="section-head">
+                    <h2>🎥 免费影视</h2>
+                    <div class="section-tabs">
+                        <a href="#movie" class="active">在线观影</a>
+                        <a href="#movie">动漫网站</a>
+                        <a href="#movie">看纪录片</a>
+                    </div>
+                </div>
+                <div class="cards">
+                    <a class="card" href="http://www.docuchina.cn/" target="_blank" rel="noopener">
+                        <div class="card-icon">🇨🇳</div>
+                        <h3>中国纪录片网</h3>
+                        <p>中国纪录片网，国内官方纪录片平台。</p>
+                        <span class="tag">看纪录片</span>
+                    </a>
+                    <a class="card" href="https://tv.cctv.com/yxg/index.shtml" target="_blank" rel="noopener">
+                        <div class="card-icon">📡</div>
+                        <h3>CCTV纪录片频道</h3>
+                        <p>央视纪录片频道，大量优秀国产纪录片。</p>
+                        <span class="tag">看纪录片</span>
+                    </a>
+                    <a class="card" href="https://www.youku.com/ku/webjilupian" target="_blank" rel="noopener">
+                        <div class="card-icon">🎞️</div>
+                        <h3>优酷纪录片频道</h3>
+                        <p>优酷纪录片频道，海量纪录片在线观看。</p>
+                        <span class="tag">看纪录片</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- AI -->
+            <section class="section" id="ai">
+                <div class="section-head">
+                    <h2>🤖 AI</h2>
+                    <div class="section-tabs">
+                        <a href="#ai" class="active">对话</a>
+                        <a href="#ai">绘画</a>
+                        <a href="#ai">写作</a>
+                        <a href="#ai">编程</a>
+                        <a href="#ai">视频</a>
+                    </div>
+                </div>
+                <div class="cards">
+                    <a class="card" href="https://oai.oooai.cc/list/#/register?inviter=PUW386" target="_blank" rel="noopener">
+                        <div class="card-icon">🐳</div>
+                        <h3>GPT 国内直连</h3>
+                        <p>ChatGPT 官网国内直连入口，注册即可使用。</p>
+                        <span class="tag">GPT</span>
+                    </a>
+                    <a class="card" href="https://www.doubao.com" target="_blank" rel="noopener">
+                        <div class="card-icon">🫘</div>
+                        <h3>豆包</h3>
+                        <p>中文 AI 助手，支持聊天、写作和多种 AI 功能。</p>
+                        <span class="tag">国产AI</span>
+                    </a>
+                    <a class="card" href="https://www.deepseek.com" target="_blank" rel="noopener">
+                        <div class="card-icon">🔍</div>
+                        <h3>DeepSeek</h3>
+                        <p>AI 对话、推理和编程工具。</p>
+                        <span class="tag">AI</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- 工具 -->
+            <section class="section" id="tools">
+                <div class="section-head">
+                    <h2>🛠 工具</h2>
+                    <div class="section-tabs">
+                        <a href="#tools" class="active">图片</a>
+                        <a href="#tools">PDF</a>
+                        <a href="#tools">转换</a>
+                        <a href="#tools">识别</a>
+                        <a href="#tools">传输</a>
+                    </div>
+                </div>
+                <div class="cards">
+                    <a class="card" href="https://github.com" target="_blank" rel="noopener">
+                        <div class="card-icon">💻</div>
+                        <h3>GitHub</h3>
+                        <p>全球开发者使用的代码托管与协作平台。</p>
+                        <span class="tag">开发</span>
+                    </a>
+                    <a class="card" href="https://www.canva.com" target="_blank" rel="noopener">
+                        <div class="card-icon">🎨</div>
+                        <h3>Canva</h3>
+                        <p>在线设计海报、图片、演示文稿等。</p>
+                        <span class="tag">设计</span>
+                    </a>
+                    <a class="card" href="https://www.remove.bg" target="_blank" rel="noopener">
+                        <div class="card-icon">✂️</div>
+                        <h3>Remove.bg</h3>
+                        <p>在线自动抠图，快速删除图片背景。</p>
+                        <span class="tag">图片</span>
+                    </a>
+                    <a class="card" href="https://www.ilovepdf.com" target="_blank" rel="noopener">
+                        <div class="card-icon">📄</div>
+                        <h3>iLovePDF</h3>
+                        <p>在线处理 PDF 文件。</p>
+                        <span class="tag">PDF</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- 学习 -->
+            <section class="section" id="learning">
+                <div class="section-head">
+                    <h2>📚 学习</h2>
+                    <div class="section-tabs">
+                        <a href="#learning" class="active">视频</a>
+                        <a href="#learning">编程</a>
+                        <a href="#learning">语言</a>
+                        <a href="#learning">课程</a>
+                        <a href="#learning">百科</a>
+                    </div>
+                </div>
+                <div class="cards">
+                    <a class="card" href="https://www.bilibili.com" target="_blank" rel="noopener">
+                        <div class="card-icon">📺</div>
+                        <h3>Bilibili</h3>
+                        <p>视频学习、知识分享和兴趣社区。</p>
+                        <span class="tag">视频</span>
+                    </a>
+                    <a class="card" href="https://www.wikipedia.org" target="_blank" rel="noopener">
+                        <div class="card-icon">🌐</div>
+                        <h3>Wikipedia</h3>
+                        <p>开放的在线百科全书。</p>
+                        <span class="tag">百科</span>
+                    </a>
+                    <a class="card" href="https://www.coursera.org" target="_blank" rel="noopener">
+                        <div class="card-icon">🎓</div>
+                        <h3>Coursera</h3>
+                        <p>在线课程和大学课程平台。</p>
+                        <span class="tag">课程</span>
+                    </a>
+                    <a class="card" href="https://www.zhihu.com" target="_blank" rel="noopener">
+                        <div class="card-icon">💡</div>
+                        <h3>知乎</h3>
+                        <p>问答、知识与经验分享社区。</p>
+                        <span class="tag">知识</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- 软件 -->
+            <section class="section" id="software">
+                <div class="section-head">
+                    <h2>💻 软件</h2>
+                    <div class="section-tabs">
+                        <a href="#software" class="active">系统</a>
+                        <a href="#software">办公</a>
+                        <a href="#software">浏览器</a>
+                        <a href="#software">开发</a>
+                        <a href="#software">设计</a>
+                    </div>
+                </div>
+                <div class="cards">
+                    <a class="card" href="https://www.microsoft.com" target="_blank" rel="noopener">
+                        <div class="card-icon">▦</div>
+                        <h3>Microsoft</h3>
+                        <p>Windows、Office 等微软产品。</p>
+                        <span class="tag">Windows</span>
+                    </a>
+                    <a class="card" href="https://www.apple.com" target="_blank" rel="noopener">
+                        <div class="card-icon"></div>
+                        <h3>Apple</h3>
+                        <p>iPhone、Mac、iPad 等苹果产品。</p>
+                        <span class="tag">Apple</span>
+                    </a>
+                    <a class="card" href="https://www.mozilla.org" target="_blank" rel="noopener">
+                        <div class="card-icon">🦊</div>
+                        <h3>Firefox</h3>
+                        <p>开源浏览器。</p>
+                        <span class="tag">浏览器</span>
+                    </a>
+                    <a class="card" href="https://www.google.com/chrome/" target="_blank" rel="noopener">
+                        <div class="card-icon">🌐</div>
+                        <h3>Chrome</h3>
+                        <p>Google 浏览器。</p>
+                        <span class="tag">浏览器</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- 设计 -->
+            <section class="section" id="design">
+                <div class="section-head">
+                    <h2>🎨 设计</h2>
+                    <div class="section-tabs">
+                        <a href="#design" class="active">UI</a>
+                        <a href="#design">平面</a>
+                        <a href="#design">图片</a>
+                        <a href="#design">视频</a>
+                        <a href="#design">灵感</a>
+                    </div>
+                </div>
+                <div class="cards">
+                    <a class="card" href="https://www.figma.com" target="_blank" rel="noopener">
+                        <div class="card-icon">◈</div>
+                        <h3>Figma</h3>
+                        <p>在线 UI、网页和产品设计工具。</p>
+                        <span class="tag">UI设计</span>
+                    </a>
+                    <a class="card" href="https://www.canva.com" target="_blank" rel="noopener">
+                        <div class="card-icon">🎨</div>
+                        <h3>Canva</h3>
+                        <p>快速制作海报、图片和视觉内容。</p>
+                        <span class="tag">平面设计</span>
+                    </a>
+                    <a class="card" href="https://www.adobe.com" target="_blank" rel="noopener">
+                        <div class="card-icon">🖌️</div>
+                        <h3>Adobe</h3>
+                        <p>专业设计、摄影和视频创作工具。</p>
+                        <span class="tag">专业设计</span>
+                    </a>
+                    <a class="card" href="https://www.photopea.com" target="_blank" rel="noopener">
+                        <div class="card-icon">🖼️</div>
+                        <h3>Photopea</h3>
+                        <p>在线图片编辑工具。</p>
+                        <span class="tag">图片编辑</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- 开发 -->
+            <section class="section" id="development">
+                <div class="section-head">
+                    <h2>👨‍💻 开发</h2>
+                    <div class="section-tabs">
+                        <a href="#development" class="active">代码</a>
+                        <a href="#development">文档</a>
+                        <a href="#development">问答</a>
+                        <a href="#development">前端</a>
+                        <a href="#development">工具</a>
+                    </div>
+                </div>
+                <div class="cards">
+                    <a class="card" href="https://github.com" target="_blank" rel="noopener">
+                        <div class="card-icon">🐙</div>
+                        <h3>GitHub</h3>
+                        <p>代码托管、开源项目和开发协作。</p>
+                        <span class="tag">代码</span>
+                    </a>
+                    <a class="card" href="https://stackoverflow.com" target="_blank" rel="noopener">
+                        <div class="card-icon">💬</div>
+                        <h3>Stack Overflow</h3>
+                        <p>程序员问答社区。</p>
+                        <span class="tag">问答</span>
+                    </a>
+                    <a class="card" href="https://developer.mozilla.org" target="_blank" rel="noopener">
+                        <div class="card-icon">📖</div>
+                        <h3>MDN</h3>
+                        <p>Web 开发技术文档。</p>
+                        <span class="tag">文档</span>
+                    </a>
+                    <a class="card" href="https://codepen.io" target="_blank" rel="noopener">
+                        <div class="card-icon">✏️</div>
+                        <h3>CodePen</h3>
+                        <p>在线编写和展示前端代码。</p>
+                        <span class="tag">前端</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- 娱乐 -->
+            <section class="section" id="entertainment">
+                <div class="section-head">
+                    <h2>🎮 娱乐</h2>
+                    <div class="section-tabs">
+                        <a href="#entertainment" class="active">视频</a>
+                        <a href="#entertainment">音乐</a>
+                        <a href="#entertainment">影视</a>
+                        <a href="#entertainment">游戏</a>
+                    </div>
+                </div>
+                <div class="cards">
+                    <a class="card" href="https://www.youtube.com" target="_blank" rel="noopener">
+                        <div class="card-icon">▶️</div>
+                        <h3>YouTube</h3>
+                        <p>全球视频内容平台。</p>
+                        <span class="tag">视频</span>
+                    </a>
+                    <a class="card" href="https://open.spotify.com" target="_blank" rel="noopener">
+                        <div class="card-icon">🎵</div>
+                        <h3>Spotify</h3>
+                        <p>音乐和播客平台。</p>
+                        <span class="tag">音乐</span>
+                    </a>
+                    <a class="card" href="https://www.netflix.com" target="_blank" rel="noopener">
+                        <div class="card-icon">🎬</div>
+                        <h3>Netflix</h3>
+                        <p>影视流媒体平台。</p>
+                        <span class="tag">影视</span>
+                    </a>
+                    <a class="card" href="https://store.steampowered.com" target="_blank" rel="noopener">
+                        <div class="card-icon">🎮</div>
+                        <h3>Steam</h3>
+                        <p>电脑游戏平台。</p>
+                        <span class="tag">游戏</span>
+                    </a>
+                </div>
+            </section>
+
+            <!-- 搞钱 -->
+            <section class="section money" id="money">
+                <div class="section-head">
+                    <h2>💰 搞钱</h2>
+                    <div class="section-tabs">
+                        <a href="#money" class="active">副业</a>
+                        <a href="#money">AI变现</a>
+                        <a href="#money">自媒体</a>
+                        <a href="#money">电商</a>
+                        <a href="#money">技能</a>
+                    </div>
+                </div>
+                <div class="cards">
+                    <a class="card" href="#">
+                        <div class="card-icon">🚀</div>
+                        <h3>副业项目</h3>
+                        <p>整理值得了解的副业方向和项目。</p>
+                        <span class="tag">副业</span>
+                    </a>
+                    <a class="card" href="#">
+                        <div class="card-icon">🤖</div>
+                        <h3>AI赚钱</h3>
+                        <p>探索 AI 工具、AI 服务和商业机会。</p>
+                        <span class="tag">AI变现</span>
+                    </a>
+                    <a class="card" href="#">
+                        <div class="card-icon">📱</div>
+                        <h3>自媒体</h3>
+                        <p>内容创作、账号运营和流量变现。</p>
+                        <span class="tag">内容创业</span>
+                    </a>
+                    <a class="card" href="#">
+                        <div class="card-icon">🛒</div>
+                        <h3>电商</h3>
+                        <p>电商平台、工具和运营资源。</p>
+                        <span class="tag">电商</span>
+                    </a>
+                    <a class="card" href="#">
+                        <div class="card-icon">💻</div>
+                        <h3>技能变现</h3>
+                        <p>把设计、编程、写作等技能变成收入。</p>
+                        <span class="tag">技能</span>
+                    </a>
+                    <a class="card" href="#">
+                        <div class="card-icon">🌍</div>
+                        <h3>海外项目</h3>
+                        <p>海外平台、工具和商业机会。</p>
+                        <span class="tag">海外</span>
+                    </a>
+                </div>
+            </section>
+
+        </main>
+
+        <footer>
+            <p>© 2026 三小仙 · 发现好用的网站</p>
+        </footer>
+
     </div>
 
-</section>
-
-<main class="container">
-
-    <section class="section" id="ai">
-
-        <div class="section-title">🤖 AI 工具</div>
-
-        <div class="grid">
-
-            <a class="card" href="https://chatgpt.com" target="_blank">
-                <h3>ChatGPT</h3>
-                <p>AI聊天、写作、编程</p >
-            </a >
-
-            <a class="card" href="https://gemini.google.com" target="_blank">
-                <h3>Gemini</h3>
-                <p>Google AI 助手</p >
-            </a >
-
-            <a class="card" href="https://www.doubao.com" target="_blank">
-                <h3>豆包</h3>
-                <p>字节跳动 AI 助手</p >
-            </a >
-
-        </div>
-
-    </section>
-
-
-    <section class="section" id="tools">
-
-        <div class="section-title">🛠️ 实用工具</div>
-
-        <div class="grid">
-
-            <a class="card" href="https://github.com" target="_blank">
-                <h3>GitHub</h3>
-                <p>代码托管与开发平台</p >
-            </a >
-
-            <a class="card" href="https://www.canva.com" target="_blank">
-                <h3>Canva</h3>
-                <p>在线设计工具</p >
-            </a >
-
-            <a class="card" href="https://www.remove.bg" target="_blank">
-                <h3>Remove.bg</h3>
-                <p>在线图片抠图</p >
-            </a >
-
-        </div>
-
-    </section>
-
-
-    <section class="section" id="money">
-
-        <div class="section-title">💰 搞钱</div>
-
-        <div class="grid">
-
-            <a class="card money" href="#">
-                <h3>副业项目</h3>
-                <p>以后整理各种低成本副业</p >
-            </a >
-
-            <a class="card money" href="#">
-                <h3>AI 赚钱</h3>
-                <p>AI 工具与商业变现方法</p >
-            </a >
-
-            <a class="card money" href="#">
-                <h3>自媒体</h3>
-                <p>内容创作与流量变现</p >
-            </a >
-
-        </div>
-
-    </section>
-
-</main>
-
-
-<footer>
-    © 2026 我的导航
-</footer>
-
+</div>
 
 <script>
-
-function searchSite() {
-
-    const keyword =
-        document.getElementById("searchInput").value.trim();
-
-    if (!keyword) {
-        alert("请输入搜索内容");
-        return;
+    function searchWebsite(event) {
+        if (event.key === "Enter") {
+            const input = document.getElementById("searchInput");
+            const keyword = input.value.trim();
+            if (keyword !== "") {
+                const url = "https://www.baidu.com/s?wd=" + encodeURIComponent(keyword);
+                window.open(url, "_blank", "noopener,noreferrer");
+            }
+        }
     }
 
-    window.open(
-        "https://www.baidu.com/s?wd=" +
-        encodeURIComponent(keyword),
-        "_blank"
-    );
-}
+    // 所有标签按钮切换（每组独立）
+    document.querySelectorAll('.section-tabs').forEach(group => {
+        group.querySelectorAll('a').forEach(tab => {
+            tab.addEventListener('click', function (e) {
+                e.preventDefault();
+                group.querySelectorAll('a').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    });
 
+    // 导航高亮：滚动时自动高亮当前板块
+    (function () {
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.sidebar-nav a, .mobile-nav a');
+
+        function updateActive() {
+            let currentId = '';
+            const scrollPos = window.scrollY + 140;
+
+            sections.forEach(section => {
+                if (section.offsetTop <= scrollPos) {
+                    currentId = section.getAttribute('id');
+                }
+            });
+
+            if (window.scrollY < 100) currentId = '';
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                const href = link.getAttribute('href');
+                if (href === '#' && currentId === '') {
+                    link.classList.add('active');
+                } else if (href === '#' + currentId) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActive, { passive: true });
+        window.addEventListener('load', updateActive);
+    })();
 </script>
 
 </body>
