@@ -380,28 +380,14 @@
             border-radius: 2px;
         }
 
-        /* ===== 卡片网格：横向滑动（不换行） ===== */
+        /* ===== 卡片网格：自适应排列，全部显示完 ===== */
         .cards {
-            display: flex;
-            flex-wrap: nowrap;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 8px;
-            overflow-x: auto;
-            overflow-y: hidden;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-            -webkit-overflow-scrolling: touch;
-            padding: 2px 2px 6px;
-            scroll-behavior: smooth;
-        }
-
-        .cards::-webkit-scrollbar {
-            display: none;
-            height: 0;
         }
 
         .card {
-            flex: 0 0 auto;
-            width: 200px;
             background: #23232e;
             border: 1px solid transparent;
             border-radius: 8px;
@@ -480,6 +466,12 @@
 
         .tab-panel.active {
             display: block;
+            animation: fadeIn 0.2s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(4px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* ===== 搞钱专区 ===== */
@@ -667,9 +659,13 @@
                 border-radius: 5px;
             }
 
-            /* 手机端卡片宽度缩小 */
+            /* 手机端：2 列网格，全部显示完 */
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 6px;
+            }
+
             .card {
-                width: 160px;
                 padding: 9px 10px;
                 min-height: 52px;
                 gap: 8px;
@@ -708,7 +704,6 @@
 
         @media (max-width: 380px) {
             .card {
-                width: 145px;
                 padding: 8px 9px;
                 min-height: 48px;
                 gap: 6px;
