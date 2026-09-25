@@ -43,27 +43,27 @@
         .top-bar {
             background: #0e0e16;
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            padding: 0 24px;
-            height: 56px;
+            padding: 0 18px;
+            height: 48px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             position: sticky;
             top: 0;
             z-index: 300;
-            font-size: 14px;
-            gap: 16px;
+            font-size: 13px;
+            gap: 12px;
         }
 
         .top-bar-left {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 14px;
             min-width: 0;
         }
 
         .top-bar-logo {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 800;
             letter-spacing: -0.5px;
             background: linear-gradient(135deg, #ffffff, #b0b0d0);
@@ -77,19 +77,19 @@
         .top-bar-links {
             display: flex;
             align-items: center;
-            gap: 2px;
+            gap: 1px;
         }
 
         .top-bar-links a {
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 4px;
             color: #c0c0d5;
-            padding: 6px 10px;
-            border-radius: 6px;
+            padding: 5px 8px;
+            border-radius: 5px;
             font-weight: 500;
             white-space: nowrap;
-            font-size: 13px;
+            font-size: 12.5px;
             transition: background 0.18s, color 0.18s;
         }
 
@@ -99,8 +99,8 @@
         }
 
         .top-bar-links a svg {
-            width: 15px;
-            height: 15px;
+            width: 13px;
+            height: 13px;
             flex-shrink: 0;
             stroke: currentColor;
             fill: none;
@@ -112,20 +112,20 @@
         .top-bar-right {
             display: flex;
             align-items: center;
-            gap: 2px;
+            gap: 1px;
             flex-shrink: 0;
         }
 
         .top-bar-right a {
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 4px;
             color: #c0c0d5;
-            padding: 6px 10px;
-            border-radius: 6px;
+            padding: 5px 8px;
+            border-radius: 5px;
             font-weight: 500;
             white-space: nowrap;
-            font-size: 13px;
+            font-size: 12.5px;
             transition: background 0.18s, color 0.18s;
         }
 
@@ -135,8 +135,8 @@
         }
 
         .top-bar-right a svg {
-            width: 15px;
-            height: 15px;
+            width: 13px;
+            height: 13px;
             flex-shrink: 0;
             stroke: currentColor;
             fill: none;
@@ -148,8 +148,8 @@
         .top-bar-right .icon-wechat svg {
             stroke: none;
             fill: currentColor;
-            width: 17px;
-            height: 17px;
+            width: 15px;
+            height: 15px;
         }
 
         /* ===== 主体布局 ===== */
@@ -162,15 +162,15 @@
         /* ===== 左侧竖排导航 ===== */
         .sidebar {
             position: fixed;
-            top: 56px;
+            top: 48px;
             left: 0;
-            width: 160px;
-            height: calc(100vh - 56px);
+            width: 130px;
+            height: calc(100vh - 48px);
             background: #0e0e16;
             border-right: 1px solid rgba(255, 255, 255, 0.06);
             display: flex;
             flex-direction: column;
-            padding: 16px 0;
+            padding: 10px 0;
             z-index: 200;
             overflow-y: auto;
             scrollbar-width: thin;
@@ -178,7 +178,7 @@
         }
 
         .sidebar::-webkit-scrollbar {
-            width: 6px;
+            width: 5px;
         }
 
         .sidebar::-webkit-scrollbar-track {
@@ -195,35 +195,35 @@
         }
 
         .sidebar-title {
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 600;
             color: #5a5a75;
-            letter-spacing: 1.5px;
+            letter-spacing: 1.2px;
             text-transform: uppercase;
-            padding: 0 20px 10px;
-            margin-bottom: 2px;
+            padding: 0 16px 6px;
+            margin-bottom: 1px;
         }
 
         .sidebar-nav {
             display: flex;
             flex-direction: column;
             gap: 1px;
-            padding: 0 10px;
+            padding: 0 8px;
         }
 
         .sidebar-nav a {
             display: flex;
             align-items: center;
-            font-size: 13.5px;
+            font-size: 12.5px;
             font-weight: 500;
             color: #a6a6be;
-            padding: 9px 14px;
-            border-radius: 8px;
+            padding: 7px 12px;
+            border-radius: 6px;
             background: transparent;
-            transition: all 0.18s ease;
-            letter-spacing: 0.2px;
+            transition: all 0.15s ease;
+            letter-spacing: 0.1px;
             font-family: inherit;
-            line-height: 1.4;
+            line-height: 1.3;
         }
 
         .sidebar-nav a:hover {
@@ -239,18 +239,18 @@
 
         /* ===== 侧边栏辅助菜单 ===== */
         .sidebar-aux {
-            margin-top: 16px;
-            padding: 14px 10px 0;
+            margin-top: 10px;
+            padding: 10px 8px 0;
             border-top: 1px solid rgba(255, 255, 255, 0.06);
         }
 
         .sidebar-aux-title {
-            font-size: 10px;
+            font-size: 9px;
             font-weight: 600;
             color: #4a4a60;
-            letter-spacing: 1.5px;
+            letter-spacing: 1.2px;
             text-transform: uppercase;
-            padding: 0 10px 8px;
+            padding: 0 8px 5px;
         }
 
         .sidebar-aux-links {
@@ -262,14 +262,14 @@
         .sidebar-aux-links a {
             display: flex;
             align-items: center;
-            gap: 7px;
-            font-size: 12px;
+            gap: 5px;
+            font-size: 11px;
             font-weight: 450;
             color: #7a7a95;
-            padding: 7px 14px;
-            border-radius: 6px;
-            transition: all 0.18s ease;
-            letter-spacing: 0.2px;
+            padding: 5px 12px;
+            border-radius: 5px;
+            transition: all 0.15s ease;
+            letter-spacing: 0.1px;
         }
 
         .sidebar-aux-links a:hover {
@@ -278,8 +278,8 @@
         }
 
         .sidebar-aux-links a svg {
-            width: 13px;
-            height: 13px;
+            width: 11px;
+            height: 11px;
             flex-shrink: 0;
             stroke: currentColor;
             fill: none;
@@ -290,7 +290,7 @@
 
         /* ===== 右侧主内容区 ===== */
         .main-wrapper {
-            margin-left: 160px;
+            margin-left: 130px;
             flex: 1;
             min-width: 0;
         }
@@ -299,32 +299,32 @@
         .hero {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 22px 24px 16px;
+            padding: 14px 18px 10px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 20px;
+            gap: 16px;
             flex-wrap: wrap;
         }
 
         .hero-left {
             display: flex;
             align-items: baseline;
-            gap: 12px;
+            gap: 10px;
             flex-wrap: wrap;
         }
 
         .hero h1 {
-            font-size: 20px;
+            font-size: 17px;
             font-weight: 700;
-            letter-spacing: -0.3px;
+            letter-spacing: -0.2px;
             color: #f0f0fa;
-            line-height: 1.3;
+            line-height: 1.2;
         }
 
         .hero p {
             color: #6e6e88;
-            font-size: 12.5px;
+            font-size: 11.5px;
             font-weight: 400;
         }
 
@@ -335,12 +335,12 @@
         }
 
         .search-box input {
-            width: 280px;
-            height: 36px;
+            width: 240px;
+            height: 32px;
             border: 1px solid #2a2a3c;
-            border-radius: 8px;
-            padding: 0 14px;
-            font-size: 13px;
+            border-radius: 7px;
+            padding: 0 12px;
+            font-size: 12px;
             outline: none;
             background: #14141f;
             transition: border 0.2s, box-shadow 0.3s;
@@ -362,24 +362,24 @@
         main {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 24px 40px;
+            padding: 0 18px 30px;
         }
 
         .section {
-            margin-bottom: 28px;
-            scroll-margin-top: 60px;
+            margin-bottom: 18px;
+            scroll-margin-top: 50px;
         }
 
         /* ===== 突出标题栏：板块标题 + 子导航 ===== */
         .section-head {
             display: flex;
             align-items: center;
-            gap: 14px;
-            margin-bottom: 12px;
-            padding: 10px 14px;
+            gap: 10px;
+            margin-bottom: 8px;
+            padding: 7px 10px;
             background: linear-gradient(90deg, #171724 0%, #131320 60%, transparent 100%);
-            border-left: 3px solid #e8465a;
-            border-radius: 8px;
+            border-left: 2.5px solid #e8465a;
+            border-radius: 6px;
             position: relative;
             min-width: 0;
         }
@@ -387,21 +387,21 @@
         .section-head::after {
             content: '';
             position: absolute;
-            bottom: -6px;
+            bottom: -4px;
             left: 0;
             right: 0;
             height: 1px;
-            background: linear-gradient(90deg, rgba(232, 70, 90, 0.5), rgba(232, 70, 90, 0.1), transparent);
+            background: linear-gradient(90deg, rgba(232, 70, 90, 0.4), rgba(232, 70, 90, 0.08), transparent);
         }
 
         .section-head h2 {
-            font-size: 17px;
+            font-size: 14px;
             font-weight: 800;
-            letter-spacing: -0.2px;
+            letter-spacing: -0.1px;
             color: #ffffff;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 4px;
             flex-shrink: 0;
             white-space: nowrap;
             margin: 0;
@@ -412,23 +412,23 @@
         .section-tabs {
             display: flex;
             align-items: center;
-            gap: 4px;
+            gap: 3px;
             flex-wrap: nowrap;
             flex: 1;
             min-width: 0;
             overflow-x: auto;
             overflow-y: hidden;
-            scrollbar-width: none;              /* Firefox 隐藏滚动条 */
-            -ms-overflow-style: none;           /* IE/Edge 隐藏滚动条 */
-            -webkit-overflow-scrolling: touch;  /* iOS 顺滑滚动 */
-            padding: 2px 2px;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+            -webkit-overflow-scrolling: touch;
+            padding: 1px 1px;
             scroll-behavior: smooth;
             mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 20px), transparent 100%);
             -webkit-mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 20px), transparent 100%);
         }
 
         .section-tabs::-webkit-scrollbar {
-            display: none;                      /* Chrome/Safari 隐藏滚动条 */
+            display: none;
             height: 0;
             width: 0;
         }
@@ -437,9 +437,9 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 3px 10px;
-            border-radius: 5px;
-            font-size: 12px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
             font-weight: 500;
             color: #9a9ab5;
             background: rgba(255, 255, 255, 0.04);
@@ -448,7 +448,7 @@
             transition: all 0.15s ease;
             letter-spacing: 0.1px;
             cursor: pointer;
-            line-height: 1.7;
+            line-height: 1.6;
             flex-shrink: 0;
         }
 
@@ -463,44 +463,44 @@
             background: #e8465a;
             border-color: #e8465a;
             font-weight: 600;
-            box-shadow: 0 2px 10px rgba(232, 70, 90, 0.4);
+            box-shadow: 0 2px 8px rgba(232, 70, 90, 0.35);
         }
 
-        /* ===== 卡片网格（参照图片风格：6 列小卡片） ===== */
+        /* ===== 卡片网格（参照图片风格：更紧凑的小卡片） ===== */
         .cards {
             display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 6px;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
         }
 
         .card {
             background: #14141f;
             border: 1px solid #1e1e30;
-            border-radius: 8px;
-            padding: 10px 12px;
+            border-radius: 6px;
+            padding: 8px 10px;
             transition: all 0.15s ease;
             display: flex;
             align-items: center;
-            gap: 10px;
-            min-height: 52px;
+            gap: 8px;
+            min-height: 46px;
             overflow: hidden;
         }
 
         .card:hover {
             border-color: #34345a;
             background: #1a1a28;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
         }
 
         .card-icon {
-            width: 30px;
-            height: 30px;
-            border-radius: 8px;
+            width: 26px;
+            height: 26px;
+            border-radius: 6px;
             background: #1e1e30;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 16px;
+            font-size: 14px;
             flex-shrink: 0;
             transition: background 0.2s;
         }
@@ -514,11 +514,11 @@
             min-width: 0;
             display: flex;
             flex-direction: column;
-            gap: 2px;
+            gap: 1px;
         }
 
         .card h3 {
-            font-size: 12.5px;
+            font-size: 11.5px;
             font-weight: 600;
             letter-spacing: -0.1px;
             color: #e8e8f5;
@@ -530,8 +530,8 @@
 
         .card p {
             color: #6e6e88;
-            font-size: 11px;
-            line-height: 1.35;
+            font-size: 10px;
+            line-height: 1.3;
             font-weight: 400;
             white-space: nowrap;
             overflow: hidden;
@@ -554,8 +554,8 @@
         /* ===== 搞钱专区 ===== */
         .money {
             background: #0d0d14;
-            border-radius: 12px;
-            padding: 16px 16px 14px;
+            border-radius: 10px;
+            padding: 12px 12px 10px;
             color: #fff;
             border: 1px solid #1a1a2a;
         }
@@ -566,7 +566,7 @@
         }
 
         .money .section-head::after {
-            background: linear-gradient(90deg, rgba(245, 166, 35, 0.5), rgba(245, 166, 35, 0.1), transparent);
+            background: linear-gradient(90deg, rgba(245, 166, 35, 0.4), rgba(245, 166, 35, 0.08), transparent);
         }
 
         .money .section-head h2 {
@@ -574,7 +574,7 @@
         }
 
         .money .cards {
-            margin-top: 10px;
+            margin-top: 8px;
         }
 
         .money .card {
@@ -604,9 +604,9 @@
             border-top: 1px solid #1a1a28;
             background: #0b0b10;
             text-align: center;
-            padding: 20px 18px;
+            padding: 14px 14px;
             color: #5a5a75;
-            font-size: 11.5px;
+            font-size: 11px;
             font-weight: 400;
             letter-spacing: 0.2px;
         }
@@ -615,20 +615,20 @@
         .mobile-topbar {
             display: none;
             position: sticky;
-            top: 56px;
+            top: 48px;
             z-index: 250;
             background: rgba(11, 11, 16, 0.92);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            padding: 8px 12px;
+            padding: 6px 10px;
         }
 
         .mobile-nav {
             display: flex;
-            gap: 4px;
+            gap: 3px;
             overflow-x: auto;
-            padding-bottom: 3px;
+            padding-bottom: 2px;
             scrollbar-width: none;
             -ms-overflow-style: none;
             -webkit-overflow-scrolling: touch;
@@ -640,10 +640,10 @@
 
         .mobile-nav a {
             flex-shrink: 0;
-            font-size: 11.5px;
+            font-size: 11px;
             font-weight: 500;
             color: #a6a6be;
-            padding: 4px 10px;
+            padding: 3px 9px;
             border-radius: 30px;
             background: rgba(255, 255, 255, 0.04);
             white-space: nowrap;
@@ -656,13 +656,19 @@
         }
 
         /* ===== 响应式 ===== */
-        @media (max-width: 1300px) {
+        @media (max-width: 1400px) {
+            .cards {
+                grid-template-columns: repeat(6, 1fr);
+            }
+        }
+
+        @media (max-width: 1200px) {
             .cards {
                 grid-template-columns: repeat(5, 1fr);
             }
         }
 
-        @media (max-width: 1080px) {
+        @media (max-width: 1000px) {
             .cards {
                 grid-template-columns: repeat(4, 1fr);
             }
@@ -682,13 +688,13 @@
             }
 
             .top-bar {
-                padding: 0 14px;
-                height: 52px;
-                gap: 10px;
+                padding: 0 12px;
+                height: 46px;
+                gap: 8px;
             }
 
             .top-bar-logo {
-                font-size: 18px;
+                font-size: 17px;
             }
 
             .top-bar-links a:nth-child(2),
@@ -697,16 +703,16 @@
             }
 
             .hero {
-                padding: 16px 16px 12px;
+                padding: 12px 14px 8px;
             }
 
             .hero h1 {
-                font-size: 17px;
+                font-size: 15px;
             }
 
             .search-box input {
                 width: 100%;
-                min-width: 200px;
+                min-width: 180px;
             }
 
             .hero-left {
@@ -715,80 +721,80 @@
 
             .search-box {
                 flex: 1;
-                max-width: 320px;
+                max-width: 280px;
             }
 
             main {
-                padding: 0 16px 30px;
+                padding: 0 14px 22px;
             }
 
             .sidebar {
-                top: 52px;
-                height: calc(100vh - 52px);
+                top: 46px;
+                height: calc(100vh - 46px);
             }
 
             .mobile-topbar {
-                top: 52px;
+                top: 46px;
             }
         }
 
         /* ===== 手机端优化：保持和 PC 类似的多列紧凑排版 ===== */
         @media (max-width: 700px) {
             .top-bar {
-                padding: 0 12px;
-                height: 48px;
-                gap: 8px;
+                padding: 0 10px;
+                height: 44px;
+                gap: 6px;
             }
 
             .top-bar-logo {
-                font-size: 17px;
+                font-size: 16px;
             }
 
             .top-bar-links a {
-                padding: 5px 8px;
-                font-size: 12px;
+                padding: 4px 6px;
+                font-size: 11.5px;
             }
 
             .top-bar-right a {
-                padding: 5px 8px;
-                font-size: 12px;
+                padding: 4px 6px;
+                font-size: 11.5px;
             }
 
             .top-bar-links a svg,
             .top-bar-right a svg {
-                width: 14px;
-                height: 14px;
+                width: 13px;
+                height: 13px;
             }
 
             .mobile-topbar {
-                top: 48px;
-                padding: 6px 10px;
+                top: 44px;
+                padding: 5px 8px;
             }
 
             .mobile-nav {
-                gap: 3px;
+                gap: 2px;
             }
 
             .mobile-nav a {
-                font-size: 11px;
-                padding: 3px 9px;
+                font-size: 10.5px;
+                padding: 3px 8px;
             }
 
             .hero {
-                padding: 14px 12px 10px;
-                gap: 10px;
-            }
-
-            .hero-left {
+                padding: 10px 10px 8px;
                 gap: 8px;
             }
 
+            .hero-left {
+                gap: 6px;
+            }
+
             .hero h1 {
-                font-size: 16px;
+                font-size: 14px;
             }
 
             .hero p {
-                font-size: 11px;
+                font-size: 10.5px;
             }
 
             .search-box {
@@ -798,101 +804,61 @@
 
             .search-box input {
                 width: 100%;
-                height: 34px;
-                padding: 0 12px;
-                font-size: 12.5px;
-                border-radius: 8px;
-            }
-
-            main {
-                padding: 0 10px 24px;
-            }
-
-            .section {
-                margin-bottom: 20px;
-            }
-
-            .section-head {
-                gap: 8px;
-                margin-bottom: 8px;
-                padding: 8px 10px;
-                border-left-width: 3px;
+                height: 30px;
+                padding: 0 10px;
+                font-size: 11.5px;
                 border-radius: 6px;
             }
 
-            .section-head h2 {
-                font-size: 14.5px;
-                gap: 4px;
+            main {
+                padding: 0 8px 18px;
             }
 
-            .section-tabs {
+            .section {
+                margin-bottom: 14px;
+            }
+
+            .section-head {
+                gap: 6px;
+                margin-bottom: 6px;
+                padding: 6px 8px;
+                border-left-width: 2.5px;
+                border-radius: 5px;
+            }
+
+            .section-head h2 {
+                font-size: 12.5px;
                 gap: 3px;
             }
 
+            .section-tabs {
+                gap: 2px;
+            }
+
             .section-tabs a {
-                padding: 2px 8px;
-                font-size: 11px;
-                border-radius: 4px;
+                padding: 1px 6px;
+                font-size: 10px;
+                border-radius: 3px;
             }
 
             /* 手机端也是 2 列紧凑卡片，和 PC 保持一致的视觉语言 */
             .cards {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 5px;
-            }
-
-            .card {
-                padding: 8px 9px;
-                min-height: 46px;
-                gap: 8px;
-                border-radius: 7px;
-            }
-
-            .card-icon {
-                width: 26px;
-                height: 26px;
-                font-size: 14px;
-                border-radius: 6px;
-            }
-
-            .card h3 {
-                font-size: 11.5px;
-            }
-
-            .card p {
-                font-size: 10px;
-            }
-
-            .money {
-                padding: 12px 10px 10px;
-                border-radius: 10px;
-            }
-
-            .money .cards {
-                margin-top: 8px;
-            }
-
-            footer {
-                padding: 16px 12px;
-                font-size: 11px;
-            }
-        }
-
-        @media (max-width: 380px) {
-            .cards {
-                grid-template-columns: repeat(2, 1fr);
+                gap: 4px;
             }
 
             .card {
                 padding: 7px 8px;
-                min-height: 44px;
+                min-height: 42px;
                 gap: 6px;
+                border-radius: 5px;
             }
 
             .card-icon {
-                width: 24px;
-                height: 24px;
-                font-size: 13px;
+                width: 22px;
+                height: 22px;
+                font-size: 12px;
+                border-radius: 5px;
             }
 
             .card h3 {
@@ -903,13 +869,53 @@
                 font-size: 9.5px;
             }
 
+            .money {
+                padding: 10px 8px 8px;
+                border-radius: 8px;
+            }
+
+            .money .cards {
+                margin-top: 6px;
+            }
+
+            footer {
+                padding: 12px 10px;
+                font-size: 10.5px;
+            }
+        }
+
+        @media (max-width: 380px) {
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .card {
+                padding: 6px 7px;
+                min-height: 40px;
+                gap: 5px;
+            }
+
+            .card-icon {
+                width: 20px;
+                height: 20px;
+                font-size: 11px;
+            }
+
+            .card h3 {
+                font-size: 10.5px;
+            }
+
+            .card p {
+                font-size: 9px;
+            }
+
             .section-head h2 {
-                font-size: 13.5px;
+                font-size: 12px;
             }
 
             .section-tabs a {
-                padding: 2px 7px;
-                font-size: 10.5px;
+                padding: 1px 5px;
+                font-size: 9.5px;
             }
         }
 
@@ -938,7 +944,7 @@
         a:focus-visible {
             outline: 2px solid #5a5a90;
             outline-offset: 2px;
-            border-radius: 6px;
+            border-radius: 5px;
         }
     </style>
 </head>
@@ -1126,28 +1132,28 @@
                             <div class="card-icon">👁️</div>
                             <div class="card-body">
                                 <h3>注视影视</h3>
-                                <p>在线观影平台，影视资源丰富</p>
+                                <p>在线观影平台</p>
                             </div>
                         </a>
                         <a class="card" href="https://www.novipnoad.uk/" target="_blank" rel="noopener">
                             <div class="card-icon">🎬</div>
                             <div class="card-body">
                                 <h3>No视频</h3>
-                                <p>免费在线影视网站</p>
+                                <p>免费在线影视</p>
                             </div>
                         </a>
                         <a class="card" href="https://juok3.top/" target="_blank" rel="noopener">
                             <div class="card-icon">🎭</div>
                             <div class="card-body">
                                 <h3>剧OK</h3>
-                                <p>电影电视剧在线观看</p>
+                                <p>影视在线观看</p>
                             </div>
                         </a>
                         <a class="card" href="https://www.cz4k.com/" target="_blank" rel="noopener">
                             <div class="card-icon">📽️</div>
                             <div class="card-body">
                                 <h3>厂长资源</h3>
-                                <p>高清影视资源网站</p>
+                                <p>高清影视资源</p>
                             </div>
                         </a>
                         <a class="card" href="https://www.xiguadh.com/" target="_blank" rel="noopener">
@@ -1161,7 +1167,7 @@
                             <div class="card-icon">🇰🇷</div>
                             <div class="card-body">
                                 <h3>韩剧99</h3>
-                                <p>韩剧在线观看平台</p>
+                                <p>韩剧在线观看</p>
                             </div>
                         </a>
                         <a class="card" href="https://hanju51.com/" target="_blank" rel="noopener">
@@ -1175,7 +1181,7 @@
                             <div class="card-icon">🦸</div>
                             <div class="card-body">
                                 <h3>看片狂人</h3>
-                                <p>免费在线影视平台</p>
+                                <p>免费在线影视</p>
                             </div>
                         </a>
                         <a class="card" href="https://wakp.xin/" target="_blank" rel="noopener">
@@ -1189,14 +1195,14 @@
                             <div class="card-icon">🐺</div>
                             <div class="card-body">
                                 <h3>真狼影视</h3>
-                                <p>免费影视资源平台</p>
+                                <p>免费影视资源</p>
                             </div>
                         </a>
                         <a class="card" href="https://www.deeyy.com/" target="_blank" rel="noopener">
                             <div class="card-icon">🎦</div>
                             <div class="card-body">
                                 <h3>DEE影院</h3>
-                                <p>在线影院免费观看</p>
+                                <p>在线影院免费看</p>
                             </div>
                         </a>
                         <a class="card" href="https://www.yayadaohang.com/site/qqys01" target="_blank" rel="noopener">
@@ -1222,21 +1228,21 @@
                             <div class="card-icon">🤖</div>
                             <div class="card-body">
                                 <h3>看剧AI</h3>
-                                <p>AI 智能短剧平台</p>
+                                <p>AI 智能短剧</p>
                             </div>
                         </a>
                         <a class="card" href="https://hongguoduanju.com/?ref=www.sbrdh.com" target="_blank" rel="noopener">
                             <div class="card-icon">🍎</div>
                             <div class="card-body">
                                 <h3>红果短剧</h3>
-                                <p>红果免费短剧平台</p>
+                                <p>免费短剧平台</p>
                             </div>
                         </a>
                         <a class="card" href="https://trieuvieclam.com/" target="_blank" rel="noopener">
                             <div class="card-icon">🎭</div>
                             <div class="card-body">
                                 <h3>短剧</h3>
-                                <p>免费短剧在线观看</p>
+                                <p>免费短剧在线看</p>
                             </div>
                         </a>
                         <a class="card" href="https://www.xpxxo.net/" target="_blank" rel="noopener">
@@ -1262,14 +1268,14 @@
                             <div class="card-icon">🌸</div>
                             <div class="card-body">
                                 <h3>樱花动漫</h3>
-                                <p>专注动漫的门户网站</p>
+                                <p>专注动漫门户</p>
                             </div>
                         </a>
                         <a class="card" href="https://www.995dm.com/" target="_blank" rel="noopener">
                             <div class="card-icon">🎎</div>
                             <div class="card-body">
                                 <h3>久久动漫</h3>
-                                <p>免费在线观看动漫</p>
+                                <p>免费在线观看</p>
                             </div>
                         </a>
                         <a class="card" href="https://cn.agekkkk.com/" target="_blank" rel="noopener">
@@ -1290,7 +1296,7 @@
                             <div class="card-icon">🎬</div>
                             <div class="card-body">
                                 <h3>二矿动漫</h3>
-                                <p>动漫爱好者的选择</p>
+                                <p>动漫爱好者选择</p>
                             </div>
                         </a>
                     </div>
@@ -1302,21 +1308,21 @@
                             <div class="card-icon">🇨🇳</div>
                             <div class="card-body">
                                 <h3>中国纪录片网</h3>
-                                <p>国内官方纪录片平台</p>
+                                <p>官方纪录片平台</p>
                             </div>
                         </a>
                         <a class="card" href="https://tv.cctv.com/yxg/index.shtml" target="_blank" rel="noopener">
                             <div class="card-icon">📡</div>
                             <div class="card-body">
-                                <h3>CCTV纪录片频道</h3>
+                                <h3>CCTV纪录片</h3>
                                 <p>优秀国产纪录片</p>
                             </div>
                         </a>
                         <a class="card" href="https://www.youku.com/ku/webjilupian" target="_blank" rel="noopener">
                             <div class="card-icon">🎞️</div>
                             <div class="card-body">
-                                <h3>优酷纪录片频道</h3>
-                                <p>海量纪录片在线观看</p>
+                                <h3>优酷纪录片</h3>
+                                <p>海量纪录片观看</p>
                             </div>
                         </a>
                     </div>
@@ -1342,7 +1348,7 @@
                             <div class="card-icon">🐳</div>
                             <div class="card-body">
                                 <h3>GPT 国内直连</h3>
-                                <p>ChatGPT 国内直连入口</p>
+                                <p>ChatGPT 直连入口</p>
                             </div>
                         </a>
                         <a class="card" href="https://www.doubao.com" target="_blank" rel="noopener">
@@ -1356,7 +1362,7 @@
                             <div class="card-icon">🔍</div>
                             <div class="card-body">
                                 <h3>DeepSeek</h3>
-                                <p>AI 对话、推理和编程</p>
+                                <p>AI 对话推理编程</p>
                             </div>
                         </a>
                     </div>
@@ -1368,14 +1374,14 @@
                             <div class="card-icon">🐦</div>
                             <div class="card-body">
                                 <h3>小云雀</h3>
-                                <p>抖音旗下AI短剧创作</p>
+                                <p>抖音 AI 短剧创作</p>
                             </div>
                         </a>
                         <a class="card" href="https://seko.sensetime.com/explore?cg_click_id=10128dcf-4d3f-4d23-9d63-a739e3468afd&cgv=j7n63zyn1g&utm=cg" target="_blank" rel="noopener">
                             <div class="card-icon">🎬</div>
                             <div class="card-body">
                                 <h3>Seko</h3>
-                                <p>商汤科技 AI 漫剧平台</p>
+                                <p>商汤 AI 漫剧平台</p>
                             </div>
                         </a>
                         <a class="card" href="https://www.updream.cn/?cg_click_id=2fd2e70e-2fa2-4600-96f3-7aa438ee3210&cgv=9we240xngo&utm=cg" target="_blank" rel="noopener">
@@ -1462,7 +1468,7 @@
                             <div class="card-icon">✍️</div>
                             <div class="card-body">
                                 <h3>稿定AI文案</h3>
-                                <p>智能生成文案内容</p>
+                                <p>智能生成文案</p>
                             </div>
                         </a>
                         <a class="card" href="https://www.xljsci.com/?channelCode=TvhaLa" target="_blank" rel="noopener">
@@ -1490,7 +1496,7 @@
                             <div class="card-icon">🖊️</div>
                             <div class="card-body">
                                 <h3>GradPeni论文</h3>
-                                <p>智能论文写作工具</p>
+                                <p>智能论文写作</p>
                             </div>
                         </a>
                     </div>
@@ -1502,14 +1508,14 @@
                             <div class="card-icon">🎨</div>
                             <div class="card-body">
                                 <h3>稿定-AI绘画</h3>
-                                <p>智能生成图片和插画</p>
+                                <p>智能生成图片插画</p>
                             </div>
                         </a>
                         <a class="card" href="https://jimeng.jianying.com/ai-tool/home/?utm_medium=aitools&utm_source=aijuhe&utm_campaign=null&utm_content=hw_jm_aijuhe1" target="_blank" rel="noopener">
                             <div class="card-icon">✨</div>
                             <div class="card-body">
                                 <h3>即梦AI</h3>
-                                <p>智能生成高质量图片</p>
+                                <p>智能生成高质量图</p>
                             </div>
                         </a>
                         <a class="card" href="https://www.ihuiwa.com/invite?huiwaInviteCode=EU5UFL&catId=1" target="_blank" rel="noopener">
@@ -1555,28 +1561,28 @@
                             <div class="card-icon">📄</div>
                             <div class="card-body">
                                 <h3>iLovePDF</h3>
-                                <p>免费在线 PDF 处理工具</p>
+                                <p>免费 PDF 处理工具</p>
                             </div>
                         </a>
                         <a class="card" href="https://www.fileeagle.com/pdfeagle/en" target="_blank" rel="noopener">
                             <div class="card-icon">🦅</div>
                             <div class="card-body">
                                 <h3>PDF Eagle</h3>
-                                <p>在线 PDF 编辑和转换</p>
+                                <p>PDF 编辑和转换</p>
                             </div>
                         </a>
                         <a class="card" href="https://pdfcandy.com/cn/" target="_blank" rel="noopener">
                             <div class="card-icon">🍬</div>
                             <div class="card-body">
                                 <h3>PDF Candy</h3>
-                                <p>免费在线 PDF 工具集</p>
+                                <p>免费 PDF 工具集</p>
                             </div>
                         </a>
                         <a class="card" href="https://www.aconvert.com/cn/" target="_blank" rel="noopener">
                             <div class="card-icon">🔄</div>
                             <div class="card-body">
                                 <h3>在线文档转换</h3>
-                                <p>支持多种格式转换</p>
+                                <p>多种格式转换</p>
                             </div>
                         </a>
                         <a class="card" href="https://imging.ai/?url=biiii.com" target="_blank" rel="noopener">
@@ -1609,7 +1615,7 @@
                             <div class="card-icon">📸</div>
                             <div class="card-body">
                                 <h3>SnapAny</h3>
-                                <p>在线视频下载和处理</p>
+                                <p>视频下载和处理</p>
                             </div>
                         </a>
                         <a class="card" href="https://www.xtdowner.com/" target="_blank" rel="noopener">
@@ -1644,7 +1650,7 @@
                             <div class="card-icon">🎯</div>
                             <div class="card-body">
                                 <h3>KuKuTool去水印</h3>
-                                <p>短视频去水印下载</p>
+                                <p>短视频去水印</p>
                             </div>
                         </a>
                     </div>
@@ -1682,7 +1688,7 @@
                             <div class="card-icon">📧</div>
                             <div class="card-body">
                                 <h3>临时邮箱</h3>
-                                <p>保护隐私避免垃圾邮件</p>
+                                <p>保护隐私避免垃圾</p>
                             </div>
                         </a>
                         <a class="card" href="https://futurecv.cn/" target="_blank" rel="noopener">
@@ -1718,28 +1724,28 @@
                             <div class="card-icon">🎓</div>
                             <div class="card-body">
                                 <h3>我要自学网</h3>
-                                <p>综合在线学习平台</p>
+                                <p>综合在线学习</p>
                             </div>
                         </a>
                         <a class="card" href="https://study.163.com/" target="_blank" rel="noopener">
                             <div class="card-icon">📖</div>
                             <div class="card-body">
                                 <h3>网易云课堂</h3>
-                                <p>成人终身学习平台</p>
+                                <p>成人终身学习</p>
                             </div>
                         </a>
                         <a class="card" href="https://www.xuetangx.com/" target="_blank" rel="noopener">
                             <div class="card-icon">🏫</div>
                             <div class="card-body">
                                 <h3>学堂在线</h3>
-                                <p>优质在线课程平台</p>
+                                <p>优质在线课程</p>
                             </div>
                         </a>
                         <a class="card" href="https://www.icourses.cn/" target="_blank" rel="noopener">
                             <div class="card-icon">📚</div>
                             <div class="card-body">
                                 <h3>爱课程</h3>
-                                <p>中国大学MOOC平台</p>
+                                <p>中国大学MOOC</p>
                             </div>
                         </a>
                     </div>
@@ -1758,21 +1764,21 @@
                             <div class="card-icon">⌨️</div>
                             <div class="card-body">
                                 <h3>EchoType</h3>
-                                <p>在线打字练习平台</p>
+                                <p>在线打字练习</p>
                             </div>
                         </a>
                         <a class="card" href="https://ogden.munch.love/?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">📘</div>
                             <div class="card-body">
-                                <h3>Ogden's Basic English</h3>
-                                <p>基础英语学习资源</p>
+                                <h3>Ogden's English</h3>
+                                <p>基础英语学习</p>
                             </div>
                         </a>
                         <a class="card" href="https://hefengxian.com/my-ielts/?url=biiii.com#/" target="_blank" rel="noopener">
                             <div class="card-icon">📝</div>
                             <div class="card-body">
                                 <h3>My IELTS</h3>
-                                <p>雅思学习备考工具</p>
+                                <p>雅思学习备考</p>
                             </div>
                         </a>
                         <a class="card" href="https://heeee.com/yingyucihui.html?url=biiii.com" target="_blank" rel="noopener">
@@ -1812,20 +1818,20 @@
                             <div class="card-icon">💻</div>
                             <div class="card-body">
                                 <h3>软件自学网</h3>
-                                <p>各种软件教程学习</p>
+                                <p>各种软件教程</p>
                             </div>
                         </a>
                         <a class="card" href="https://www.excelhome.net/" target="_blank" rel="noopener">
                             <div class="card-icon">📊</div>
                             <div class="card-body">
                                 <h3>ExcelHome</h3>
-                                <p>Excel 学习与交流社区</p>
+                                <p>Excel 学习社区</p>
                             </div>
                         </a>
                         <a class="card" href="https://systems-programming.org/database_zh/?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">🗄️</div>
                             <div class="card-body">
-                                <h3>从零开始手搓数据库</h3>
+                                <h3>手搓数据库</h3>
                                 <p>系统编程学习</p>
                             </div>
                         </a>
@@ -1833,13 +1839,13 @@
                             <div class="card-icon">🖌️</div>
                             <div class="card-body">
                                 <h3>ps教程自学网</h3>
-                                <p>Photoshop 学习教程</p>
+                                <p>PS 学习教程</p>
                             </div>
                         </a>
                         <a class="card" href="https://www.yuque.com/94benyi/funeng?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">📗</div>
                             <div class="card-body">
-                                <h3>Excel函数赋能手册</h3>
+                                <h3>Excel函数手册</h3>
                                 <p>Excel 函数学习</p>
                             </div>
                         </a>
@@ -1847,21 +1853,21 @@
                             <div class="card-icon">🎨</div>
                             <div class="card-body">
                                 <h3>Adobe软件教程</h3>
-                                <p>Photoshop 学习</p>
+                                <p>PS 学习</p>
                             </div>
                         </a>
                         <a class="card" href="https://www.lanrenexcel.com/?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">📈</div>
                             <div class="card-body">
                                 <h3>懒人Excel</h3>
-                                <p>轻松学习 Excel 技巧</p>
+                                <p>轻松学 Excel</p>
                             </div>
                         </a>
                         <a class="card" href="https://www.wps.cn/learning/?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">📘</div>
                             <div class="card-body">
                                 <h3>WPS学堂</h3>
-                                <p>WPS Office 学习教程</p>
+                                <p>WPS 学习教程</p>
                             </div>
                         </a>
                     </div>
@@ -1934,21 +1940,21 @@
                             <div class="card-icon">👨‍🍳</div>
                             <div class="card-body">
                                 <h3>大厨网</h3>
-                                <p>专业菜谱和烹饪教程</p>
+                                <p>专业菜谱教程</p>
                             </div>
                         </a>
                         <a class="card" href="https://eat.lz-t.top/?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">🍽️</div>
                             <div class="card-body">
                                 <h3>一饭封神</h3>
-                                <p>美食菜谱和技巧</p>
+                                <p>美食菜谱技巧</p>
                             </div>
                         </a>
                         <a class="card" href="https://bbqnotes.tw/?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">🍖</div>
                             <div class="card-body">
                                 <h3>烤肉烧烤指南</h3>
-                                <p>烧烤技巧和食谱</p>
+                                <p>烧烤技巧食谱</p>
                             </div>
                         </a>
                     </div>
@@ -1960,7 +1966,7 @@
                             <div class="card-icon">📐</div>
                             <div class="card-body">
                                 <h3>高中学习网</h3>
-                                <p>高中课程学习资源</p>
+                                <p>高中课程学习</p>
                             </div>
                         </a>
                     </div>
@@ -1972,14 +1978,14 @@
                             <div class="card-icon">🥁</div>
                             <div class="card-body">
                                 <h3>在线架子鼓</h3>
-                                <p>在线模拟架子鼓演奏</p>
+                                <p>在线模拟演奏</p>
                             </div>
                         </a>
                         <a class="card" href="https://www.autopiano.cn/" target="_blank" rel="noopener">
                             <div class="card-icon">🎹</div>
                             <div class="card-body">
                                 <h3>自由钢琴</h3>
-                                <p>在线钢琴学习和演奏</p>
+                                <p>在线钢琴演奏</p>
                             </div>
                         </a>
                     </div>
@@ -1991,14 +1997,14 @@
                             <div class="card-icon">📚</div>
                             <div class="card-body">
                                 <h3>Z-Library</h3>
-                                <p>海量电子书在线图书馆</p>
+                                <p>电子书在线图书馆</p>
                             </div>
                         </a>
                         <a class="card" href="https://zh.annas-archive.gl/?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">🗂️</div>
                             <div class="card-body">
                                 <h3>安娜的档案</h3>
-                                <p>电子书和学术资源</p>
+                                <p>电子书学术资源</p>
                             </div>
                         </a>
                     </div>
@@ -2022,14 +2028,14 @@
                         <div class="card-icon">▦</div>
                         <div class="card-body">
                             <h3>Microsoft</h3>
-                            <p>Windows、Office 等产品</p>
+                            <p>Windows Office</p>
                         </div>
                     </a>
                     <a class="card" href="https://www.apple.com" target="_blank" rel="noopener">
                         <div class="card-icon"></div>
                         <div class="card-body">
                             <h3>Apple</h3>
-                            <p>iPhone、Mac、iPad</p>
+                            <p>iPhone Mac iPad</p>
                         </div>
                     </a>
                     <a class="card" href="https://www.mozilla.org" target="_blank" rel="noopener">
@@ -2066,7 +2072,7 @@
                         <div class="card-icon">◈</div>
                         <div class="card-body">
                             <h3>Figma</h3>
-                            <p>在线 UI 和产品设计</p>
+                            <p>在线 UI 产品设计</p>
                         </div>
                     </a>
                     <a class="card" href="https://www.canva.com" target="_blank" rel="noopener">
@@ -2080,7 +2086,7 @@
                         <div class="card-icon">🖌️</div>
                         <div class="card-body">
                             <h3>Adobe</h3>
-                            <p>专业设计和视频工具</p>
+                            <p>专业设计视频工具</p>
                         </div>
                     </a>
                     <a class="card" href="https://www.photopea.com" target="_blank" rel="noopener">
@@ -2110,7 +2116,7 @@
                         <div class="card-icon">🐙</div>
                         <div class="card-body">
                             <h3>GitHub</h3>
-                            <p>代码托管和开发协作</p>
+                            <p>代码托管开发协作</p>
                         </div>
                     </a>
                     <a class="card" href="https://stackoverflow.com" target="_blank" rel="noopener">
@@ -2211,14 +2217,14 @@
                         <div class="card-icon">📱</div>
                         <div class="card-body">
                             <h3>自媒体</h3>
-                            <p>内容创作和流量变现</p>
+                            <p>内容创作流量变现</p>
                         </div>
                     </a>
                     <a class="card" href="#">
                         <div class="card-icon">🛒</div>
                         <div class="card-body">
                             <h3>电商</h3>
-                            <p>电商平台和运营资源</p>
+                            <p>电商平台运营资源</p>
                         </div>
                     </a>
                     <a class="card" href="#">
@@ -2232,7 +2238,7 @@
                         <div class="card-icon">🌍</div>
                         <div class="card-body">
                             <h3>海外项目</h3>
-                            <p>海外平台和商业机会</p>
+                            <p>海外平台商业机会</p>
                         </div>
                     </a>
                 </div>
@@ -2304,7 +2310,7 @@
 
         function updateActive() {
             let currentId = '';
-            const scrollPos = window.scrollY + 100;
+            const scrollPos = window.scrollY + 90;
 
             sections.forEach(section => {
                 if (section.offsetTop <= scrollPos) {
