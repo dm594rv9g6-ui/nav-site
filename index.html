@@ -385,6 +385,14 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 8px;
+            touch-action: pan-y;  /* 允许垂直滚动页面，水平手势我们自己处理 */
+            user-select: none;    /* 防止长按选中文字 */
+            -webkit-user-select: none;
+            cursor: grab;
+        }
+
+        .cards:active {
+            cursor: grabbing;
         }
 
         .card {
@@ -396,14 +404,19 @@
             align-items: center;
             gap: 10px;
             min-height: 56px;
-            transition: all 0.15s ease;
+            transition: background 0.15s ease, border-color 0.15s ease;
             overflow: hidden;
         }
 
         .card:hover {
             background: #2a2a38;
             border-color: rgba(255, 255, 255, 0.06);
-            transform: translateY(-1px);
+        }
+
+        /* 滑动时禁止卡片内的悬停效果，防止视觉干扰 */
+        .cards.swiping .card:hover {
+            background: #23232e;
+            border-color: transparent;
         }
 
         .card-icon {
@@ -417,6 +430,7 @@
             flex-shrink: 0;
             overflow: hidden;
             font-size: 18px;
+            pointer-events: none; /* 让滑动事件不被图标吃掉 */
         }
 
         .card-icon img {
@@ -425,6 +439,8 @@
             object-fit: contain;
             display: block;
             border-radius: 4px;
+            pointer-events: none;
+            -webkit-user-drag: none;
         }
 
         .card-body {
@@ -433,6 +449,7 @@
             display: flex;
             flex-direction: column;
             gap: 2px;
+            pointer-events: none;
         }
 
         .card h3 {
@@ -472,6 +489,22 @@
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(4px); }
             to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* 切换到相邻类目时，卡片区短暂显示提示动画 */
+        .cards.slide-left-anim {
+            animation: slideLeftIn 0.28s ease;
+        }
+        .cards.slide-right-anim {
+            animation: slideRightIn 0.28s ease;
+        }
+        @keyframes slideLeftIn {
+            from { opacity: 0.4; transform: translateX(20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes slideRightIn {
+            from { opacity: 0.4; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
         }
 
         /* ===== 搞钱专区 ===== */
@@ -1666,31 +1699,176 @@
 </div>
 
 <script>
-    // 带 data-panel 的标签组：点击后切换对应面板内容
+    /* ========== 激活某个子导航（供标签点击 & 滑动切换共用） ========== */
+    function activateTab(group, tab, direction) {
+        const panelId = tab.getAttribute('data-panel');
+        if (!panelId) return;
+
+        // 高亮
+        group.querySelectorAll('a').forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        // 面板切换
+        const section = group.closest('.section');
+        section.querySelectorAll('.tab-panel').forEach(panel => {
+            if (panel.id === panelId) {
+                panel.classList.add('active');
+                // 为卡片区添加切换动画
+                const cardsEl = panel.querySelector('.cards');
+                if (cardsEl) {
+                    cardsEl.classList.remove('slide-left-anim', 'slide-right-anim');
+                    void cardsEl.offsetWidth; // 触发重排以重启动画
+                    if (direction === 'left') {
+                        cardsEl.classList.add('slide-left-anim');
+                    } else if (direction === 'right') {
+                        cardsEl.classList.add('slide-right-anim');
+                    }
+                }
+            } else {
+                panel.classList.remove('active');
+            }
+        });
+
+        // 让激活的标签滚到可视区域
+        tab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+
+    /* ========== 标签点击事件 ========== */
     document.querySelectorAll('.section-tabs[data-tabs]').forEach(group => {
         group.querySelectorAll('a[data-panel]').forEach(tab => {
             tab.addEventListener('click', function (e) {
                 e.preventDefault();
-                const panelId = this.getAttribute('data-panel');
-
-                group.querySelectorAll('a').forEach(t => t.classList.remove('active'));
-                this.classList.add('active');
-
-                const section = group.closest('.section');
-                section.querySelectorAll('.tab-panel').forEach(panel => {
-                    if (panel.id === panelId) {
-                        panel.classList.add('active');
-                    } else {
-                        panel.classList.remove('active');
-                    }
-                });
-
-                this.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                activateTab(group, this);
             });
         });
     });
 
-    // 其它纯样式切换的标签（没有 data-panel 的）
+    /* ========== 卡片区域：按住任意位置往左滑 → 切到下一个子导航 ========== */
+    (function setupCardsSwipe() {
+        document.querySelectorAll('.tab-panel').forEach(panel => {
+            const cardsEl = panel.querySelector('.cards');
+            if (!cardsEl) return;
+
+            const section = panel.closest('.section');
+            const tabsGroup = section.querySelector('.section-tabs[data-tabs]');
+            if (!tabsGroup) return;
+
+            const tabs = Array.from(tabsGroup.querySelectorAll('a[data-panel]'));
+            if (tabs.length < 2) return;
+
+            const currentIndex = () => tabs.findIndex(t => t.classList.contains('active'));
+            const SWIPE_THRESHOLD = 50; // 滑动距离阈值
+            let pointerDown = false;
+            let startX = 0;
+            let startY = 0;
+            let moved = false;
+
+            /* ---------- 鼠标事件 ---------- */
+            cardsEl.addEventListener('mousedown', function (e) {
+                // 只响应左键
+                if (e.button !== 0) return;
+                // 如果是点击在链接上，也要能触发滑动，所以不阻止默认行为
+                pointerDown = true;
+                moved = false;
+                startX = e.clientX;
+                startY = e.clientY;
+                cardsEl.classList.add('swiping');
+            });
+
+            document.addEventListener('mousemove', function (e) {
+                if (!pointerDown) return;
+                const dx = e.clientX - startX;
+                const dy = e.clientY - startY;
+                if (Math.abs(dx) > 6 || Math.abs(dy) > 6) {
+                    moved = true;
+                }
+            });
+
+            document.addEventListener('mouseup', function (e) {
+                if (!pointerDown) return;
+                pointerDown = false;
+                cardsEl.classList.remove('swiping');
+
+                const dx = e.clientX - startX;
+                const dy = e.clientY - startY;
+
+                // 判定是水平滑动：水平距离大于阈值，且横向位移大于纵向位移
+                if (Math.abs(dx) >= SWIPE_THRESHOLD && Math.abs(dx) > Math.abs(dy)) {
+                    if (dx < 0) {
+                        // 往左滑 → 下一个子导航
+                        const idx = currentIndex();
+                        if (idx < tabs.length - 1) {
+                            activateTab(tabsGroup, tabs[idx + 1], 'left');
+                        }
+                    } else {
+                        // 往右滑 → 上一个子导航
+                        const idx = currentIndex();
+                        if (idx > 0) {
+                            activateTab(tabsGroup, tabs[idx - 1], 'right');
+                        }
+                    }
+                }
+            });
+
+            /* ---------- 触摸事件（手机） ---------- */
+            let touchStartX = 0;
+            let touchStartY = 0;
+            let touchMoved = false;
+
+            cardsEl.addEventListener('touchstart', function (e) {
+                if (e.touches.length !== 1) return;
+                touchStartX = e.touches[0].clientX;
+                touchStartY = e.touches[0].clientY;
+                touchMoved = false;
+                cardsEl.classList.add('swiping');
+            }, { passive: true });
+
+            cardsEl.addEventListener('touchmove', function (e) {
+                if (e.touches.length !== 1) return;
+                const dx = e.touches[0].clientX - touchStartX;
+                const dy = e.touches[0].clientY - touchStartY;
+                if (Math.abs(dx) > 6 || Math.abs(dy) > 6) {
+                    touchMoved = true;
+                }
+                // 如果横向位移明显大于纵向，阻止页面垂直滚动
+                if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 10) {
+                    if (e.cancelable) e.preventDefault();
+                }
+            }, { passive: false });
+
+            cardsEl.addEventListener('touchend', function (e) {
+                cardsEl.classList.remove('swiping');
+                if (!touchMoved) return;
+                if (e.changedTouches.length !== 1) return;
+
+                const endX = e.changedTouches[0].clientX;
+                const endY = e.changedTouches[0].clientY;
+                const dx = endX - touchStartX;
+                const dy = endY - touchStartY;
+
+                if (Math.abs(dx) >= SWIPE_THRESHOLD && Math.abs(dx) > Math.abs(dy)) {
+                    if (dx < 0) {
+                        const idx = currentIndex();
+                        if (idx < tabs.length - 1) {
+                            activateTab(tabsGroup, tabs[idx + 1], 'left');
+                        }
+                    } else {
+                        const idx = currentIndex();
+                        if (idx > 0) {
+                            activateTab(tabsGroup, tabs[idx - 1], 'right');
+                        }
+                    }
+                }
+            }, { passive: true });
+
+            /* 阻止卡片被拖动时图片的原生拖动（防止滑动时被拖拽出残影） */
+            cardsEl.querySelectorAll('img').forEach(img => {
+                img.addEventListener('dragstart', e => e.preventDefault());
+            });
+        });
+    })();
+
+    /* ========== 其它纯样式切换的标签 ========== */
     document.querySelectorAll('.section-tabs:not([data-tabs])').forEach(group => {
         group.querySelectorAll('a').forEach(tab => {
             tab.addEventListener('click', function (e) {
@@ -1702,7 +1880,7 @@
         });
     });
 
-    // 导航高亮：滚动时自动高亮当前板块
+    /* ========== 导航高亮 ========== */
     (function () {
         const sections = document.querySelectorAll('section[id]');
         const navLinks = document.querySelectorAll('.sidebar-nav a, .mobile-nav a');
