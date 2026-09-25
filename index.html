@@ -385,14 +385,29 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 8px;
-            touch-action: pan-y;  /* 允许垂直滚动页面，水平手势我们自己处理 */
-            user-select: none;    /* 防止长按选中文字 */
+            touch-action: pan-y;            /* 允许垂直滚动，水平手势自己处理 */
+            user-select: none;              /* 防止滑动时选中文字 */
             -webkit-user-select: none;
+            -webkit-touch-callout: none;    /* iOS 长按不弹出菜单 */
             cursor: grab;
+            position: relative;
         }
 
         .cards:active {
             cursor: grabbing;
+        }
+
+        /* 滑动过程中：强制禁用所有卡片 hover 效果，避免画面乱跳 */
+        .cards.swiping .card {
+            background: #23232e !important;
+            border-color: transparent !important;
+        }
+
+        /* 滑动过程中：禁用所有过渡和动画，保证画面完全稳定 */
+        .cards.swiping .card,
+        .cards.swiping .card-icon {
+            transition: none !important;
+            animation: none !important;
         }
 
         .card {
@@ -406,17 +421,12 @@
             min-height: 56px;
             transition: background 0.15s ease, border-color 0.15s ease;
             overflow: hidden;
+            -webkit-user-drag: none;
         }
 
         .card:hover {
             background: #2a2a38;
             border-color: rgba(255, 255, 255, 0.06);
-        }
-
-        /* 滑动时禁止卡片内的悬停效果，防止视觉干扰 */
-        .cards.swiping .card:hover {
-            background: #23232e;
-            border-color: transparent;
         }
 
         .card-icon {
@@ -430,7 +440,7 @@
             flex-shrink: 0;
             overflow: hidden;
             font-size: 18px;
-            pointer-events: none; /* 让滑动事件不被图标吃掉 */
+            pointer-events: none;   /* 让滑动事件直接命中 .cards */
         }
 
         .card-icon img {
@@ -440,7 +450,8 @@
             display: block;
             border-radius: 4px;
             pointer-events: none;
-            -webkit-user-drag: none;
+            -webkit-user-drag: none;   /* 禁止图片被拖动 */
+            user-select: none;
         }
 
         .card-body {
@@ -449,7 +460,7 @@
             display: flex;
             flex-direction: column;
             gap: 2px;
-            pointer-events: none;
+            pointer-events: none;   /* 让滑动事件直接命中 .cards */
         }
 
         .card h3 {
@@ -483,28 +494,16 @@
 
         .tab-panel.active {
             display: block;
-            animation: fadeIn 0.25s ease;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(4px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* 切换类目时的淡入动画：只做透明度变化，避免位移造成视觉抖动 */
+        .tab-panel.active .cards {
+            animation: cardFadeIn 0.22s ease;
         }
 
-        /* 切换到相邻类目时，卡片区短暂显示提示动画 */
-        .cards.slide-left-anim {
-            animation: slideLeftIn 0.28s ease;
-        }
-        .cards.slide-right-anim {
-            animation: slideRightIn 0.28s ease;
-        }
-        @keyframes slideLeftIn {
-            from { opacity: 0.4; transform: translateX(20px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes slideRightIn {
-            from { opacity: 0.4; transform: translateX(-20px); }
-            to { opacity: 1; transform: translateX(0); }
+        @keyframes cardFadeIn {
+            from { opacity: 0.6; }
+            to { opacity: 1; }
         }
 
         /* ===== 搞钱专区 ===== */
@@ -692,7 +691,7 @@
                 border-radius: 5px;
             }
 
-            /* 手机端：2 列网格，全部显示 */
+            /* 手机端：2 列网格 */
             .cards {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 6px;
@@ -1708,22 +1707,11 @@
         group.querySelectorAll('a').forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
 
-        // 面板切换
+        // 面板切换（不需要位移动画，只做透明度渐变避免抖动）
         const section = group.closest('.section');
         section.querySelectorAll('.tab-panel').forEach(panel => {
             if (panel.id === panelId) {
                 panel.classList.add('active');
-                // 为卡片区添加切换动画
-                const cardsEl = panel.querySelector('.cards');
-                if (cardsEl) {
-                    cardsEl.classList.remove('slide-left-anim', 'slide-right-anim');
-                    void cardsEl.offsetWidth; // 触发重排以重启动画
-                    if (direction === 'left') {
-                        cardsEl.classList.add('slide-left-anim');
-                    } else if (direction === 'right') {
-                        cardsEl.classList.add('slide-right-anim');
-                    }
-                }
             } else {
                 panel.classList.remove('active');
             }
@@ -1757,34 +1745,34 @@
             if (tabs.length < 2) return;
 
             const currentIndex = () => tabs.findIndex(t => t.classList.contains('active'));
-            const SWIPE_THRESHOLD = 50; // 滑动距离阈值
+            const SWIPE_THRESHOLD = 50;
             let pointerDown = false;
             let startX = 0;
             let startY = 0;
-            let moved = false;
+            let isSwiping = false;
 
             /* ---------- 鼠标事件 ---------- */
-            cardsEl.addEventListener('mousedown', function (e) {
-                // 只响应左键
+            const onMouseDown = function (e) {
                 if (e.button !== 0) return;
-                // 如果是点击在链接上，也要能触发滑动，所以不阻止默认行为
                 pointerDown = true;
-                moved = false;
+                isSwiping = false;
                 startX = e.clientX;
                 startY = e.clientY;
+                // 进入"滑动准备"状态，禁用 hover 效果
                 cardsEl.classList.add('swiping');
-            });
+            };
 
-            document.addEventListener('mousemove', function (e) {
+            const onMouseMove = function (e) {
                 if (!pointerDown) return;
                 const dx = e.clientX - startX;
                 const dy = e.clientY - startY;
-                if (Math.abs(dx) > 6 || Math.abs(dy) > 6) {
-                    moved = true;
+                // 判定为横向滑动后，标记
+                if (Math.abs(dx) > 6 && Math.abs(dx) > Math.abs(dy)) {
+                    isSwiping = true;
                 }
-            });
+            };
 
-            document.addEventListener('mouseup', function (e) {
+            const onMouseUp = function (e) {
                 if (!pointerDown) return;
                 pointerDown = false;
                 cardsEl.classList.remove('swiping');
@@ -1792,53 +1780,81 @@
                 const dx = e.clientX - startX;
                 const dy = e.clientY - startY;
 
-                // 判定是水平滑动：水平距离大于阈值，且横向位移大于纵向位移
+                // 判定是否触发了类目切换
                 if (Math.abs(dx) >= SWIPE_THRESHOLD && Math.abs(dx) > Math.abs(dy)) {
+                    // 阻止冒泡，避免同时打开卡片链接
+                    e.preventDefault();
+                    e.stopPropagation();
                     if (dx < 0) {
-                        // 往左滑 → 下一个子导航
                         const idx = currentIndex();
                         if (idx < tabs.length - 1) {
                             activateTab(tabsGroup, tabs[idx + 1], 'left');
                         }
                     } else {
-                        // 往右滑 → 上一个子导航
                         const idx = currentIndex();
                         if (idx > 0) {
                             activateTab(tabsGroup, tabs[idx - 1], 'right');
                         }
                     }
                 }
-            });
+            };
+
+            // 在 mouseup 之后立即阻止一次 click 事件（防止滑动后误触链接）
+            const onClick = function (e) {
+                if (isSwiping) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    isSwiping = false;
+                }
+            };
+
+            cardsEl.addEventListener('mousedown', onMouseDown);
+            document.addEventListener('mousemove', onMouseMove);
+            document.addEventListener('mouseup', onMouseUp);
+            cardsEl.addEventListener('click', onClick, true); // 使用捕获阶段，优先处理
 
             /* ---------- 触摸事件（手机） ---------- */
             let touchStartX = 0;
             let touchStartY = 0;
-            let touchMoved = false;
+            let touchSwiping = false;
+            let touchLocked = false; // 用于锁定方向，防止抖动
 
-            cardsEl.addEventListener('touchstart', function (e) {
+            const onTouchStart = function (e) {
                 if (e.touches.length !== 1) return;
                 touchStartX = e.touches[0].clientX;
                 touchStartY = e.touches[0].clientY;
-                touchMoved = false;
+                touchSwiping = false;
+                touchLocked = false;
                 cardsEl.classList.add('swiping');
-            }, { passive: true });
+            };
 
-            cardsEl.addEventListener('touchmove', function (e) {
+            const onTouchMove = function (e) {
                 if (e.touches.length !== 1) return;
                 const dx = e.touches[0].clientX - touchStartX;
                 const dy = e.touches[0].clientY - touchStartY;
-                if (Math.abs(dx) > 6 || Math.abs(dy) > 6) {
-                    touchMoved = true;
-                }
-                // 如果横向位移明显大于纵向，阻止页面垂直滚动
-                if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 10) {
-                    if (e.cancelable) e.preventDefault();
-                }
-            }, { passive: false });
 
-            cardsEl.addEventListener('touchend', function (e) {
+                // 首次判定方向
+                if (!touchLocked && (Math.abs(dx) > 8 || Math.abs(dy) > 8)) {
+                    if (Math.abs(dx) > Math.abs(dy)) {
+                        // 横向滑动，阻止默认滚动
+                        touchLocked = true;
+                        touchSwiping = true;
+                    } else {
+                        // 纵向滑动，让页面正常滚动
+                        touchLocked = true;
+                        touchSwiping = false;
+                    }
+                }
+
+                // 横向滑动时阻止页面跟随滚动（防止画面抖动）
+                if (touchSwiping && e.cancelable) {
+                    e.preventDefault();
+                }
+            };
+
+            const onTouchEnd = function (e) {
                 cardsEl.classList.remove('swiping');
-                if (!touchMoved) return;
+                if (!touchSwiping) return;
                 if (e.changedTouches.length !== 1) return;
 
                 const endX = e.changedTouches[0].clientX;
@@ -1858,12 +1874,26 @@
                             activateTab(tabsGroup, tabs[idx - 1], 'right');
                         }
                     }
+                    // 阻止后续的点击事件（防止误触卡片链接）
+                    e.preventDefault();
                 }
-            }, { passive: true });
+            };
 
-            /* 阻止卡片被拖动时图片的原生拖动（防止滑动时被拖拽出残影） */
+            const onTouchCancel = function () {
+                cardsEl.classList.remove('swiping');
+                touchSwiping = false;
+                touchLocked = false;
+            };
+
+            cardsEl.addEventListener('touchstart', onTouchStart, { passive: true });
+            cardsEl.addEventListener('touchmove', onTouchMove, { passive: false });
+            cardsEl.addEventListener('touchend', onTouchEnd, { passive: false });
+            cardsEl.addEventListener('touchcancel', onTouchCancel, { passive: true });
+
+            /* 阻止图片被拖拽 */
             cardsEl.querySelectorAll('img').forEach(img => {
                 img.addEventListener('dragstart', e => e.preventDefault());
+                img.addEventListener('selectstart', e => e.preventDefault());
             });
         });
     })();
