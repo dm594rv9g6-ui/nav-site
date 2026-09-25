@@ -42,7 +42,7 @@
             background: #0e0e16;
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
             padding: 0 24px;
-            height: 60px;
+            height: 56px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -61,7 +61,7 @@
         }
 
         .top-bar-logo {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 800;
             letter-spacing: -0.5px;
             background: linear-gradient(135deg, #ffffff, #b0b0d0);
@@ -75,18 +75,19 @@
         .top-bar-links {
             display: flex;
             align-items: center;
-            gap: 4px;
+            gap: 2px;
         }
 
         .top-bar-links a {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
             color: #c0c0d5;
-            padding: 7px 12px;
-            border-radius: 8px;
+            padding: 6px 10px;
+            border-radius: 6px;
             font-weight: 500;
             white-space: nowrap;
+            font-size: 13px;
             transition: background 0.18s, color 0.18s;
         }
 
@@ -96,8 +97,8 @@
         }
 
         .top-bar-links a svg {
-            width: 17px;
-            height: 17px;
+            width: 15px;
+            height: 15px;
             flex-shrink: 0;
             stroke: currentColor;
             fill: none;
@@ -116,12 +117,13 @@
         .top-bar-right a {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 5px;
             color: #c0c0d5;
-            padding: 7px 12px;
-            border-radius: 8px;
+            padding: 6px 10px;
+            border-radius: 6px;
             font-weight: 500;
             white-space: nowrap;
+            font-size: 13px;
             transition: background 0.18s, color 0.18s;
         }
 
@@ -131,8 +133,8 @@
         }
 
         .top-bar-right a svg {
-            width: 17px;
-            height: 17px;
+            width: 15px;
+            height: 15px;
             flex-shrink: 0;
             stroke: currentColor;
             fill: none;
@@ -144,8 +146,8 @@
         .top-bar-right .icon-wechat svg {
             stroke: none;
             fill: currentColor;
-            width: 19px;
-            height: 19px;
+            width: 17px;
+            height: 17px;
         }
 
         /* ===== 主体布局 ===== */
@@ -158,15 +160,15 @@
         /* ===== 左侧竖排导航 ===== */
         .sidebar {
             position: fixed;
-            top: 60px;
+            top: 56px;
             left: 0;
-            width: 180px;
-            height: calc(100vh - 60px);
+            width: 160px;
+            height: calc(100vh - 56px);
             background: #0e0e16;
             border-right: 1px solid rgba(255, 255, 255, 0.06);
             display: flex;
             flex-direction: column;
-            padding: 20px 0;
+            padding: 16px 0;
             z-index: 200;
             overflow-y: auto;
             scrollbar-width: thin;
@@ -191,35 +193,35 @@
         }
 
         .sidebar-title {
-            font-size: 12px;
+            font-size: 11px;
             font-weight: 600;
             color: #5a5a75;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            padding: 0 24px 12px;
-            margin-bottom: 4px;
+            padding: 0 20px 10px;
+            margin-bottom: 2px;
         }
 
         .sidebar-nav {
             display: flex;
             flex-direction: column;
-            gap: 2px;
-            padding: 0 12px;
+            gap: 1px;
+            padding: 0 10px;
         }
 
         .sidebar-nav a {
             display: flex;
             align-items: center;
-            font-size: 15px;
+            font-size: 13.5px;
             font-weight: 500;
             color: #a6a6be;
-            padding: 11px 16px;
-            border-radius: 10px;
+            padding: 9px 14px;
+            border-radius: 8px;
             background: transparent;
             transition: all 0.18s ease;
             letter-spacing: 0.2px;
             font-family: inherit;
-            line-height: 1.5;
+            line-height: 1.4;
         }
 
         .sidebar-nav a:hover {
@@ -235,35 +237,35 @@
 
         /* ===== 侧边栏辅助菜单 ===== */
         .sidebar-aux {
-            margin-top: 20px;
-            padding: 16px 12px 0;
+            margin-top: 16px;
+            padding: 14px 10px 0;
             border-top: 1px solid rgba(255, 255, 255, 0.06);
         }
 
         .sidebar-aux-title {
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 600;
             color: #4a4a60;
             letter-spacing: 1.5px;
             text-transform: uppercase;
-            padding: 0 12px 10px;
+            padding: 0 10px 8px;
         }
 
         .sidebar-aux-links {
             display: flex;
             flex-direction: column;
-            gap: 2px;
+            gap: 1px;
         }
 
         .sidebar-aux-links a {
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 13px;
+            gap: 7px;
+            font-size: 12px;
             font-weight: 450;
             color: #7a7a95;
-            padding: 8px 16px;
-            border-radius: 8px;
+            padding: 7px 14px;
+            border-radius: 6px;
             transition: all 0.18s ease;
             letter-spacing: 0.2px;
         }
@@ -274,8 +276,8 @@
         }
 
         .sidebar-aux-links a svg {
-            width: 14px;
-            height: 14px;
+            width: 13px;
+            height: 13px;
             flex-shrink: 0;
             stroke: currentColor;
             fill: none;
@@ -286,56 +288,59 @@
 
         /* ===== 右侧主内容区 ===== */
         .main-wrapper {
-            margin-left: 180px;
+            margin-left: 160px;
             flex: 1;
             min-width: 0;
         }
 
-        /* ===== Hero 区域 ===== */
+        /* ===== Hero 区域（极简紧凑） ===== */
         .hero {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 64px 32px 48px;
-            text-align: center;
+            padding: 22px 24px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .hero-left {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            flex-wrap: wrap;
         }
 
         .hero h1 {
-            font-size: 48px;
-            font-weight: 800;
-            letter-spacing: -1px;
-            margin-bottom: 18px;
-            background: linear-gradient(145deg, #ffffff, #9a9ac0);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            line-height: 1.2;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            color: #f0f0fa;
+            line-height: 1.3;
         }
 
         .hero p {
-            color: #7a7a95;
-            font-size: 17px;
-            margin-bottom: 36px;
+            color: #6e6e88;
+            font-size: 12.5px;
             font-weight: 400;
-            letter-spacing: 0.3px;
         }
 
-        /* ===== 搜索框 ===== */
+        /* ===== 搜索框（传统风格，小尺寸） ===== */
         .search-box {
-            max-width: 660px;
-            margin: 0 auto;
             position: relative;
+            flex-shrink: 0;
         }
 
         .search-box input {
-            width: 100%;
-            height: 60px;
-            border: 1.5px solid #2a2a3c;
-            border-radius: 20px;
-            padding: 0 26px;
-            font-size: 16px;
+            width: 280px;
+            height: 36px;
+            border: 1px solid #2a2a3c;
+            border-radius: 8px;
+            padding: 0 14px;
+            font-size: 13px;
             outline: none;
             background: #14141f;
-            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.4);
             transition: border 0.2s, box-shadow 0.3s;
             color: #e6e6f0;
             font-weight: 450;
@@ -348,47 +353,48 @@
 
         .search-box input:focus {
             border-color: #5a5a80;
-            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6), 0 0 0 3px rgba(90, 90, 140, 0.15);
+            box-shadow: 0 0 0 3px rgba(90, 90, 140, 0.15);
         }
 
         /* ===== 主体结构 ===== */
         main {
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 0 32px 70px;
+            padding: 0 24px 40px;
         }
 
         .section {
-            margin-bottom: 54px;
-            scroll-margin-top: 80px;
+            margin-bottom: 24px;
+            scroll-margin-top: 60px;
         }
 
-        /* ===== 统一标题行：左侧大标题 + 右侧一排标签按钮 ===== */
+        /* ===== 传统导航页风格标题行：紧凑、左对齐 ===== */
         .section-head {
             display: flex;
             align-items: center;
-            gap: 16px;
-            margin-bottom: 22px;
+            gap: 10px;
+            margin-bottom: 10px;
             flex-wrap: wrap;
         }
 
         .section-head h2 {
-            font-size: 24px;
+            font-size: 15px;
             font-weight: 700;
-            letter-spacing: -0.3px;
+            letter-spacing: -0.2px;
             color: #f0f0fa;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 5px;
             flex-shrink: 0;
             white-space: nowrap;
             margin: 0;
         }
 
+        /* 子导航栏：极小紧凑的标签按钮 */
         .section-tabs {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 2px;
             flex-wrap: wrap;
         }
 
@@ -396,68 +402,68 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 5px 14px;
-            border-radius: 8px;
-            font-size: 13px;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11.5px;
             font-weight: 500;
-            color: #a6a6be;
-            background: #1a1a28;
-            border: 1px solid #26263a;
+            color: #8a8aa5;
+            background: transparent;
+            border: 1px solid transparent;
             white-space: nowrap;
-            transition: all 0.18s ease;
-            letter-spacing: 0.2px;
+            transition: all 0.15s ease;
+            letter-spacing: 0.1px;
             cursor: pointer;
+            line-height: 1.7;
         }
 
         .section-tabs a:hover {
-            color: #ffffff;
-            background: #22223a;
-            border-color: #34345a;
+            color: #d0d0e0;
+            background: rgba(255, 255, 255, 0.06);
         }
 
         .section-tabs a.active {
             color: #ffffff;
             background: #e8465a;
-            border-color: #e8465a;
             font-weight: 600;
-            box-shadow: 0 4px 12px rgba(232, 70, 90, 0.3);
+            box-shadow: 0 2px 6px rgba(232, 70, 90, 0.25);
         }
 
-        /* ===== 卡片网格 ===== */
+        /* ===== 卡片网格（参照图片风格：6 列小卡片） ===== */
         .cards {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 6px;
         }
 
         .card {
             background: #14141f;
-            border: 1px solid #222235;
-            border-radius: 20px;
-            padding: 24px 22px 20px;
-            transition: all 0.25s cubic-bezier(0.2, 0, 0, 1);
+            border: 1px solid #1e1e30;
+            border-radius: 8px;
+            padding: 10px 12px;
+            transition: all 0.15s ease;
             display: flex;
-            flex-direction: column;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+            align-items: center;
+            gap: 10px;
+            min-height: 52px;
+            overflow: hidden;
         }
 
         .card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 36px rgba(0, 0, 0, 0.5);
             border-color: #34345a;
-            background: #181826;
+            background: #1a1a28;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         }
 
         .card-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 14px;
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
             background: #1e1e30;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
-            margin-bottom: 18px;
+            font-size: 16px;
+            flex-shrink: 0;
             transition: background 0.2s;
         }
 
@@ -465,39 +471,37 @@
             background: #26263f;
         }
 
+        .card-body {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
         .card h3 {
-            font-size: 17px;
-            font-weight: 700;
-            margin-bottom: 6px;
-            letter-spacing: -0.2px;
-            color: #f0f0fa;
+            font-size: 12.5px;
+            font-weight: 600;
+            letter-spacing: -0.1px;
+            color: #e8e8f5;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 1.3;
         }
 
         .card p {
-            color: #8888a5;
-            font-size: 13px;
-            line-height: 1.55;
-            flex: 1;
-            margin-bottom: 12px;
+            color: #6e6e88;
+            font-size: 11px;
+            line-height: 1.35;
             font-weight: 400;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .tag {
-            display: inline-block;
-            align-self: flex-start;
-            padding: 5px 10px;
-            background: #1e1e30;
-            color: #9a9ac0;
-            border-radius: 40px;
-            font-size: 11px;
-            font-weight: 500;
-            letter-spacing: 0.2px;
-            transition: background 0.2s;
-        }
-
-        .card:hover .tag {
-            background: #26263f;
-            color: #c0c0e0;
+            display: none;
         }
 
         /* 标签面板显隐控制 */
@@ -511,12 +515,11 @@
 
         /* ===== 搞钱专区 ===== */
         .money {
-            background: #08080c;
-            border-radius: 28px;
-            padding: 38px 32px 34px;
+            background: #0d0d14;
+            border-radius: 12px;
+            padding: 16px 16px 14px;
             color: #fff;
             border: 1px solid #1a1a2a;
-            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.6);
         }
 
         .money .section-head h2 {
@@ -524,18 +527,16 @@
         }
 
         .money .cards {
-            margin-top: 26px;
+            margin-top: 10px;
         }
 
         .money .card {
             background: #111119;
             border-color: #1e1e30;
-            box-shadow: none;
         }
 
         .money .card:hover {
             border-color: #3a3a5a;
-            box-shadow: 0 16px 32px rgba(0, 0, 0, 0.7);
             background: #151522;
         }
 
@@ -548,21 +549,7 @@
         }
 
         .money .card p {
-            color: #7a7a95;
-        }
-
-        .money .tag {
-            background: #1a1a2a;
-            color: #8a8ab0;
-        }
-
-        .money .card:hover .tag {
-            background: #22223a;
-            color: #b0b0d0;
-        }
-
-        .money .card:hover .card-icon {
-            background: #22223a;
+            color: #6e6e88;
         }
 
         /* ===== 底部 ===== */
@@ -570,9 +557,9 @@
             border-top: 1px solid #1a1a28;
             background: #0b0b10;
             text-align: center;
-            padding: 32px 24px;
+            padding: 20px 18px;
             color: #5a5a75;
-            font-size: 13px;
+            font-size: 11.5px;
             font-weight: 400;
             letter-spacing: 0.2px;
         }
@@ -581,20 +568,20 @@
         .mobile-topbar {
             display: none;
             position: sticky;
-            top: 60px;
+            top: 56px;
             z-index: 250;
             background: rgba(11, 11, 16, 0.92);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            padding: 12px 16px;
+            padding: 8px 12px;
         }
 
         .mobile-nav {
             display: flex;
-            gap: 6px;
+            gap: 4px;
             overflow-x: auto;
-            padding-bottom: 4px;
+            padding-bottom: 3px;
             scrollbar-width: none;
         }
 
@@ -604,11 +591,11 @@
 
         .mobile-nav a {
             flex-shrink: 0;
-            font-size: 13px;
+            font-size: 11.5px;
             font-weight: 500;
             color: #a6a6be;
-            padding: 6px 14px;
-            border-radius: 40px;
+            padding: 4px 10px;
+            border-radius: 30px;
             background: rgba(255, 255, 255, 0.04);
             white-space: nowrap;
         }
@@ -620,19 +607,15 @@
         }
 
         /* ===== 响应式 ===== */
-        @media (max-width: 1100px) {
+        @media (max-width: 1300px) {
             .cards {
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(5, 1fr);
             }
+        }
 
-            .top-bar-links a span,
-            .top-bar-right a span {
-                display: none;
-            }
-
-            .top-bar-links a,
-            .top-bar-right a {
-                padding: 7px 9px;
+        @media (max-width: 1080px) {
+            .cards {
+                grid-template-columns: repeat(4, 1fr);
             }
         }
 
@@ -649,32 +632,14 @@
                 display: block;
             }
 
-            .hero {
-                padding: 44px 20px 36px;
-            }
-
-            .hero h1 {
-                font-size: 38px;
-            }
-
-            main {
-                padding: 0 20px 60px;
-            }
-
             .top-bar {
-                padding: 0 16px;
-                height: 56px;
-                gap: 12px;
+                padding: 0 14px;
+                height: 52px;
+                gap: 10px;
             }
 
             .top-bar-logo {
-                font-size: 20px;
-            }
-
-            .top-bar-links a svg,
-            .top-bar-right a svg {
-                width: 18px;
-                height: 18px;
+                font-size: 18px;
             }
 
             .top-bar-links a:nth-child(2),
@@ -682,79 +647,101 @@
                 display: none;
             }
 
+            .hero {
+                padding: 16px 16px 12px;
+            }
+
+            .hero h1 {
+                font-size: 17px;
+            }
+
+            .search-box input {
+                width: 100%;
+                min-width: 200px;
+            }
+
+            .hero-left {
+                flex: 1;
+            }
+
+            .search-box {
+                flex: 1;
+                max-width: 320px;
+            }
+
+            main {
+                padding: 0 16px 30px;
+            }
+
             .sidebar {
-                top: 56px;
-                height: calc(100vh - 56px);
+                top: 52px;
+                height: calc(100vh - 52px);
             }
 
             .mobile-topbar {
-                top: 56px;
+                top: 52px;
             }
         }
 
         @media (max-width: 700px) {
             .cards {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 14px;
+                gap: 5px;
             }
 
-            .hero h1 {
-                font-size: 32px;
-                letter-spacing: -0.5px;
-            }
-
-            .hero p {
-                font-size: 15px;
-                margin-bottom: 28px;
-                color: #6b6b88;
-            }
-
-            .search-box input {
-                height: 54px;
-                padding: 0 20px;
-                font-size: 15px;
-                border-radius: 18px;
-                background: #12121c;
-            }
-
-            .section-head {
+            .hero {
+                flex-direction: column;
+                align-items: stretch;
                 gap: 10px;
             }
 
-            .section-head h2 {
-                font-size: 21px;
+            .search-box input {
+                width: 100%;
+                max-width: none;
             }
 
-            .section-tabs {
+            .section-head {
                 gap: 6px;
             }
 
+            .section-head h2 {
+                font-size: 13.5px;
+            }
+
+            .section-tabs {
+                gap: 2px;
+            }
+
             .section-tabs a {
-                padding: 4px 11px;
-                font-size: 12px;
-                border-radius: 7px;
+                padding: 2px 7px;
+                font-size: 11px;
+                border-radius: 4px;
             }
 
             .card {
-                padding: 18px 16px 16px;
-                border-radius: 18px;
+                padding: 8px 10px;
+                min-height: 46px;
+                gap: 8px;
             }
 
             .card-icon {
-                width: 42px;
-                height: 42px;
-                font-size: 20px;
-                border-radius: 12px;
-                margin-bottom: 14px;
+                width: 26px;
+                height: 26px;
+                font-size: 14px;
+                border-radius: 6px;
             }
 
             .card h3 {
-                font-size: 16px;
+                font-size: 12px;
+            }
+
+            .card p {
+                font-size: 10.5px;
             }
 
             .money {
-                padding: 28px 20px 24px;
-                border-radius: 24px;
+                padding: 14px 12px 12px;
+                border-radius: 10px;
             }
         }
 
@@ -764,34 +751,24 @@
             }
 
             .hero h1 {
-                font-size: 28px;
+                font-size: 16px;
             }
 
             .hero {
-                padding: 36px 16px 32px;
-            }
-
-            .search-box input {
-                height: 50px;
-                padding: 0 18px;
-                font-size: 14px;
-            }
-
-            .money {
-                padding: 22px 16px 18px;
+                padding: 14px 12px 10px;
             }
 
             .top-bar {
-                height: 52px;
-                padding: 0 12px;
+                height: 48px;
+                padding: 0 10px;
             }
 
             .top-bar-logo {
-                font-size: 18px;
+                font-size: 16px;
             }
 
             .mobile-topbar {
-                top: 52px;
+                top: 48px;
             }
         }
 
@@ -820,7 +797,7 @@
         a:focus-visible {
             outline: 2px solid #5a5a90;
             outline-offset: 2px;
-            border-radius: 8px;
+            border-radius: 6px;
         }
     </style>
 </head>
@@ -905,7 +882,6 @@
             <a href="#money">搞钱</a>
         </nav>
 
-        <!-- 辅助菜单 -->
         <div class="sidebar-aux">
             <div class="sidebar-aux-title">快捷功能</div>
             <div class="sidebar-aux-links">
@@ -972,10 +948,12 @@
             </div>
         </div>
 
-        <!-- 首页大标题 -->
+        <!-- 首页标题栏（极简） -->
         <section class="hero">
-            <h1>发现好用的网站</h1>
-            <p>三小仙 · 一个简单、好用的综合网站导航</p>
+            <div class="hero-left">
+                <h1>发现好用的网站</h1>
+                <p>三小仙 · 简单好用的网站导航</p>
+            </div>
             <div class="search-box">
                 <input
                     type="text"
@@ -1005,81 +983,94 @@
                     <div class="cards">
                         <a class="card" href="https://gaze.red/" target="_blank" rel="noopener">
                             <div class="card-icon">👁️</div>
-                            <h3>注视影视</h3>
-                            <p>在线观影平台，提供丰富的影视资源。</p>
-                            <span class="tag">在线观影</span>
+                            <div class="card-body">
+                                <h3>注视影视</h3>
+                                <p>在线观影平台，影视资源丰富</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.novipnoad.uk/" target="_blank" rel="noopener">
                             <div class="card-icon">🎬</div>
-                            <h3>No视频</h3>
-                            <p>免费在线影视网站，海量电影电视剧。</p>
-                            <span class="tag">在线观影</span>
+                            <div class="card-body">
+                                <h3>No视频</h3>
+                                <p>免费在线影视网站</p>
+                            </div>
                         </a>
                         <a class="card" href="https://juok3.top/" target="_blank" rel="noopener">
                             <div class="card-icon">🎭</div>
-                            <h3>剧OK</h3>
-                            <p>在线影视平台，提供电影、电视剧在线观看。</p>
-                            <span class="tag">在线观影</span>
+                            <div class="card-body">
+                                <h3>剧OK</h3>
+                                <p>电影电视剧在线观看</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.cz4k.com/" target="_blank" rel="noopener">
                             <div class="card-icon">📽️</div>
-                            <h3>厂长资源</h3>
-                            <p>高清影视资源网站，提供免费在线观看。</p>
-                            <span class="tag">在线观影</span>
+                            <div class="card-body">
+                                <h3>厂长资源</h3>
+                                <p>高清影视资源网站</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.xiguadh.com/" target="_blank" rel="noopener">
                             <div class="card-icon">🍉</div>
-                            <h3>西瓜影院</h3>
-                            <p>免费在线影院，海量影视资源随心看。</p>
-                            <span class="tag">在线观影</span>
+                            <div class="card-body">
+                                <h3>西瓜影院</h3>
+                                <p>免费在线影院</p>
+                            </div>
                         </a>
                         <a class="card" href="https://hanju99.cc/" target="_blank" rel="noopener">
                             <div class="card-icon">🇰🇷</div>
-                            <h3>韩剧99</h3>
-                            <p>韩剧在线观看平台，最新韩剧资源。</p>
-                            <span class="tag">在线观影</span>
+                            <div class="card-body">
+                                <h3>韩剧99</h3>
+                                <p>韩剧在线观看平台</p>
+                            </div>
                         </a>
                         <a class="card" href="https://hanju51.com/" target="_blank" rel="noopener">
                             <div class="card-icon">📺</div>
-                            <h3>韩剧网</h3>
-                            <p>看韩国电视剧就上韩剧网，海量韩剧资源。</p>
-                            <span class="tag">在线观影</span>
+                            <div class="card-body">
+                                <h3>韩剧网</h3>
+                                <p>看韩剧就上韩剧网</p>
+                            </div>
                         </a>
                         <a class="card" href="https://kpkuang.fyi/" target="_blank" rel="noopener">
                             <div class="card-icon">🦸</div>
-                            <h3>看片狂人</h3>
-                            <p>免费在线影视平台，各种影视资源。</p>
-                            <span class="tag">在线观影</span>
+                            <div class="card-body">
+                                <h3>看片狂人</h3>
+                                <p>免费在线影视平台</p>
+                            </div>
                         </a>
                         <a class="card" href="https://wakp.xin/" target="_blank" rel="noopener">
                             <div class="card-icon">🎞️</div>
-                            <h3>挂片</h3>
-                            <p>在线影视网站，提供电影电视剧观看。</p>
-                            <span class="tag">在线观影</span>
+                            <div class="card-body">
+                                <h3>挂片</h3>
+                                <p>在线影视网站</p>
+                            </div>
                         </a>
                         <a class="card" href="https://zlys9.top/" target="_blank" rel="noopener">
                             <div class="card-icon">🐺</div>
-                            <h3>真狼影视</h3>
-                            <p>免费影视资源平台，在线观看电影电视剧。</p>
-                            <span class="tag">在线观影</span>
+                            <div class="card-body">
+                                <h3>真狼影视</h3>
+                                <p>免费影视资源平台</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.deeyy.com/" target="_blank" rel="noopener">
                             <div class="card-icon">🎦</div>
-                            <h3>DEE影院</h3>
-                            <p>在线影院，提供免费电影电视剧观看。</p>
-                            <span class="tag">在线观影</span>
+                            <div class="card-body">
+                                <h3>DEE影院</h3>
+                                <p>在线影院免费观看</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.yayadaohang.com/site/qqys01" target="_blank" rel="noopener">
                             <div class="card-icon">📡</div>
-                            <h3>千干影视</h3>
-                            <p>影视导航站，汇集多个在线观影入口。</p>
-                            <span class="tag">在线观影</span>
+                            <div class="card-body">
+                                <h3>千干影视</h3>
+                                <p>影视导航站</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.xhkan.top/" target="_blank" rel="noopener">
                             <div class="card-icon">🌟</div>
-                            <h3>星河影视</h3>
-                            <p>在线影视平台，提供丰富的影视资源。</p>
-                            <span class="tag">在线观影</span>
+                            <div class="card-body">
+                                <h3>星河影视</h3>
+                                <p>在线影视平台</p>
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -1088,27 +1079,31 @@
                     <div class="cards">
                         <a class="card" href="https://kanju2.ai/" target="_blank" rel="noopener">
                             <div class="card-icon">🤖</div>
-                            <h3>看剧AI</h3>
-                            <p>AI 智能短剧平台，海量免费短剧在线看。</p>
-                            <span class="tag">免费短剧</span>
+                            <div class="card-body">
+                                <h3>看剧AI</h3>
+                                <p>AI 智能短剧平台</p>
+                            </div>
                         </a>
                         <a class="card" href="https://hongguoduanju.com/?ref=www.sbrdh.com" target="_blank" rel="noopener">
                             <div class="card-icon">🍎</div>
-                            <h3>红果短剧</h3>
-                            <p>红果免费短剧平台，热门短剧随时看。</p>
-                            <span class="tag">免费短剧</span>
+                            <div class="card-body">
+                                <h3>红果短剧</h3>
+                                <p>红果免费短剧平台</p>
+                            </div>
                         </a>
                         <a class="card" href="https://trieuvieclam.com/" target="_blank" rel="noopener">
                             <div class="card-icon">🎭</div>
-                            <h3>短剧</h3>
-                            <p>免费短剧在线观看平台，资源丰富。</p>
-                            <span class="tag">免费短剧</span>
+                            <div class="card-body">
+                                <h3>短剧</h3>
+                                <p>免费短剧在线观看</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.xpxxo.net/" target="_blank" rel="noopener">
                             <div class="card-icon">☁️</div>
-                            <h3>云短剧</h3>
-                            <p>云短剧平台，免费短剧在线观看。</p>
-                            <span class="tag">免费短剧</span>
+                            <div class="card-body">
+                                <h3>云短剧</h3>
+                                <p>云短剧平台</p>
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -1117,39 +1112,45 @@
                     <div class="cards">
                         <a class="card" href="https://www.bimiacg14.net/" target="_blank" rel="noopener">
                             <div class="card-icon">🎌</div>
-                            <h3>哔咪动漫</h3>
-                            <p>哔咪动漫在线观看，海量动漫资源。</p>
-                            <span class="tag">动漫网站</span>
+                            <div class="card-body">
+                                <h3>哔咪动漫</h3>
+                                <p>海量动漫资源</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.yinghuacd.com/" target="_blank" rel="noopener">
                             <div class="card-icon">🌸</div>
-                            <h3>樱花动漫</h3>
-                            <p>樱花动漫专注动漫的门户网站。</p>
-                            <span class="tag">动漫网站</span>
+                            <div class="card-body">
+                                <h3>樱花动漫</h3>
+                                <p>专注动漫的门户网站</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.995dm.com/" target="_blank" rel="noopener">
                             <div class="card-icon">🎎</div>
-                            <h3>久久动漫</h3>
-                            <p>久久动漫免费在线观看，资源丰富。</p>
-                            <span class="tag">动漫网站</span>
+                            <div class="card-body">
+                                <h3>久久动漫</h3>
+                                <p>免费在线观看动漫</p>
+                            </div>
                         </a>
                         <a class="card" href="https://cn.agekkkk.com/" target="_blank" rel="noopener">
                             <div class="card-icon">📺</div>
-                            <h3>4K动漫</h3>
-                            <p>4K动漫高清在线观看，画质清晰。</p>
-                            <span class="tag">动漫网站</span>
+                            <div class="card-body">
+                                <h3>4K动漫</h3>
+                                <p>高清在线观看</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.acfun.cn/" target="_blank" rel="noopener">
                             <div class="card-icon">🅰️</div>
-                            <h3>AcFun</h3>
-                            <p>AcFun弹幕视频网，二次元动漫社区。</p>
-                            <span class="tag">动漫网站</span>
+                            <div class="card-body">
+                                <h3>AcFun</h3>
+                                <p>二次元动漫社区</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.2rk.cc/" target="_blank" rel="noopener">
                             <div class="card-icon">🎬</div>
-                            <h3>二矿动漫</h3>
-                            <p>二矿动漫在线观看，动漫爱好者的选择。</p>
-                            <span class="tag">动漫网站</span>
+                            <div class="card-body">
+                                <h3>二矿动漫</h3>
+                                <p>动漫爱好者的选择</p>
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -1158,21 +1159,24 @@
                     <div class="cards">
                         <a class="card" href="http://www.docuchina.cn/" target="_blank" rel="noopener">
                             <div class="card-icon">🇨🇳</div>
-                            <h3>中国纪录片网</h3>
-                            <p>中国纪录片网，国内官方纪录片平台。</p>
-                            <span class="tag">看纪录片</span>
+                            <div class="card-body">
+                                <h3>中国纪录片网</h3>
+                                <p>国内官方纪录片平台</p>
+                            </div>
                         </a>
                         <a class="card" href="https://tv.cctv.com/yxg/index.shtml" target="_blank" rel="noopener">
                             <div class="card-icon">📡</div>
-                            <h3>CCTV纪录片频道</h3>
-                            <p>央视纪录片频道，大量优秀国产纪录片。</p>
-                            <span class="tag">看纪录片</span>
+                            <div class="card-body">
+                                <h3>CCTV纪录片频道</h3>
+                                <p>优秀国产纪录片</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.youku.com/ku/webjilupian" target="_blank" rel="noopener">
                             <div class="card-icon">🎞️</div>
-                            <h3>优酷纪录片频道</h3>
-                            <p>优酷纪录片频道，海量纪录片在线观看。</p>
-                            <span class="tag">看纪录片</span>
+                            <div class="card-body">
+                                <h3>优酷纪录片频道</h3>
+                                <p>海量纪录片在线观看</p>
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -1195,21 +1199,24 @@
                     <div class="cards">
                         <a class="card" href="https://oai.oooai.cc/list/#/register?inviter=PUW386" target="_blank" rel="noopener">
                             <div class="card-icon">🐳</div>
-                            <h3>GPT 国内直连</h3>
-                            <p>ChatGPT 官网国内直连入口，注册即可使用。</p>
-                            <span class="tag">AI对话</span>
+                            <div class="card-body">
+                                <h3>GPT 国内直连</h3>
+                                <p>ChatGPT 国内直连入口</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.doubao.com" target="_blank" rel="noopener">
                             <div class="card-icon">🫘</div>
-                            <h3>豆包</h3>
-                            <p>中文 AI 助手，支持聊天、写作和多种 AI 功能。</p>
-                            <span class="tag">AI对话</span>
+                            <div class="card-body">
+                                <h3>豆包</h3>
+                                <p>中文 AI 助手</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.deepseek.com" target="_blank" rel="noopener">
                             <div class="card-icon">🔍</div>
-                            <h3>DeepSeek</h3>
-                            <p>AI 对话、推理和编程工具。</p>
-                            <span class="tag">AI对话</span>
+                            <div class="card-body">
+                                <h3>DeepSeek</h3>
+                                <p>AI 对话、推理和编程</p>
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -1218,33 +1225,38 @@
                     <div class="cards">
                         <a class="card" href="https://xyq.jianying.com/?utm_medium=paidads&utm_source=aitools&utm_campaign=hw_xyq_aikit" target="_blank" rel="noopener">
                             <div class="card-icon">🐦</div>
-                            <h3>小云雀</h3>
-                            <p>抖音旗下内容创作Agent，AI短剧创作专家。</p>
-                            <span class="tag">AI漫剧</span>
+                            <div class="card-body">
+                                <h3>小云雀</h3>
+                                <p>抖音旗下AI短剧创作</p>
+                            </div>
                         </a>
                         <a class="card" href="https://seko.sensetime.com/explore?cg_click_id=10128dcf-4d3f-4d23-9d63-a739e3468afd&cgv=j7n63zyn1g&utm=cg" target="_blank" rel="noopener">
                             <div class="card-icon">🎬</div>
-                            <h3>Seko</h3>
-                            <p>商汤科技 AI 漫剧创作平台，智能生成漫画短剧。</p>
-                            <span class="tag">AI漫剧</span>
+                            <div class="card-body">
+                                <h3>Seko</h3>
+                                <p>商汤科技 AI 漫剧平台</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.updream.cn/?cg_click_id=2fd2e70e-2fa2-4600-96f3-7aa438ee3210&cgv=9we240xngo&utm=cg" target="_blank" rel="noopener">
                             <div class="card-icon">💭</div>
-                            <h3>Updream</h3>
-                            <p>AI 漫剧制作平台，轻松创作漫剧内容。</p>
-                            <span class="tag">AI漫剧</span>
+                            <div class="card-body">
+                                <h3>Updream</h3>
+                                <p>AI 漫剧制作平台</p>
+                            </div>
                         </a>
                         <a class="card" href="https://aw.jiaxunai.cn/" target="_blank" rel="noopener">
                             <div class="card-icon">📖</div>
-                            <h3>知漫剧</h3>
-                            <p>知漫剧 AI 平台，智能生成漫画短剧。</p>
-                            <span class="tag">AI漫剧</span>
+                            <div class="card-body">
+                                <h3>知漫剧</h3>
+                                <p>智能生成漫画短剧</p>
+                            </div>
                         </a>
                         <a class="card" href="https://aw.jiaxunai.cn/" target="_blank" rel="noopener">
                             <div class="card-icon">🐸</div>
-                            <h3>蛙蛙漫剧</h3>
-                            <p>蛙蛙漫剧 AI 创作平台，轻松制作漫剧。</p>
-                            <span class="tag">AI漫剧</span>
+                            <div class="card-body">
+                                <h3>蛙蛙漫剧</h3>
+                                <p>轻松制作漫剧</p>
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -1253,39 +1265,45 @@
                     <div class="cards">
                         <a class="card" href="https://www.islide.cc/?mtm_campaign=aikit-CZQD" target="_blank" rel="noopener">
                             <div class="card-icon">📊</div>
-                            <h3>iSlide PPT</h3>
-                            <p>iSlide AI PPT 生成工具，快速制作演示文稿。</p>
-                            <span class="tag">AI PPT</span>
+                            <div class="card-body">
+                                <h3>iSlide PPT</h3>
+                                <p>AI PPT 生成工具</p>
+                            </div>
                         </a>
                         <a class="card" href="https://zhiwen.xfyun.cn/home?from=aitool37" target="_blank" rel="noopener">
                             <div class="card-icon">🧠</div>
-                            <h3>讯飞智文</h3>
-                            <p>科大讯飞 AI PPT 生成，智能创作演示文稿。</p>
-                            <span class="tag">AI PPT</span>
+                            <div class="card-body">
+                                <h3>讯飞智文</h3>
+                                <p>科大讯飞 AI PPT</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.cappt.cc/?mtm_campaign=CZQD-aikit-tg0030-100000" target="_blank" rel="noopener">
                             <div class="card-icon">🎨</div>
-                            <h3>咔片PPT</h3>
-                            <p>咔片 AI PPT 生成工具，一键生成精美 PPT。</p>
-                            <span class="tag">AI PPT</span>
+                            <div class="card-body">
+                                <h3>咔片PPT</h3>
+                                <p>一键生成精美 PPT</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.gaoding.com/contents?q=PPT&hmsr=ai-kit-ai-kit-ppt--ppt-ppt-bdqd&utm_source=ai-kit" target="_blank" rel="noopener">
                             <div class="card-icon">📑</div>
-                            <h3>稿定PPT</h3>
-                            <p>稿定设计 AI PPT 生成，海量模板快速出稿。</p>
-                            <span class="tag">AI PPT</span>
+                            <div class="card-body">
+                                <h3>稿定PPT</h3>
+                                <p>海量模板快速出稿</p>
+                            </div>
                         </a>
                         <a class="card" href="https://modao.cc/feature/aippt.html?utm_channel=wl&utm_source=referrals&utm_keyword=aikit" target="_blank" rel="noopener">
                             <div class="card-icon">🔨</div>
-                            <h3>墨刀AIPPT</h3>
-                            <p>墨刀 AI PPT 生成工具，智能生成演示文稿。</p>
-                            <span class="tag">AI PPT</span>
+                            <div class="card-body">
+                                <h3>墨刀AIPPT</h3>
+                                <p>智能生成演示文稿</p>
+                            </div>
                         </a>
                         <a class="card" href="https://modao.cc/feature/aippt.html?utm_channel=wl&utm_source=referrals&utm_keyword=aikit" target="_blank" rel="noopener">
                             <div class="card-icon">✨</div>
-                            <h3>Gamma AI PPT</h3>
-                            <p>Gamma AI 生成 PPT，智能创作演示文稿。</p>
-                            <span class="tag">AI PPT</span>
+                            <div class="card-body">
+                                <h3>Gamma AI PPT</h3>
+                                <p>智能创作演示文稿</p>
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -1294,39 +1312,45 @@
                     <div class="cards">
                         <a class="card" href="https://wawawriter.com/app/?cg_click_id=eeb3e297-2761-4d95-b9a9-180d9115e6f4&cgv=dqndmywn2z&utm=cg&utm_source=aiweb" target="_blank" rel="noopener">
                             <div class="card-icon">🐸</div>
-                            <h3>蛙蛙写作</h3>
-                            <p>蛙蛙写作 AI 助手，辅助写作论文和文章。</p>
-                            <span class="tag">AI写作</span>
+                            <div class="card-body">
+                                <h3>蛙蛙写作</h3>
+                                <p>AI 写作论文助手</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.gaoding.com/image?hmsr=aikit-aikit-writer--writer-writer-bdqd&utm_source=aikit" target="_blank" rel="noopener">
                             <div class="card-icon">✍️</div>
-                            <h3>稿定AI文案</h3>
-                            <p>稿定 AI 文案工具，智能生成文案内容。</p>
-                            <span class="tag">AI写作</span>
+                            <div class="card-body">
+                                <h3>稿定AI文案</h3>
+                                <p>智能生成文案内容</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.xljsci.com/?channelCode=TvhaLa" target="_blank" rel="noopener">
                             <div class="card-icon">🐳</div>
-                            <h3>小绿鲸</h3>
-                            <p>小绿鲸 AI 论文助手，学术写作好帮手。</p>
-                            <span class="tag">AI写作</span>
+                            <div class="card-body">
+                                <h3>小绿鲸</h3>
+                                <p>AI 论文助手</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.ailw8.com/paper/" target="_blank" rel="noopener">
                             <div class="card-icon">📝</div>
-                            <h3>零零AI论文助手</h3>
-                            <p>零零 AI 论文助手，辅助论文写作。</p>
-                            <span class="tag">AI写作</span>
+                            <div class="card-body">
+                                <h3>零零AI论文助手</h3>
+                                <p>辅助论文写作</p>
+                            </div>
                         </a>
                         <a class="card" href="https://app.qinyanai.com/?sourceCode=mu17e8&land_id=fe6a0a67dee0f68ccb5f451fe020d5da" target="_blank" rel="noopener">
                             <div class="card-icon">🎓</div>
-                            <h3>沁言学术</h3>
-                            <p>沁言学术 AI 论文写作助手，学术创作利器。</p>
-                            <span class="tag">AI写作</span>
+                            <div class="card-body">
+                                <h3>沁言学术</h3>
+                                <p>AI 论文写作助手</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.gradpen.com/" target="_blank" rel="noopener">
                             <div class="card-icon">🖊️</div>
-                            <h3>GradPeni论文</h3>
-                            <p>GradPeni AI 论文助手，智能论文写作工具。</p>
-                            <span class="tag">AI写作</span>
+                            <div class="card-body">
+                                <h3>GradPeni论文</h3>
+                                <p>智能论文写作工具</p>
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -1335,33 +1359,38 @@
                     <div class="cards">
                         <a class="card" href="https://www.gaoding.com/image?hmsr=aikit-aikit-image--image-image-bdqd&utm_source=aikit" target="_blank" rel="noopener">
                             <div class="card-icon">🎨</div>
-                            <h3>稿定-AI绘画</h3>
-                            <p>稿定 AI 绘画工具，智能生成图片和插画。</p>
-                            <span class="tag">AI生图</span>
+                            <div class="card-body">
+                                <h3>稿定-AI绘画</h3>
+                                <p>智能生成图片和插画</p>
+                            </div>
                         </a>
                         <a class="card" href="https://jimeng.jianying.com/ai-tool/home/?utm_medium=aitools&utm_source=aijuhe&utm_campaign=null&utm_content=hw_jm_aijuhe1" target="_blank" rel="noopener">
                             <div class="card-icon">✨</div>
-                            <h3>即梦AI</h3>
-                            <p>即梦 AI 生图工具，智能生成高质量图片。</p>
-                            <span class="tag">AI生图</span>
+                            <div class="card-body">
+                                <h3>即梦AI</h3>
+                                <p>智能生成高质量图片</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.ihuiwa.com/invite?huiwaInviteCode=EU5UFL&catId=1" target="_blank" rel="noopener">
                             <div class="card-icon">🐸</div>
-                            <h3>绘蛙-AI生图</h3>
-                            <p>绘蛙 AI 生图工具，轻松生成图片素材。</p>
-                            <span class="tag">AI生图</span>
+                            <div class="card-body">
+                                <h3>绘蛙-AI生图</h3>
+                                <p>轻松生成图片素材</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.xingliu.art/?cg_click_id=de32eabd-f32d-4a8a-bc13-5eb496cb7bde&cgv=rpexyo4k90&sourceid=005903&utm=cg" target="_blank" rel="noopener">
                             <div class="card-icon">⭐</div>
-                            <h3>星流</h3>
-                            <p>星流 AI 绘画平台，智能生成艺术图片。</p>
-                            <span class="tag">AI生图</span>
+                            <div class="card-body">
+                                <h3>星流</h3>
+                                <p>智能生成艺术图片</p>
+                            </div>
                         </a>
                         <a class="card" href="https://create.qianwen.com/" target="_blank" rel="noopener">
                             <div class="card-icon">☁️</div>
-                            <h3>千问</h3>
-                            <p>千问 AI 创作平台，智能生成图片内容。</p>
-                            <span class="tag">AI生图</span>
+                            <div class="card-body">
+                                <h3>千问</h3>
+                                <p>智能生成图片内容</p>
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -1383,39 +1412,45 @@
                     <div class="cards">
                         <a class="card" href="https://www.ilovepdf.com/zh-cn" target="_blank" rel="noopener">
                             <div class="card-icon">📄</div>
-                            <h3>iLovePDF</h3>
-                            <p>免费在线 PDF 处理工具，支持合并、分割、压缩等。</p>
-                            <span class="tag">PDF</span>
+                            <div class="card-body">
+                                <h3>iLovePDF</h3>
+                                <p>免费在线 PDF 处理工具</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.fileeagle.com/pdfeagle/en" target="_blank" rel="noopener">
                             <div class="card-icon">🦅</div>
-                            <h3>PDF Eagle</h3>
-                            <p>PDF Eagle 在线 PDF 编辑和转换工具。</p>
-                            <span class="tag">PDF</span>
+                            <div class="card-body">
+                                <h3>PDF Eagle</h3>
+                                <p>在线 PDF 编辑和转换</p>
+                            </div>
                         </a>
                         <a class="card" href="https://pdfcandy.com/cn/" target="_blank" rel="noopener">
                             <div class="card-icon">🍬</div>
-                            <h3>PDF Candy</h3>
-                            <p>PDF Candy 免费在线 PDF 工具集，功能丰富。</p>
-                            <span class="tag">PDF</span>
+                            <div class="card-body">
+                                <h3>PDF Candy</h3>
+                                <p>免费在线 PDF 工具集</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.aconvert.com/cn/" target="_blank" rel="noopener">
                             <div class="card-icon">🔄</div>
-                            <h3>在线文档转换</h3>
-                            <p>Aconvert 在线文档转换工具，支持多种格式。</p>
-                            <span class="tag">转换</span>
+                            <div class="card-body">
+                                <h3>在线文档转换</h3>
+                                <p>支持多种格式转换</p>
+                            </div>
                         </a>
                         <a class="card" href="https://imging.ai/?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">🖼️</div>
-                            <h3>Imglng图映</h3>
-                            <p>图映 AI 图片处理工具，在线编辑图片。</p>
-                            <span class="tag">图片</span>
+                            <div class="card-body">
+                                <h3>Imglng图映</h3>
+                                <p>AI 图片处理工具</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.ilovepdfapp.com/?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">📱</div>
-                            <h3>iLovePDF App</h3>
-                            <p>iLovePDF 在线工具，PDF 处理便捷入口。</p>
-                            <span class="tag">PDF</span>
+                            <div class="card-body">
+                                <h3>iLovePDF App</h3>
+                                <p>PDF 处理便捷入口</p>
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -1424,45 +1459,52 @@
                     <div class="cards">
                         <a class="card" href="https://greenvideo.cc/" target="_blank" rel="noopener">
                             <div class="card-icon">🎬</div>
-                            <h3>GreenVideo</h3>
-                            <p>在线视频处理工具，支持多种视频编辑功能。</p>
-                            <span class="tag">视频</span>
+                            <div class="card-body">
+                                <h3>GreenVideo</h3>
+                                <p>在线视频处理工具</p>
+                            </div>
                         </a>
                         <a class="card" href="https://snapany.com/zh" target="_blank" rel="noopener">
                             <div class="card-icon">📸</div>
-                            <h3>SnapAny</h3>
-                            <p>SnapAny 在线视频下载和处理工具。</p>
-                            <span class="tag">视频</span>
+                            <div class="card-body">
+                                <h3>SnapAny</h3>
+                                <p>在线视频下载和处理</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.xtdowner.com/" target="_blank" rel="noopener">
                             <div class="card-icon">⬇️</div>
-                            <h3>小天短视频在线工具</h3>
-                            <p>短视频在线下载工具，支持多个平台。</p>
-                            <span class="tag">下载</span>
+                            <div class="card-body">
+                                <h3>小天短视频工具</h3>
+                                <p>短视频在线下载</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.67tool.com/video/compress" target="_blank" rel="noopener">
                             <div class="card-icon">📦</div>
-                            <h3>视频压缩</h3>
-                            <p>67工具在线视频压缩，快速减小视频体积。</p>
-                            <span class="tag">压缩</span>
+                            <div class="card-body">
+                                <h3>视频压缩</h3>
+                                <p>在线视频压缩</p>
+                            </div>
                         </a>
                         <a class="card" href="https://vv.netnr.eu.org/" target="_blank" rel="noopener">
                             <div class="card-icon">🔗</div>
-                            <h3>zme解析</h3>
-                            <p>视频解析工具，支持多平台视频解析。</p>
-                            <span class="tag">解析</span>
+                            <div class="card-body">
+                                <h3>zme解析</h3>
+                                <p>多平台视频解析</p>
+                            </div>
                         </a>
                         <a class="card" href="https://ezremove.ai/zh/watermark-remover/" target="_blank" rel="noopener">
                             <div class="card-icon">🧹</div>
-                            <h3>EzRemove</h3>
-                            <p>AI 去水印工具，智能移除图片和视频水印。</p>
-                            <span class="tag">去水印</span>
+                            <div class="card-body">
+                                <h3>EzRemove</h3>
+                                <p>AI 去水印工具</p>
+                            </div>
                         </a>
                         <a class="card" href="https://dy.kukutool.com/?go=www.9ghao.com" target="_blank" rel="noopener">
                             <div class="card-icon">🎯</div>
-                            <h3>KuKuTool去水印</h3>
-                            <p>KuKuTool 去水印工具，短视频去水印下载。</p>
-                            <span class="tag">去水印</span>
+                            <div class="card-body">
+                                <h3>KuKuTool去水印</h3>
+                                <p>短视频去水印下载</p>
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -1471,21 +1513,24 @@
                     <div class="cards">
                         <a class="card" href="https://texttospeech.im/zh-CN" target="_blank" rel="noopener">
                             <div class="card-icon">🗣️</div>
-                            <h3>免费文本转语音</h3>
-                            <p>在线文本转语音工具，多种语音可选。</p>
-                            <span class="tag">音频</span>
+                            <div class="card-body">
+                                <h3>免费文本转语音</h3>
+                                <p>多种语音可选</p>
+                            </div>
                         </a>
                         <a class="card" href="https://ttsomni.com/zh?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">🎙️</div>
-                            <h3>TTS Omni</h3>
-                            <p>TTS Omni 在线语音合成工具，智能配音。</p>
-                            <span class="tag">音频</span>
+                            <div class="card-body">
+                                <h3>TTS Omni</h3>
+                                <p>在线语音合成工具</p>
+                            </div>
                         </a>
                         <a class="card" href="https://yueyin.zhipianbang.com/" target="_blank" rel="noopener">
                             <div class="card-icon">🎵</div>
-                            <h3>悦音配音</h3>
-                            <p>悦音配音在线工具，智能语音合成配音。</p>
-                            <span class="tag">配音</span>
+                            <div class="card-body">
+                                <h3>悦音配音</h3>
+                                <p>智能语音合成配音</p>
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -1494,21 +1539,23 @@
                     <div class="cards">
                         <a class="card" href="https://www.linshi-email.com/" target="_blank" rel="noopener">
                             <div class="card-icon">📧</div>
-                            <h3>临时邮箱</h3>
-                            <p>临时邮箱工具，保护隐私，避免垃圾邮件。</p>
-                            <span class="tag">邮箱</span>
+                            <div class="card-body">
+                                <h3>临时邮箱</h3>
+                                <p>保护隐私避免垃圾邮件</p>
+                            </div>
                         </a>
                         <a class="card" href="https://futurecv.cn/" target="_blank" rel="noopener">
                             <div class="card-icon">📋</div>
-                            <h3>未来简历</h3>
-                            <p>未来简历在线制作工具，快速生成专业简历。</p>
-                            <span class="tag">简历</span>
+                            <div class="card-body">
+                                <h3>未来简历</h3>
+                                <p>快速生成专业简历</p>
+                            </div>
                         </a>
                     </div>
                 </div>
             </section>
 
-            <!-- 学习（带子标签内容切换） -->
+            <!-- 学习 -->
             <section class="section" id="learning">
                 <div class="section-head">
                     <h2>📚 学习</h2>
@@ -1524,266 +1571,294 @@
                     </div>
                 </div>
 
-                <!-- 面板：综合平台 -->
                 <div class="tab-panel active" id="panel-learn-platform" data-tab-group="learning">
                     <div class="cards">
                         <a class="card" href="https://www.51zxw.net/" target="_blank" rel="noopener">
                             <div class="card-icon">🎓</div>
-                            <h3>我要自学网</h3>
-                            <p>我要自学网，综合在线学习平台。</p>
-                            <span class="tag">综合平台</span>
+                            <div class="card-body">
+                                <h3>我要自学网</h3>
+                                <p>综合在线学习平台</p>
+                            </div>
                         </a>
                         <a class="card" href="https://study.163.com/" target="_blank" rel="noopener">
                             <div class="card-icon">📖</div>
-                            <h3>网易云课堂</h3>
-                            <p>成人终身学习的在线教育平台。</p>
-                            <span class="tag">综合平台</span>
+                            <div class="card-body">
+                                <h3>网易云课堂</h3>
+                                <p>成人终身学习平台</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.xuetangx.com/" target="_blank" rel="noopener">
                             <div class="card-icon">🏫</div>
-                            <h3>学堂在线</h3>
-                            <p>学堂在线，优质在线课程平台。</p>
-                            <span class="tag">综合平台</span>
+                            <div class="card-body">
+                                <h3>学堂在线</h3>
+                                <p>优质在线课程平台</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.icourses.cn/" target="_blank" rel="noopener">
                             <div class="card-icon">📚</div>
-                            <h3>爱课程</h3>
-                            <p>爱课程，中国大学MOOC平台。</p>
-                            <span class="tag">综合平台</span>
+                            <div class="card-body">
+                                <h3>爱课程</h3>
+                                <p>中国大学MOOC平台</p>
+                            </div>
                         </a>
                     </div>
                 </div>
 
-                <!-- 面板：外语学习 -->
                 <div class="tab-panel" id="panel-learn-language" data-tab-group="learning">
                     <div class="cards">
                         <a class="card" href="https://moocs.unipus.cn/" target="_blank" rel="noopener">
                             <div class="card-icon">🌍</div>
-                            <h3>中国高校外语慕课平台</h3>
-                            <p>高校外语在线学习平台，优质外语课程。</p>
-                            <span class="tag">外语学习</span>
+                            <div class="card-body">
+                                <h3>中国高校外语慕课</h3>
+                                <p>优质外语课程</p>
+                            </div>
                         </a>
                         <a class="card" href="https://echo-type.app/?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">⌨️</div>
-                            <h3>EchoType</h3>
-                            <p>EchoType 在线打字练习平台，提升打字速度。</p>
-                            <span class="tag">外语学习</span>
+                            <div class="card-body">
+                                <h3>EchoType</h3>
+                                <p>在线打字练习平台</p>
+                            </div>
                         </a>
                         <a class="card" href="https://ogden.munch.love/?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">📘</div>
-                            <h3>Ogden's Basic English</h3>
-                            <p>基础英语学习资源，简单易学。</p>
-                            <span class="tag">外语学习</span>
+                            <div class="card-body">
+                                <h3>Ogden's Basic English</h3>
+                                <p>基础英语学习资源</p>
+                            </div>
                         </a>
                         <a class="card" href="https://hefengxian.com/my-ielts/?url=biiii.com#/" target="_blank" rel="noopener">
                             <div class="card-icon">📝</div>
-                            <h3>My IELTS</h3>
-                            <p>雅思学习备考工具，助力雅思考试。</p>
-                            <span class="tag">外语学习</span>
+                            <div class="card-body">
+                                <h3>My IELTS</h3>
+                                <p>雅思学习备考工具</p>
+                            </div>
                         </a>
                         <a class="card" href="https://heeee.com/yingyucihui.html?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">🧠</div>
-                            <h3>英语词汇记忆挑战</h3>
-                            <p>英语词汇记忆挑战，趣味背单词。</p>
-                            <span class="tag">外语学习</span>
+                            <div class="card-body">
+                                <h3>英语词汇记忆挑战</h3>
+                                <p>趣味背单词</p>
+                            </div>
                         </a>
                         <a class="card" href="https://heeee.com/dancixiaoxiaole.html?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">🎮</div>
-                            <h3>中英文单词消消乐</h3>
-                            <p>中英文单词消消乐，趣味学单词。</p>
-                            <span class="tag">外语学习</span>
+                            <div class="card-body">
+                                <h3>中英文单词消消乐</h3>
+                                <p>趣味学单词</p>
+                            </div>
                         </a>
                         <a class="card" href="https://englishdaily.ai/?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">📰</div>
-                            <h3>English Daily</h3>
-                            <p>English Daily 英语学习平台，每日英语。</p>
-                            <span class="tag">外语学习</span>
+                            <div class="card-body">
+                                <h3>English Daily</h3>
+                                <p>每日英语学习</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.wushiyin.com/?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">🇯🇵</div>
-                            <h3>日语五十音在线练习</h3>
-                            <p>日语五十音在线练习，轻松学日语。</p>
-                            <span class="tag">外语学习</span>
+                            <div class="card-body">
+                                <h3>日语五十音在线练习</h3>
+                                <p>轻松学日语</p>
+                            </div>
                         </a>
                     </div>
                 </div>
 
-                <!-- 面板：软件教程 -->
                 <div class="tab-panel" id="panel-learn-software" data-tab-group="learning">
                     <div class="cards">
                         <a class="card" href="https://rjzxw.com/" target="_blank" rel="noopener">
                             <div class="card-icon">💻</div>
-                            <h3>软件自学网</h3>
-                            <p>软件自学网，各种软件教程学习。</p>
-                            <span class="tag">软件教程</span>
+                            <div class="card-body">
+                                <h3>软件自学网</h3>
+                                <p>各种软件教程学习</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.excelhome.net/" target="_blank" rel="noopener">
                             <div class="card-icon">📊</div>
-                            <h3>ExcelHome</h3>
-                            <p>ExcelHome，Excel 学习与交流社区。</p>
-                            <span class="tag">软件教程</span>
+                            <div class="card-body">
+                                <h3>ExcelHome</h3>
+                                <p>Excel 学习与交流社区</p>
+                            </div>
                         </a>
                         <a class="card" href="https://systems-programming.org/database_zh/?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">🗄️</div>
-                            <h3>从零开始手搓数据库</h3>
-                            <p>从零开始手搓数据库，系统编程学习。</p>
-                            <span class="tag">软件教程</span>
+                            <div class="card-body">
+                                <h3>从零开始手搓数据库</h3>
+                                <p>系统编程学习</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.16xx8.com/?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">🖌️</div>
-                            <h3>ps教程自学网</h3>
-                            <p>PS教程自学网，Photoshop 学习教程。</p>
-                            <span class="tag">软件教程</span>
+                            <div class="card-body">
+                                <h3>ps教程自学网</h3>
+                                <p>Photoshop 学习教程</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.yuque.com/94benyi/funeng?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">📗</div>
-                            <h3>Excel函数赋能手册</h3>
-                            <p>Excel 函数赋能手册，Excel 函数学习。</p>
-                            <span class="tag">软件教程</span>
+                            <div class="card-body">
+                                <h3>Excel函数赋能手册</h3>
+                                <p>Excel 函数学习</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.adobe.com/cn/learn/photoshop" target="_blank" rel="noopener">
                             <div class="card-icon">🎨</div>
-                            <h3>Adobe软件教程</h3>
-                            <p>Adobe 官方软件教程，Photoshop 学习。</p>
-                            <span class="tag">软件教程</span>
+                            <div class="card-body">
+                                <h3>Adobe软件教程</h3>
+                                <p>Photoshop 学习</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.lanrenexcel.com/?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">📈</div>
-                            <h3>懒人Excel</h3>
-                            <p>懒人Excel，轻松学习 Excel 技巧。</p>
-                            <span class="tag">软件教程</span>
+                            <div class="card-body">
+                                <h3>懒人Excel</h3>
+                                <p>轻松学习 Excel 技巧</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.wps.cn/learning/?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">📘</div>
-                            <h3>WPS学堂</h3>
-                            <p>WPS学堂，WPS Office 学习教程。</p>
-                            <span class="tag">软件教程</span>
+                            <div class="card-body">
+                                <h3>WPS学堂</h3>
+                                <p>WPS Office 学习教程</p>
+                            </div>
                         </a>
                     </div>
                 </div>
 
-                <!-- 面板：医学健康 -->
                 <div class="tab-panel" id="panel-learn-medical" data-tab-group="learning">
                     <div class="cards">
                         <a class="card" href="https://spanios.qdkf.net/zh?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">🏥</div>
-                            <h3>Spanios</h3>
-                            <p>Spanios 医学健康平台，健康知识学习。</p>
-                            <span class="tag">医学健康</span>
+                            <div class="card-body">
+                                <h3>Spanios</h3>
+                                <p>健康知识学习</p>
+                            </div>
                         </a>
                         <a class="card" href="http://drug.ptger.cn/?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">💊</div>
-                            <h3>药物说明书大全</h3>
-                            <p>药物说明书大全，查询药品信息。</p>
-                            <span class="tag">医学健康</span>
+                            <div class="card-body">
+                                <h3>药物说明书大全</h3>
+                                <p>查询药品信息</p>
+                            </div>
                         </a>
                         <a class="card" href="https://m.youlai.cn/jijiu/?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">🚑</div>
-                            <h3>急救指南</h3>
-                            <p>急救指南，学习急救知识和技能。</p>
-                            <span class="tag">医学健康</span>
+                            <div class="card-body">
+                                <h3>急救指南</h3>
+                                <p>学习急救知识</p>
+                            </div>
                         </a>
                         <a class="card" href="https://ask.nocode.com/?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">🩺</div>
-                            <h3>就诊问问</h3>
-                            <p>就诊问问，在线医疗咨询和健康知识。</p>
-                            <span class="tag">医学健康</span>
+                            <div class="card-body">
+                                <h3>就诊问问</h3>
+                                <p>在线医疗咨询</p>
+                            </div>
                         </a>
                         <a class="card" href="https://ixinqing.com/?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">💚</div>
-                            <h3>心晴网</h3>
-                            <p>心晴网，心理健康知识学习平台。</p>
-                            <span class="tag">医学健康</span>
+                            <div class="card-body">
+                                <h3>心晴网</h3>
+                                <p>心理健康知识</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.a-hospital.com/?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">📖</div>
-                            <h3>A+医学百科</h3>
-                            <p>A+医学百科，医学知识百科全书。</p>
-                            <span class="tag">医学健康</span>
+                            <div class="card-body">
+                                <h3>A+医学百科</h3>
+                                <p>医学知识百科</p>
+                            </div>
                         </a>
                     </div>
                 </div>
 
-                <!-- 面板：厨师菜谱 -->
                 <div class="tab-panel" id="panel-learn-cooking" data-tab-group="learning">
                     <div class="cards">
                         <a class="card" href="https://docs.cook.ninthfeast.com/?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">🍳</div>
-                            <h3>做饭指南</h3>
-                            <p>做饭指南，详细烹饪教程和菜谱。</p>
-                            <span class="tag">厨师菜谱</span>
+                            <div class="card-body">
+                                <h3>做饭指南</h3>
+                                <p>详细烹饪教程</p>
+                            </div>
                         </a>
                         <a class="card" href="https://heeee.com/coffee.html?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">☕</div>
-                            <h3>咖啡制作大师</h3>
-                            <p>咖啡制作大师，学习咖啡制作技巧。</p>
-                            <span class="tag">厨师菜谱</span>
+                            <div class="card-body">
+                                <h3>咖啡制作大师</h3>
+                                <p>学习咖啡制作</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.dachu.co/?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">👨‍🍳</div>
-                            <h3>大厨网</h3>
-                            <p>大厨网，专业菜谱和烹饪教程。</p>
-                            <span class="tag">厨师菜谱</span>
+                            <div class="card-body">
+                                <h3>大厨网</h3>
+                                <p>专业菜谱和烹饪教程</p>
+                            </div>
                         </a>
                         <a class="card" href="https://eat.lz-t.top/?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">🍽️</div>
-                            <h3>一饭封神</h3>
-                            <p>一饭封神，美食菜谱和烹饪技巧。</p>
-                            <span class="tag">厨师菜谱</span>
+                            <div class="card-body">
+                                <h3>一饭封神</h3>
+                                <p>美食菜谱和技巧</p>
+                            </div>
                         </a>
                         <a class="card" href="https://bbqnotes.tw/?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">🍖</div>
-                            <h3>烤肉烧烤指南</h3>
-                            <p>烤肉烧烤指南，学习烧烤技巧和食谱。</p>
-                            <span class="tag">厨师菜谱</span>
+                            <div class="card-body">
+                                <h3>烤肉烧烤指南</h3>
+                                <p>烧烤技巧和食谱</p>
+                            </div>
                         </a>
                     </div>
                 </div>
 
-                <!-- 面板：中小学课程 -->
                 <div class="tab-panel" id="panel-learn-school" data-tab-group="learning">
                     <div class="cards">
                         <a class="card" href="https://gzenxx.com/?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">📐</div>
-                            <h3>高中学习网</h3>
-                            <p>高中学习网，高中课程学习资源。</p>
-                            <span class="tag">中小学课程</span>
+                            <div class="card-body">
+                                <h3>高中学习网</h3>
+                                <p>高中课程学习资源</p>
+                            </div>
                         </a>
                     </div>
                 </div>
 
-                <!-- 面板：音乐学习 -->
                 <div class="tab-panel" id="panel-learn-music" data-tab-group="learning">
                     <div class="cards">
                         <a class="card" href="https://www.sequencer64.com/sequencer/session" target="_blank" rel="noopener">
                             <div class="card-icon">🥁</div>
-                            <h3>在线架子鼓</h3>
-                            <p>在线架子鼓，在线模拟架子鼓演奏。</p>
-                            <span class="tag">音乐学习</span>
+                            <div class="card-body">
+                                <h3>在线架子鼓</h3>
+                                <p>在线模拟架子鼓演奏</p>
+                            </div>
                         </a>
                         <a class="card" href="https://www.autopiano.cn/" target="_blank" rel="noopener">
                             <div class="card-icon">🎹</div>
-                            <h3>自由钢琴</h3>
-                            <p>自由钢琴，在线钢琴学习和演奏。</p>
-                            <span class="tag">音乐学习</span>
+                            <div class="card-body">
+                                <h3>自由钢琴</h3>
+                                <p>在线钢琴学习和演奏</p>
+                            </div>
                         </a>
                     </div>
                 </div>
 
-                <!-- 面板：其他 -->
                 <div class="tab-panel" id="panel-learn-other" data-tab-group="learning">
                     <div class="cards">
                         <a class="card" href="https://zh.sov101.ru/" target="_blank" rel="noopener">
                             <div class="card-icon">📚</div>
-                            <h3>Z-Library</h3>
-                            <p>Z-Library 在线电子图书馆，海量电子书。</p>
-                            <span class="tag">其他</span>
+                            <div class="card-body">
+                                <h3>Z-Library</h3>
+                                <p>海量电子书在线图书馆</p>
+                            </div>
                         </a>
                         <a class="card" href="https://zh.annas-archive.gl/?url=biiii.com" target="_blank" rel="noopener">
                             <div class="card-icon">🗂️</div>
-                            <h3>安娜的档案</h3>
-                            <p>安娜的档案，海量电子书和学术资源。</p>
-                            <span class="tag">其他</span>
+                            <div class="card-body">
+                                <h3>安娜的档案</h3>
+                                <p>电子书和学术资源</p>
+                            </div>
                         </a>
                     </div>
                 </div>
@@ -1804,27 +1879,31 @@
                 <div class="cards">
                     <a class="card" href="https://www.microsoft.com" target="_blank" rel="noopener">
                         <div class="card-icon">▦</div>
-                        <h3>Microsoft</h3>
-                        <p>Windows、Office 等微软产品。</p>
-                        <span class="tag">Windows</span>
+                        <div class="card-body">
+                            <h3>Microsoft</h3>
+                            <p>Windows、Office 等产品</p>
+                        </div>
                     </a>
                     <a class="card" href="https://www.apple.com" target="_blank" rel="noopener">
                         <div class="card-icon"></div>
-                        <h3>Apple</h3>
-                        <p>iPhone、Mac、iPad 等苹果产品。</p>
-                        <span class="tag">Apple</span>
+                        <div class="card-body">
+                            <h3>Apple</h3>
+                            <p>iPhone、Mac、iPad</p>
+                        </div>
                     </a>
                     <a class="card" href="https://www.mozilla.org" target="_blank" rel="noopener">
                         <div class="card-icon">🦊</div>
-                        <h3>Firefox</h3>
-                        <p>开源浏览器。</p>
-                        <span class="tag">浏览器</span>
+                        <div class="card-body">
+                            <h3>Firefox</h3>
+                            <p>开源浏览器</p>
+                        </div>
                     </a>
                     <a class="card" href="https://www.google.com/chrome/" target="_blank" rel="noopener">
                         <div class="card-icon">🌐</div>
-                        <h3>Chrome</h3>
-                        <p>Google 浏览器。</p>
-                        <span class="tag">浏览器</span>
+                        <div class="card-body">
+                            <h3>Chrome</h3>
+                            <p>Google 浏览器</p>
+                        </div>
                     </a>
                 </div>
             </section>
@@ -1844,27 +1923,31 @@
                 <div class="cards">
                     <a class="card" href="https://www.figma.com" target="_blank" rel="noopener">
                         <div class="card-icon">◈</div>
-                        <h3>Figma</h3>
-                        <p>在线 UI、网页和产品设计工具。</p>
-                        <span class="tag">UI设计</span>
+                        <div class="card-body">
+                            <h3>Figma</h3>
+                            <p>在线 UI 和产品设计</p>
+                        </div>
                     </a>
                     <a class="card" href="https://www.canva.com" target="_blank" rel="noopener">
                         <div class="card-icon">🎨</div>
-                        <h3>Canva</h3>
-                        <p>快速制作海报、图片和视觉内容。</p>
-                        <span class="tag">平面设计</span>
+                        <div class="card-body">
+                            <h3>Canva</h3>
+                            <p>快速制作海报图片</p>
+                        </div>
                     </a>
                     <a class="card" href="https://www.adobe.com" target="_blank" rel="noopener">
                         <div class="card-icon">🖌️</div>
-                        <h3>Adobe</h3>
-                        <p>专业设计、摄影和视频创作工具。</p>
-                        <span class="tag">专业设计</span>
+                        <div class="card-body">
+                            <h3>Adobe</h3>
+                            <p>专业设计和视频工具</p>
+                        </div>
                     </a>
                     <a class="card" href="https://www.photopea.com" target="_blank" rel="noopener">
                         <div class="card-icon">🖼️</div>
-                        <h3>Photopea</h3>
-                        <p>在线图片编辑工具。</p>
-                        <span class="tag">图片编辑</span>
+                        <div class="card-body">
+                            <h3>Photopea</h3>
+                            <p>在线图片编辑工具</p>
+                        </div>
                     </a>
                 </div>
             </section>
@@ -1884,27 +1967,31 @@
                 <div class="cards">
                     <a class="card" href="https://github.com" target="_blank" rel="noopener">
                         <div class="card-icon">🐙</div>
-                        <h3>GitHub</h3>
-                        <p>代码托管、开源项目和开发协作。</p>
-                        <span class="tag">代码</span>
+                        <div class="card-body">
+                            <h3>GitHub</h3>
+                            <p>代码托管和开发协作</p>
+                        </div>
                     </a>
                     <a class="card" href="https://stackoverflow.com" target="_blank" rel="noopener">
                         <div class="card-icon">💬</div>
-                        <h3>Stack Overflow</h3>
-                        <p>程序员问答社区。</p>
-                        <span class="tag">问答</span>
+                        <div class="card-body">
+                            <h3>Stack Overflow</h3>
+                            <p>程序员问答社区</p>
+                        </div>
                     </a>
                     <a class="card" href="https://developer.mozilla.org" target="_blank" rel="noopener">
                         <div class="card-icon">📖</div>
-                        <h3>MDN</h3>
-                        <p>Web 开发技术文档。</p>
-                        <span class="tag">文档</span>
+                        <div class="card-body">
+                            <h3>MDN</h3>
+                            <p>Web 开发技术文档</p>
+                        </div>
                     </a>
                     <a class="card" href="https://codepen.io" target="_blank" rel="noopener">
                         <div class="card-icon">✏️</div>
-                        <h3>CodePen</h3>
-                        <p>在线编写和展示前端代码。</p>
-                        <span class="tag">前端</span>
+                        <div class="card-body">
+                            <h3>CodePen</h3>
+                            <p>在线编写前端代码</p>
+                        </div>
                     </a>
                 </div>
             </section>
@@ -1923,27 +2010,31 @@
                 <div class="cards">
                     <a class="card" href="https://www.youtube.com" target="_blank" rel="noopener">
                         <div class="card-icon">▶️</div>
-                        <h3>YouTube</h3>
-                        <p>全球视频内容平台。</p>
-                        <span class="tag">视频</span>
+                        <div class="card-body">
+                            <h3>YouTube</h3>
+                            <p>全球视频内容平台</p>
+                        </div>
                     </a>
                     <a class="card" href="https://open.spotify.com" target="_blank" rel="noopener">
                         <div class="card-icon">🎵</div>
-                        <h3>Spotify</h3>
-                        <p>音乐和播客平台。</p>
-                        <span class="tag">音乐</span>
+                        <div class="card-body">
+                            <h3>Spotify</h3>
+                            <p>音乐和播客平台</p>
+                        </div>
                     </a>
                     <a class="card" href="https://www.netflix.com" target="_blank" rel="noopener">
                         <div class="card-icon">🎬</div>
-                        <h3>Netflix</h3>
-                        <p>影视流媒体平台。</p>
-                        <span class="tag">影视</span>
+                        <div class="card-body">
+                            <h3>Netflix</h3>
+                            <p>影视流媒体平台</p>
+                        </div>
                     </a>
                     <a class="card" href="https://store.steampowered.com" target="_blank" rel="noopener">
                         <div class="card-icon">🎮</div>
-                        <h3>Steam</h3>
-                        <p>电脑游戏平台。</p>
-                        <span class="tag">游戏</span>
+                        <div class="card-body">
+                            <h3>Steam</h3>
+                            <p>电脑游戏平台</p>
+                        </div>
                     </a>
                 </div>
             </section>
@@ -1963,39 +2054,45 @@
                 <div class="cards">
                     <a class="card" href="#">
                         <div class="card-icon">🚀</div>
-                        <h3>副业项目</h3>
-                        <p>整理值得了解的副业方向和项目。</p>
-                        <span class="tag">副业</span>
+                        <div class="card-body">
+                            <h3>副业项目</h3>
+                            <p>副业方向和项目</p>
+                        </div>
                     </a>
                     <a class="card" href="#">
                         <div class="card-icon">🤖</div>
-                        <h3>AI赚钱</h3>
-                        <p>探索 AI 工具、AI 服务和商业机会。</p>
-                        <span class="tag">AI变现</span>
+                        <div class="card-body">
+                            <h3>AI赚钱</h3>
+                            <p>AI 服务和商业机会</p>
+                        </div>
                     </a>
                     <a class="card" href="#">
                         <div class="card-icon">📱</div>
-                        <h3>自媒体</h3>
-                        <p>内容创作、账号运营和流量变现。</p>
-                        <span class="tag">内容创业</span>
+                        <div class="card-body">
+                            <h3>自媒体</h3>
+                            <p>内容创作和流量变现</p>
+                        </div>
                     </a>
                     <a class="card" href="#">
                         <div class="card-icon">🛒</div>
-                        <h3>电商</h3>
-                        <p>电商平台、工具和运营资源。</p>
-                        <span class="tag">电商</span>
+                        <div class="card-body">
+                            <h3>电商</h3>
+                            <p>电商平台和运营资源</p>
+                        </div>
                     </a>
                     <a class="card" href="#">
                         <div class="card-icon">💻</div>
-                        <h3>技能变现</h3>
-                        <p>把设计、编程、写作等技能变成收入。</p>
-                        <span class="tag">技能</span>
+                        <div class="card-body">
+                            <h3>技能变现</h3>
+                            <p>技能变成收入</p>
+                        </div>
                     </a>
                     <a class="card" href="#">
                         <div class="card-icon">🌍</div>
-                        <h3>海外项目</h3>
-                        <p>海外平台、工具和商业机会。</p>
-                        <span class="tag">海外</span>
+                        <div class="card-body">
+                            <h3>海外项目</h3>
+                            <p>海外平台和商业机会</p>
+                        </div>
                     </a>
                 </div>
             </section>
@@ -2062,7 +2159,7 @@
 
         function updateActive() {
             let currentId = '';
-            const scrollPos = window.scrollY + 140;
+            const scrollPos = window.scrollY + 100;
 
             sections.forEach(section => {
                 if (section.offsetTop <= scrollPos) {
