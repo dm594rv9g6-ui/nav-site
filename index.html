@@ -406,6 +406,7 @@
             white-space: nowrap;
             transition: all 0.18s ease;
             letter-spacing: 0.2px;
+            cursor: pointer;
         }
 
         .section-tabs a:hover {
@@ -497,6 +498,15 @@
         .card:hover .tag {
             background: #26263f;
             color: #c0c0e0;
+        }
+
+        /* 标签面板显隐控制 */
+        .tab-panel {
+            display: none;
+        }
+
+        .tab-panel.active {
+            display: block;
         }
 
         /* ===== 搞钱专区 ===== */
@@ -884,8 +894,7 @@
         <div class="sidebar-title">导航菜单</div>
         <nav class="sidebar-nav">
             <a href="#" class="active">首页</a>
-            <a href="#drama">免费短剧</a>
-            <a href="#movie">免费影视</a>
+            <a href="#movie">影视</a>
             <a href="#ai">AI</a>
             <a href="#tools">工具</a>
             <a href="#learning">学习</a>
@@ -951,8 +960,7 @@
         <div class="mobile-topbar">
             <div class="mobile-nav">
                 <a href="#" class="active">首页</a>
-                <a href="#drama">免费短剧</a>
-                <a href="#movie">免费影视</a>
+                <a href="#movie">影视</a>
                 <a href="#ai">AI</a>
                 <a href="#tools">工具</a>
                 <a href="#learning">学习</a>
@@ -981,138 +989,192 @@
 
         <main>
 
-            <!-- 免费短剧 -->
-            <section class="section" id="drama">
-                <div class="section-head">
-                    <h2>🎬 免费短剧</h2>
-                    <div class="section-tabs">
-                        <a href="#drama" class="active">抖音</a>
-                        <a href="#drama">快手</a>
-                        <a href="#drama">芒果</a>
-                        <a href="#drama">爱奇艺</a>
-                        <a href="#drama">优酷</a>
-                        <a href="#drama">腾讯</a>
-                    </div>
-                </div>
-                <div class="cards">
-                    <a class="card" href="https://www.douyin.com" target="_blank" rel="noopener">
-                        <div class="card-icon">📱</div>
-                        <h3>抖音短剧</h3>
-                        <p>抖音官方短剧频道，大量免费短剧在线看。</p>
-                        <span class="tag">短剧</span>
-                    </a>
-                    <a class="card" href="https://www.kuaishou.com" target="_blank" rel="noopener">
-                        <div class="card-icon">⚡</div>
-                        <h3>快手短剧</h3>
-                        <p>快手短剧专区，免费观看热门短剧。</p>
-                        <span class="tag">短剧</span>
-                    </a>
-                    <a class="card" href="https://www.mgtv.com" target="_blank" rel="noopener">
-                        <div class="card-icon">🥭</div>
-                        <h3>芒果TV短剧</h3>
-                        <p>芒果TV短剧频道，大量免费短剧资源。</p>
-                        <span class="tag">短剧</span>
-                    </a>
-                    <a class="card" href="https://www.iqiyi.com" target="_blank" rel="noopener">
-                        <div class="card-icon">🎥</div>
-                        <h3>爱奇艺短剧</h3>
-                        <p>爱奇艺短剧专区，免费短剧在线观看。</p>
-                        <span class="tag">短剧</span>
-                    </a>
-                </div>
-            </section>
-
-            <!-- 免费影视 -->
+            <!-- 影视 -->
             <section class="section" id="movie">
                 <div class="section-head">
-                    <h2>🎥 免费影视</h2>
-                    <div class="section-tabs">
-                        <a href="#movie" class="active">在线观影</a>
-                        <a href="#movie">动漫网站</a>
-                        <a href="#movie">看纪录片</a>
-                        <a href="#movie">美剧网站</a>
-                        <a href="#movie">体育直播</a>
+                    <h2>🎥 影视</h2>
+                    <div class="section-tabs" data-tabs="movie">
+                        <a href="javascript:void(0)" class="active" data-panel="panel-online">在线观影</a>
+                        <a href="javascript:void(0)" data-panel="panel-drama">免费短剧</a>
+                        <a href="javascript:void(0)" data-panel="panel-anime">动漫网站</a>
+                        <a href="javascript:void(0)" data-panel="panel-doc">看纪录片</a>
                     </div>
                 </div>
-                <div class="cards">
-                    <a class="card" href="https://gaze.red/" target="_blank" rel="noopener">
-                        <div class="card-icon">👁️</div>
-                        <h3>注视影视</h3>
-                        <p>在线观影平台，提供丰富的影视资源。</p>
-                        <span class="tag">在线观影</span>
-                    </a>
-                    <a class="card" href="https://www.novipnoad.uk/" target="_blank" rel="noopener">
-                        <div class="card-icon">🎬</div>
-                        <h3>No视频</h3>
-                        <p>免费在线影视网站，海量电影电视剧。</p>
-                        <span class="tag">在线观影</span>
-                    </a>
-                    <a class="card" href="https://juok3.top/" target="_blank" rel="noopener">
-                        <div class="card-icon">🎭</div>
-                        <h3>剧OK</h3>
-                        <p>在线影视平台，提供电影、电视剧在线观看。</p>
-                        <span class="tag">在线观影</span>
-                    </a>
-                    <a class="card" href="https://www.cz4k.com/" target="_blank" rel="noopener">
-                        <div class="card-icon">📽️</div>
-                        <h3>厂长资源</h3>
-                        <p>高清影视资源网站，提供免费在线观看。</p>
-                        <span class="tag">在线观影</span>
-                    </a>
-                    <a class="card" href="https://www.xiguadh.com/" target="_blank" rel="noopener">
-                        <div class="card-icon">🍉</div>
-                        <h3>西瓜影院</h3>
-                        <p>免费在线影院，海量影视资源随心看。</p>
-                        <span class="tag">在线观影</span>
-                    </a>
-                    <a class="card" href="https://hanju99.cc/" target="_blank" rel="noopener">
-                        <div class="card-icon">🇰🇷</div>
-                        <h3>韩剧99</h3>
-                        <p>韩剧在线观看平台，最新韩剧资源。</p>
-                        <span class="tag">在线观影</span>
-                    </a>
-                    <a class="card" href="https://hanju51.com/" target="_blank" rel="noopener">
-                        <div class="card-icon">📺</div>
-                        <h3>韩剧网</h3>
-                        <p>看韩国电视剧就上韩剧网，海量韩剧资源。</p>
-                        <span class="tag">在线观影</span>
-                    </a>
-                    <a class="card" href="https://kpkuang.fyi/" target="_blank" rel="noopener">
-                        <div class="card-icon">🦸</div>
-                        <h3>看片狂人</h3>
-                        <p>免费在线影视平台，各种影视资源。</p>
-                        <span class="tag">在线观影</span>
-                    </a>
-                    <a class="card" href="https://wakp.xin/" target="_blank" rel="noopener">
-                        <div class="card-icon">🎞️</div>
-                        <h3>挂片</h3>
-                        <p>在线影视网站，提供电影电视剧观看。</p>
-                        <span class="tag">在线观影</span>
-                    </a>
-                    <a class="card" href="https://zlys9.top/" target="_blank" rel="noopener">
-                        <div class="card-icon">🐺</div>
-                        <h3>真狼影视</h3>
-                        <p>免费影视资源平台，在线观看电影电视剧。</p>
-                        <span class="tag">在线观影</span>
-                    </a>
-                    <a class="card" href="https://www.deeyy.com/" target="_blank" rel="noopener">
-                        <div class="card-icon">🎦</div>
-                        <h3>DEE影院</h3>
-                        <p>在线影院，提供免费电影电视剧观看。</p>
-                        <span class="tag">在线观影</span>
-                    </a>
-                    <a class="card" href="https://www.yayadaohang.com/site/qqys01" target="_blank" rel="noopener">
-                        <div class="card-icon">📡</div>
-                        <h3>千干影视</h3>
-                        <p>影视导航站，汇集多个在线观影入口。</p>
-                        <span class="tag">在线观影</span>
-                    </a>
-                    <a class="card" href="https://www.xhkan.top/" target="_blank" rel="noopener">
-                        <div class="card-icon">🌟</div>
-                        <h3>星河影视</h3>
-                        <p>在线影视平台，提供丰富的影视资源。</p>
-                        <span class="tag">在线观影</span>
-                    </a>
+
+                <div class="tab-panel active" id="panel-online" data-tab-group="movie">
+                    <div class="cards">
+                        <a class="card" href="https://gaze.red/" target="_blank" rel="noopener">
+                            <div class="card-icon">👁️</div>
+                            <h3>注视影视</h3>
+                            <p>在线观影平台，提供丰富的影视资源。</p>
+                            <span class="tag">在线观影</span>
+                        </a>
+                        <a class="card" href="https://www.novipnoad.uk/" target="_blank" rel="noopener">
+                            <div class="card-icon">🎬</div>
+                            <h3>No视频</h3>
+                            <p>免费在线影视网站，海量电影电视剧。</p>
+                            <span class="tag">在线观影</span>
+                        </a>
+                        <a class="card" href="https://juok3.top/" target="_blank" rel="noopener">
+                            <div class="card-icon">🎭</div>
+                            <h3>剧OK</h3>
+                            <p>在线影视平台，提供电影、电视剧在线观看。</p>
+                            <span class="tag">在线观影</span>
+                        </a>
+                        <a class="card" href="https://www.cz4k.com/" target="_blank" rel="noopener">
+                            <div class="card-icon">📽️</div>
+                            <h3>厂长资源</h3>
+                            <p>高清影视资源网站，提供免费在线观看。</p>
+                            <span class="tag">在线观影</span>
+                        </a>
+                        <a class="card" href="https://www.xiguadh.com/" target="_blank" rel="noopener">
+                            <div class="card-icon">🍉</div>
+                            <h3>西瓜影院</h3>
+                            <p>免费在线影院，海量影视资源随心看。</p>
+                            <span class="tag">在线观影</span>
+                        </a>
+                        <a class="card" href="https://hanju99.cc/" target="_blank" rel="noopener">
+                            <div class="card-icon">🇰🇷</div>
+                            <h3>韩剧99</h3>
+                            <p>韩剧在线观看平台，最新韩剧资源。</p>
+                            <span class="tag">在线观影</span>
+                        </a>
+                        <a class="card" href="https://hanju51.com/" target="_blank" rel="noopener">
+                            <div class="card-icon">📺</div>
+                            <h3>韩剧网</h3>
+                            <p>看韩国电视剧就上韩剧网，海量韩剧资源。</p>
+                            <span class="tag">在线观影</span>
+                        </a>
+                        <a class="card" href="https://kpkuang.fyi/" target="_blank" rel="noopener">
+                            <div class="card-icon">🦸</div>
+                            <h3>看片狂人</h3>
+                            <p>免费在线影视平台，各种影视资源。</p>
+                            <span class="tag">在线观影</span>
+                        </a>
+                        <a class="card" href="https://wakp.xin/" target="_blank" rel="noopener">
+                            <div class="card-icon">🎞️</div>
+                            <h3>挂片</h3>
+                            <p>在线影视网站，提供电影电视剧观看。</p>
+                            <span class="tag">在线观影</span>
+                        </a>
+                        <a class="card" href="https://zlys9.top/" target="_blank" rel="noopener">
+                            <div class="card-icon">🐺</div>
+                            <h3>真狼影视</h3>
+                            <p>免费影视资源平台，在线观看电影电视剧。</p>
+                            <span class="tag">在线观影</span>
+                        </a>
+                        <a class="card" href="https://www.deeyy.com/" target="_blank" rel="noopener">
+                            <div class="card-icon">🎦</div>
+                            <h3>DEE影院</h3>
+                            <p>在线影院，提供免费电影电视剧观看。</p>
+                            <span class="tag">在线观影</span>
+                        </a>
+                        <a class="card" href="https://www.yayadaohang.com/site/qqys01" target="_blank" rel="noopener">
+                            <div class="card-icon">📡</div>
+                            <h3>千干影视</h3>
+                            <p>影视导航站，汇集多个在线观影入口。</p>
+                            <span class="tag">在线观影</span>
+                        </a>
+                        <a class="card" href="https://www.xhkan.top/" target="_blank" rel="noopener">
+                            <div class="card-icon">🌟</div>
+                            <h3>星河影视</h3>
+                            <p>在线影视平台，提供丰富的影视资源。</p>
+                            <span class="tag">在线观影</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="panel-drama" data-tab-group="movie">
+                    <div class="cards">
+                        <a class="card" href="https://kanju2.ai/" target="_blank" rel="noopener">
+                            <div class="card-icon">🤖</div>
+                            <h3>看剧AI</h3>
+                            <p>AI 智能短剧平台，海量免费短剧在线看。</p>
+                            <span class="tag">免费短剧</span>
+                        </a>
+                        <a class="card" href="https://hongguoduanju.com/?ref=www.sbrdh.com" target="_blank" rel="noopener">
+                            <div class="card-icon">🍎</div>
+                            <h3>红果短剧</h3>
+                            <p>红果免费短剧平台，热门短剧随时看。</p>
+                            <span class="tag">免费短剧</span>
+                        </a>
+                        <a class="card" href="https://trieuvieclam.com/" target="_blank" rel="noopener">
+                            <div class="card-icon">🎭</div>
+                            <h3>短剧</h3>
+                            <p>免费短剧在线观看平台，资源丰富。</p>
+                            <span class="tag">免费短剧</span>
+                        </a>
+                        <a class="card" href="https://www.xpxxo.net/" target="_blank" rel="noopener">
+                            <div class="card-icon">☁️</div>
+                            <h3>云短剧</h3>
+                            <p>云短剧平台，免费短剧在线观看。</p>
+                            <span class="tag">免费短剧</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="panel-anime" data-tab-group="movie">
+                    <div class="cards">
+                        <a class="card" href="https://www.bimiacg14.net/" target="_blank" rel="noopener">
+                            <div class="card-icon">🎌</div>
+                            <h3>哔咪动漫</h3>
+                            <p>哔咪动漫在线观看，海量动漫资源。</p>
+                            <span class="tag">动漫网站</span>
+                        </a>
+                        <a class="card" href="https://www.yinghuacd.com/" target="_blank" rel="noopener">
+                            <div class="card-icon">🌸</div>
+                            <h3>樱花动漫</h3>
+                            <p>樱花动漫专注动漫的门户网站。</p>
+                            <span class="tag">动漫网站</span>
+                        </a>
+                        <a class="card" href="https://www.995dm.com/" target="_blank" rel="noopener">
+                            <div class="card-icon">🎎</div>
+                            <h3>久久动漫</h3>
+                            <p>久久动漫免费在线观看，资源丰富。</p>
+                            <span class="tag">动漫网站</span>
+                        </a>
+                        <a class="card" href="https://cn.agekkkk.com/" target="_blank" rel="noopener">
+                            <div class="card-icon">📺</div>
+                            <h3>4K动漫</h3>
+                            <p>4K动漫高清在线观看，画质清晰。</p>
+                            <span class="tag">动漫网站</span>
+                        </a>
+                        <a class="card" href="https://www.acfun.cn/" target="_blank" rel="noopener">
+                            <div class="card-icon">🅰️</div>
+                            <h3>AcFun</h3>
+                            <p>AcFun弹幕视频网，二次元动漫社区。</p>
+                            <span class="tag">动漫网站</span>
+                        </a>
+                        <a class="card" href="https://www.2rk.cc/" target="_blank" rel="noopener">
+                            <div class="card-icon">🎬</div>
+                            <h3>二矿动漫</h3>
+                            <p>二矿动漫在线观看，动漫爱好者的选择。</p>
+                            <span class="tag">动漫网站</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="panel-doc" data-tab-group="movie">
+                    <div class="cards">
+                        <a class="card" href="http://www.docuchina.cn/" target="_blank" rel="noopener">
+                            <div class="card-icon">🇨🇳</div>
+                            <h3>中国纪录片网</h3>
+                            <p>中国纪录片网，国内官方纪录片平台。</p>
+                            <span class="tag">看纪录片</span>
+                        </a>
+                        <a class="card" href="https://tv.cctv.com/yxg/index.shtml" target="_blank" rel="noopener">
+                            <div class="card-icon">📡</div>
+                            <h3>CCTV纪录片频道</h3>
+                            <p>央视纪录片频道，大量优秀国产纪录片。</p>
+                            <span class="tag">看纪录片</span>
+                        </a>
+                        <a class="card" href="https://www.youku.com/ku/webjilupian" target="_blank" rel="noopener">
+                            <div class="card-icon">🎞️</div>
+                            <h3>优酷纪录片频道</h3>
+                            <p>优酷纪录片频道，海量纪录片在线观看。</p>
+                            <span class="tag">看纪录片</span>
+                        </a>
+                    </div>
                 </div>
             </section>
 
@@ -1120,33 +1182,188 @@
             <section class="section" id="ai">
                 <div class="section-head">
                     <h2>🤖 AI</h2>
-                    <div class="section-tabs">
-                        <a href="#ai" class="active">对话</a>
-                        <a href="#ai">绘画</a>
-                        <a href="#ai">写作</a>
-                        <a href="#ai">编程</a>
-                        <a href="#ai">视频</a>
+                    <div class="section-tabs" data-tabs="ai">
+                        <a href="javascript:void(0)" class="active" data-panel="panel-ai-chat">对话</a>
+                        <a href="javascript:void(0)" data-panel="panel-ai-comic">AI漫剧制作</a>
+                        <a href="javascript:void(0)" data-panel="panel-ai-ppt">AI PPT生成</a>
+                        <a href="javascript:void(0)" data-panel="panel-ai-paper">AI写作论文</a>
+                        <a href="javascript:void(0)" data-panel="panel-ai-image">AI图片生成工具</a>
                     </div>
                 </div>
-                <div class="cards">
-                    <a class="card" href="https://oai.oooai.cc/list/#/register?inviter=PUW386" target="_blank" rel="noopener">
-                        <div class="card-icon">🐳</div>
-                        <h3>GPT 国内直连</h3>
-                        <p>ChatGPT 官网国内直连入口，注册即可使用。</p>
-                        <span class="tag">GPT</span>
-                    </a>
-                    <a class="card" href="https://www.doubao.com" target="_blank" rel="noopener">
-                        <div class="card-icon">🫘</div>
-                        <h3>豆包</h3>
-                        <p>中文 AI 助手，支持聊天、写作和多种 AI 功能。</p>
-                        <span class="tag">国产AI</span>
-                    </a>
-                    <a class="card" href="https://www.deepseek.com" target="_blank" rel="noopener">
-                        <div class="card-icon">🔍</div>
-                        <h3>DeepSeek</h3>
-                        <p>AI 对话、推理和编程工具。</p>
-                        <span class="tag">AI</span>
-                    </a>
+
+                <div class="tab-panel active" id="panel-ai-chat" data-tab-group="ai">
+                    <div class="cards">
+                        <a class="card" href="https://oai.oooai.cc/list/#/register?inviter=PUW386" target="_blank" rel="noopener">
+                            <div class="card-icon">🐳</div>
+                            <h3>GPT 国内直连</h3>
+                            <p>ChatGPT 官网国内直连入口，注册即可使用。</p>
+                            <span class="tag">AI对话</span>
+                        </a>
+                        <a class="card" href="https://www.doubao.com" target="_blank" rel="noopener">
+                            <div class="card-icon">🫘</div>
+                            <h3>豆包</h3>
+                            <p>中文 AI 助手，支持聊天、写作和多种 AI 功能。</p>
+                            <span class="tag">AI对话</span>
+                        </a>
+                        <a class="card" href="https://www.deepseek.com" target="_blank" rel="noopener">
+                            <div class="card-icon">🔍</div>
+                            <h3>DeepSeek</h3>
+                            <p>AI 对话、推理和编程工具。</p>
+                            <span class="tag">AI对话</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="panel-ai-comic" data-tab-group="ai">
+                    <div class="cards">
+                        <a class="card" href="https://xyq.jianying.com/?utm_medium=paidads&utm_source=aitools&utm_campaign=hw_xyq_aikit" target="_blank" rel="noopener">
+                            <div class="card-icon">🐦</div>
+                            <h3>小云雀</h3>
+                            <p>抖音旗下内容创作Agent，AI短剧创作专家。</p>
+                            <span class="tag">AI漫剧</span>
+                        </a>
+                        <a class="card" href="https://seko.sensetime.com/explore?cg_click_id=10128dcf-4d3f-4d23-9d63-a739e3468afd&cgv=j7n63zyn1g&utm=cg" target="_blank" rel="noopener">
+                            <div class="card-icon">🎬</div>
+                            <h3>Seko</h3>
+                            <p>商汤科技 AI 漫剧创作平台，智能生成漫画短剧。</p>
+                            <span class="tag">AI漫剧</span>
+                        </a>
+                        <a class="card" href="https://www.updream.cn/?cg_click_id=2fd2e70e-2fa2-4600-96f3-7aa438ee3210&cgv=9we240xngo&utm=cg" target="_blank" rel="noopener">
+                            <div class="card-icon">💭</div>
+                            <h3>Updream</h3>
+                            <p>AI 漫剧制作平台，轻松创作漫剧内容。</p>
+                            <span class="tag">AI漫剧</span>
+                        </a>
+                        <a class="card" href="https://aw.jiaxunai.cn/" target="_blank" rel="noopener">
+                            <div class="card-icon">📖</div>
+                            <h3>知漫剧</h3>
+                            <p>知漫剧 AI 平台，智能生成漫画短剧。</p>
+                            <span class="tag">AI漫剧</span>
+                        </a>
+                        <a class="card" href="https://aw.jiaxunai.cn/" target="_blank" rel="noopener">
+                            <div class="card-icon">🐸</div>
+                            <h3>蛙蛙漫剧</h3>
+                            <p>蛙蛙漫剧 AI 创作平台，轻松制作漫剧。</p>
+                            <span class="tag">AI漫剧</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="panel-ai-ppt" data-tab-group="ai">
+                    <div class="cards">
+                        <a class="card" href="https://www.islide.cc/?mtm_campaign=aikit-CZQD" target="_blank" rel="noopener">
+                            <div class="card-icon">📊</div>
+                            <h3>iSlide PPT</h3>
+                            <p>iSlide AI PPT 生成工具，快速制作演示文稿。</p>
+                            <span class="tag">AI PPT</span>
+                        </a>
+                        <a class="card" href="https://zhiwen.xfyun.cn/home?from=aitool37" target="_blank" rel="noopener">
+                            <div class="card-icon">🧠</div>
+                            <h3>讯飞智文</h3>
+                            <p>科大讯飞 AI PPT 生成，智能创作演示文稿。</p>
+                            <span class="tag">AI PPT</span>
+                        </a>
+                        <a class="card" href="https://www.cappt.cc/?mtm_campaign=CZQD-aikit-tg0030-100000" target="_blank" rel="noopener">
+                            <div class="card-icon">🎨</div>
+                            <h3>咔片PPT</h3>
+                            <p>咔片 AI PPT 生成工具，一键生成精美 PPT。</p>
+                            <span class="tag">AI PPT</span>
+                        </a>
+                        <a class="card" href="https://www.gaoding.com/contents?q=PPT&hmsr=ai-kit-ai-kit-ppt--ppt-ppt-bdqd&utm_source=ai-kit" target="_blank" rel="noopener">
+                            <div class="card-icon">📑</div>
+                            <h3>稿定PPT</h3>
+                            <p>稿定设计 AI PPT 生成，海量模板快速出稿。</p>
+                            <span class="tag">AI PPT</span>
+                        </a>
+                        <a class="card" href="https://modao.cc/feature/aippt.html?utm_channel=wl&utm_source=referrals&utm_keyword=aikit" target="_blank" rel="noopener">
+                            <div class="card-icon">🔨</div>
+                            <h3>墨刀AIPPT</h3>
+                            <p>墨刀 AI PPT 生成工具，智能生成演示文稿。</p>
+                            <span class="tag">AI PPT</span>
+                        </a>
+                        <a class="card" href="https://modao.cc/feature/aippt.html?utm_channel=wl&utm_source=referrals&utm_keyword=aikit" target="_blank" rel="noopener">
+                            <div class="card-icon">✨</div>
+                            <h3>Gamma AI PPT</h3>
+                            <p>Gamma AI 生成 PPT，智能创作演示文稿。</p>
+                            <span class="tag">AI PPT</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="panel-ai-paper" data-tab-group="ai">
+                    <div class="cards">
+                        <a class="card" href="https://wawawriter.com/app/?cg_click_id=eeb3e297-2761-4d95-b9a9-180d9115e6f4&cgv=dqndmywn2z&utm=cg&utm_source=aiweb" target="_blank" rel="noopener">
+                            <div class="card-icon">🐸</div>
+                            <h3>蛙蛙写作</h3>
+                            <p>蛙蛙写作 AI 助手，辅助写作论文和文章。</p>
+                            <span class="tag">AI写作</span>
+                        </a>
+                        <a class="card" href="https://www.gaoding.com/image?hmsr=aikit-aikit-writer--writer-writer-bdqd&utm_source=aikit" target="_blank" rel="noopener">
+                            <div class="card-icon">✍️</div>
+                            <h3>稿定AI文案</h3>
+                            <p>稿定 AI 文案工具，智能生成文案内容。</p>
+                            <span class="tag">AI写作</span>
+                        </a>
+                        <a class="card" href="https://www.xljsci.com/?channelCode=TvhaLa" target="_blank" rel="noopener">
+                            <div class="card-icon">🐳</div>
+                            <h3>小绿鲸</h3>
+                            <p>小绿鲸 AI 论文助手，学术写作好帮手。</p>
+                            <span class="tag">AI写作</span>
+                        </a>
+                        <a class="card" href="https://www.ailw8.com/paper/" target="_blank" rel="noopener">
+                            <div class="card-icon">📝</div>
+                            <h3>零零AI论文助手</h3>
+                            <p>零零 AI 论文助手，辅助论文写作。</p>
+                            <span class="tag">AI写作</span>
+                        </a>
+                        <a class="card" href="https://app.qinyanai.com/?sourceCode=mu17e8&land_id=fe6a0a67dee0f68ccb5f451fe020d5da" target="_blank" rel="noopener">
+                            <div class="card-icon">🎓</div>
+                            <h3>沁言学术</h3>
+                            <p>沁言学术 AI 论文写作助手，学术创作利器。</p>
+                            <span class="tag">AI写作</span>
+                        </a>
+                        <a class="card" href="https://www.gradpen.com/" target="_blank" rel="noopener">
+                            <div class="card-icon">🖊️</div>
+                            <h3>GradPeni论文</h3>
+                            <p>GradPeni AI 论文助手，智能论文写作工具。</p>
+                            <span class="tag">AI写作</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="panel-ai-image" data-tab-group="ai">
+                    <div class="cards">
+                        <a class="card" href="https://www.gaoding.com/image?hmsr=aikit-aikit-image--image-image-bdqd&utm_source=aikit" target="_blank" rel="noopener">
+                            <div class="card-icon">🎨</div>
+                            <h3>稿定-AI绘画</h3>
+                            <p>稿定 AI 绘画工具，智能生成图片和插画。</p>
+                            <span class="tag">AI生图</span>
+                        </a>
+                        <a class="card" href="https://jimeng.jianying.com/ai-tool/home/?utm_medium=aitools&utm_source=aijuhe&utm_campaign=null&utm_content=hw_jm_aijuhe1" target="_blank" rel="noopener">
+                            <div class="card-icon">✨</div>
+                            <h3>即梦AI</h3>
+                            <p>即梦 AI 生图工具，智能生成高质量图片。</p>
+                            <span class="tag">AI生图</span>
+                        </a>
+                        <a class="card" href="https://www.ihuiwa.com/invite?huiwaInviteCode=EU5UFL&catId=1" target="_blank" rel="noopener">
+                            <div class="card-icon">🐸</div>
+                            <h3>绘蛙-AI生图</h3>
+                            <p>绘蛙 AI 生图工具，轻松生成图片素材。</p>
+                            <span class="tag">AI生图</span>
+                        </a>
+                        <a class="card" href="https://www.xingliu.art/?cg_click_id=de32eabd-f32d-4a8a-bc13-5eb496cb7bde&cgv=rpexyo4k90&sourceid=005903&utm=cg" target="_blank" rel="noopener">
+                            <div class="card-icon">⭐</div>
+                            <h3>星流</h3>
+                            <p>星流 AI 绘画平台，智能生成艺术图片。</p>
+                            <span class="tag">AI生图</span>
+                        </a>
+                        <a class="card" href="https://create.qianwen.com/" target="_blank" rel="noopener">
+                            <div class="card-icon">☁️</div>
+                            <h3>千问</h3>
+                            <p>千问 AI 创作平台，智能生成图片内容。</p>
+                            <span class="tag">AI生图</span>
+                        </a>
+                    </div>
                 </div>
             </section>
 
@@ -1154,79 +1371,421 @@
             <section class="section" id="tools">
                 <div class="section-head">
                     <h2>🛠 工具</h2>
-                    <div class="section-tabs">
-                        <a href="#tools" class="active">图片</a>
-                        <a href="#tools">PDF</a>
-                        <a href="#tools">转换</a>
-                        <a href="#tools">识别</a>
-                        <a href="#tools">传输</a>
+                    <div class="section-tabs" data-tabs="tools">
+                        <a href="javascript:void(0)" class="active" data-panel="panel-tool-pdf">PDF转换</a>
+                        <a href="javascript:void(0)" data-panel="panel-tool-video">视频处理</a>
+                        <a href="javascript:void(0)" data-panel="panel-tool-audio">音频处理</a>
+                        <a href="javascript:void(0)" data-panel="panel-tool-other">其他工具</a>
                     </div>
                 </div>
-                <div class="cards">
-                    <a class="card" href="https://github.com" target="_blank" rel="noopener">
-                        <div class="card-icon">💻</div>
-                        <h3>GitHub</h3>
-                        <p>全球开发者使用的代码托管与协作平台。</p>
-                        <span class="tag">开发</span>
-                    </a>
-                    <a class="card" href="https://www.canva.com" target="_blank" rel="noopener">
-                        <div class="card-icon">🎨</div>
-                        <h3>Canva</h3>
-                        <p>在线设计海报、图片、演示文稿等。</p>
-                        <span class="tag">设计</span>
-                    </a>
-                    <a class="card" href="https://www.remove.bg" target="_blank" rel="noopener">
-                        <div class="card-icon">✂️</div>
-                        <h3>Remove.bg</h3>
-                        <p>在线自动抠图，快速删除图片背景。</p>
-                        <span class="tag">图片</span>
-                    </a>
-                    <a class="card" href="https://www.ilovepdf.com" target="_blank" rel="noopener">
-                        <div class="card-icon">📄</div>
-                        <h3>iLovePDF</h3>
-                        <p>在线处理 PDF 文件。</p>
-                        <span class="tag">PDF</span>
-                    </a>
+
+                <div class="tab-panel active" id="panel-tool-pdf" data-tab-group="tools">
+                    <div class="cards">
+                        <a class="card" href="https://www.ilovepdf.com/zh-cn" target="_blank" rel="noopener">
+                            <div class="card-icon">📄</div>
+                            <h3>iLovePDF</h3>
+                            <p>免费在线 PDF 处理工具，支持合并、分割、压缩等。</p>
+                            <span class="tag">PDF</span>
+                        </a>
+                        <a class="card" href="https://www.fileeagle.com/pdfeagle/en" target="_blank" rel="noopener">
+                            <div class="card-icon">🦅</div>
+                            <h3>PDF Eagle</h3>
+                            <p>PDF Eagle 在线 PDF 编辑和转换工具。</p>
+                            <span class="tag">PDF</span>
+                        </a>
+                        <a class="card" href="https://pdfcandy.com/cn/" target="_blank" rel="noopener">
+                            <div class="card-icon">🍬</div>
+                            <h3>PDF Candy</h3>
+                            <p>PDF Candy 免费在线 PDF 工具集，功能丰富。</p>
+                            <span class="tag">PDF</span>
+                        </a>
+                        <a class="card" href="https://www.aconvert.com/cn/" target="_blank" rel="noopener">
+                            <div class="card-icon">🔄</div>
+                            <h3>在线文档转换</h3>
+                            <p>Aconvert 在线文档转换工具，支持多种格式。</p>
+                            <span class="tag">转换</span>
+                        </a>
+                        <a class="card" href="https://imging.ai/?url=biiii.com" target="_blank" rel="noopener">
+                            <div class="card-icon">🖼️</div>
+                            <h3>Imglng图映</h3>
+                            <p>图映 AI 图片处理工具，在线编辑图片。</p>
+                            <span class="tag">图片</span>
+                        </a>
+                        <a class="card" href="https://www.ilovepdfapp.com/?url=biiii.com" target="_blank" rel="noopener">
+                            <div class="card-icon">📱</div>
+                            <h3>iLovePDF App</h3>
+                            <p>iLovePDF 在线工具，PDF 处理便捷入口。</p>
+                            <span class="tag">PDF</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="panel-tool-video" data-tab-group="tools">
+                    <div class="cards">
+                        <a class="card" href="https://greenvideo.cc/" target="_blank" rel="noopener">
+                            <div class="card-icon">🎬</div>
+                            <h3>GreenVideo</h3>
+                            <p>在线视频处理工具，支持多种视频编辑功能。</p>
+                            <span class="tag">视频</span>
+                        </a>
+                        <a class="card" href="https://snapany.com/zh" target="_blank" rel="noopener">
+                            <div class="card-icon">📸</div>
+                            <h3>SnapAny</h3>
+                            <p>SnapAny 在线视频下载和处理工具。</p>
+                            <span class="tag">视频</span>
+                        </a>
+                        <a class="card" href="https://www.xtdowner.com/" target="_blank" rel="noopener">
+                            <div class="card-icon">⬇️</div>
+                            <h3>小天短视频在线工具</h3>
+                            <p>短视频在线下载工具，支持多个平台。</p>
+                            <span class="tag">下载</span>
+                        </a>
+                        <a class="card" href="https://www.67tool.com/video/compress" target="_blank" rel="noopener">
+                            <div class="card-icon">📦</div>
+                            <h3>视频压缩</h3>
+                            <p>67工具在线视频压缩，快速减小视频体积。</p>
+                            <span class="tag">压缩</span>
+                        </a>
+                        <a class="card" href="https://vv.netnr.eu.org/" target="_blank" rel="noopener">
+                            <div class="card-icon">🔗</div>
+                            <h3>zme解析</h3>
+                            <p>视频解析工具，支持多平台视频解析。</p>
+                            <span class="tag">解析</span>
+                        </a>
+                        <a class="card" href="https://ezremove.ai/zh/watermark-remover/" target="_blank" rel="noopener">
+                            <div class="card-icon">🧹</div>
+                            <h3>EzRemove</h3>
+                            <p>AI 去水印工具，智能移除图片和视频水印。</p>
+                            <span class="tag">去水印</span>
+                        </a>
+                        <a class="card" href="https://dy.kukutool.com/?go=www.9ghao.com" target="_blank" rel="noopener">
+                            <div class="card-icon">🎯</div>
+                            <h3>KuKuTool去水印</h3>
+                            <p>KuKuTool 去水印工具，短视频去水印下载。</p>
+                            <span class="tag">去水印</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="panel-tool-audio" data-tab-group="tools">
+                    <div class="cards">
+                        <a class="card" href="https://texttospeech.im/zh-CN" target="_blank" rel="noopener">
+                            <div class="card-icon">🗣️</div>
+                            <h3>免费文本转语音</h3>
+                            <p>在线文本转语音工具，多种语音可选。</p>
+                            <span class="tag">音频</span>
+                        </a>
+                        <a class="card" href="https://ttsomni.com/zh?url=biiii.com" target="_blank" rel="noopener">
+                            <div class="card-icon">🎙️</div>
+                            <h3>TTS Omni</h3>
+                            <p>TTS Omni 在线语音合成工具，智能配音。</p>
+                            <span class="tag">音频</span>
+                        </a>
+                        <a class="card" href="https://yueyin.zhipianbang.com/" target="_blank" rel="noopener">
+                            <div class="card-icon">🎵</div>
+                            <h3>悦音配音</h3>
+                            <p>悦音配音在线工具，智能语音合成配音。</p>
+                            <span class="tag">配音</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="panel-tool-other" data-tab-group="tools">
+                    <div class="cards">
+                        <a class="card" href="https://www.linshi-email.com/" target="_blank" rel="noopener">
+                            <div class="card-icon">📧</div>
+                            <h3>临时邮箱</h3>
+                            <p>临时邮箱工具，保护隐私，避免垃圾邮件。</p>
+                            <span class="tag">邮箱</span>
+                        </a>
+                        <a class="card" href="https://futurecv.cn/" target="_blank" rel="noopener">
+                            <div class="card-icon">📋</div>
+                            <h3>未来简历</h3>
+                            <p>未来简历在线制作工具，快速生成专业简历。</p>
+                            <span class="tag">简历</span>
+                        </a>
+                    </div>
                 </div>
             </section>
 
-            <!-- 学习 -->
+            <!-- 学习（带子标签内容切换） -->
             <section class="section" id="learning">
                 <div class="section-head">
                     <h2>📚 学习</h2>
-                    <div class="section-tabs">
-                        <a href="#learning" class="active">视频</a>
-                        <a href="#learning">编程</a>
-                        <a href="#learning">语言</a>
-                        <a href="#learning">课程</a>
-                        <a href="#learning">百科</a>
+                    <div class="section-tabs" data-tabs="learning">
+                        <a href="javascript:void(0)" class="active" data-panel="panel-learn-platform">综合平台</a>
+                        <a href="javascript:void(0)" data-panel="panel-learn-language">外语学习</a>
+                        <a href="javascript:void(0)" data-panel="panel-learn-software">软件教程</a>
+                        <a href="javascript:void(0)" data-panel="panel-learn-medical">医学健康</a>
+                        <a href="javascript:void(0)" data-panel="panel-learn-cooking">厨师菜谱</a>
+                        <a href="javascript:void(0)" data-panel="panel-learn-school">中小学课程</a>
+                        <a href="javascript:void(0)" data-panel="panel-learn-music">音乐学习</a>
+                        <a href="javascript:void(0)" data-panel="panel-learn-other">其他</a>
                     </div>
                 </div>
-                <div class="cards">
-                    <a class="card" href="https://www.bilibili.com" target="_blank" rel="noopener">
-                        <div class="card-icon">📺</div>
-                        <h3>Bilibili</h3>
-                        <p>视频学习、知识分享和兴趣社区。</p>
-                        <span class="tag">视频</span>
-                    </a>
-                    <a class="card" href="https://www.wikipedia.org" target="_blank" rel="noopener">
-                        <div class="card-icon">🌐</div>
-                        <h3>Wikipedia</h3>
-                        <p>开放的在线百科全书。</p>
-                        <span class="tag">百科</span>
-                    </a>
-                    <a class="card" href="https://www.coursera.org" target="_blank" rel="noopener">
-                        <div class="card-icon">🎓</div>
-                        <h3>Coursera</h3>
-                        <p>在线课程和大学课程平台。</p>
-                        <span class="tag">课程</span>
-                    </a>
-                    <a class="card" href="https://www.zhihu.com" target="_blank" rel="noopener">
-                        <div class="card-icon">💡</div>
-                        <h3>知乎</h3>
-                        <p>问答、知识与经验分享社区。</p>
-                        <span class="tag">知识</span>
-                    </a>
+
+                <!-- 面板：综合平台 -->
+                <div class="tab-panel active" id="panel-learn-platform" data-tab-group="learning">
+                    <div class="cards">
+                        <a class="card" href="https://www.51zxw.net/" target="_blank" rel="noopener">
+                            <div class="card-icon">🎓</div>
+                            <h3>我要自学网</h3>
+                            <p>我要自学网，综合在线学习平台。</p>
+                            <span class="tag">综合平台</span>
+                        </a>
+                        <a class="card" href="https://study.163.com/" target="_blank" rel="noopener">
+                            <div class="card-icon">📖</div>
+                            <h3>网易云课堂</h3>
+                            <p>成人终身学习的在线教育平台。</p>
+                            <span class="tag">综合平台</span>
+                        </a>
+                        <a class="card" href="https://www.xuetangx.com/" target="_blank" rel="noopener">
+                            <div class="card-icon">🏫</div>
+                            <h3>学堂在线</h3>
+                            <p>学堂在线，优质在线课程平台。</p>
+                            <span class="tag">综合平台</span>
+                        </a>
+                        <a class="card" href="https://www.icourses.cn/" target="_blank" rel="noopener">
+                            <div class="card-icon">📚</div>
+                            <h3>爱课程</h3>
+                            <p>爱课程，中国大学MOOC平台。</p>
+                            <span class="tag">综合平台</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 面板：外语学习 -->
+                <div class="tab-panel" id="panel-learn-language" data-tab-group="learning">
+                    <div class="cards">
+                        <a class="card" href="https://moocs.unipus.cn/" target="_blank" rel="noopener">
+                            <div class="card-icon">🌍</div>
+                            <h3>中国高校外语慕课平台</h3>
+                            <p>高校外语在线学习平台，优质外语课程。</p>
+                            <span class="tag">外语学习</span>
+                        </a>
+                        <a class="card" href="https://echo-type.app/?url=biiii.com" target="_blank" rel="noopener">
+                            <div class="card-icon">⌨️</div>
+                            <h3>EchoType</h3>
+                            <p>EchoType 在线打字练习平台，提升打字速度。</p>
+                            <span class="tag">外语学习</span>
+                        </a>
+                        <a class="card" href="https://ogden.munch.love/?url=biiii.com" target="_blank" rel="noopener">
+                            <div class="card-icon">📘</div>
+                            <h3>Ogden's Basic English</h3>
+                            <p>基础英语学习资源，简单易学。</p>
+                            <span class="tag">外语学习</span>
+                        </a>
+                        <a class="card" href="https://hefengxian.com/my-ielts/?url=biiii.com#/" target="_blank" rel="noopener">
+                            <div class="card-icon">📝</div>
+                            <h3>My IELTS</h3>
+                            <p>雅思学习备考工具，助力雅思考试。</p>
+                            <span class="tag">外语学习</span>
+                        </a>
+                        <a class="card" href="https://heeee.com/yingyucihui.html?url=biiii.com" target="_blank" rel="noopener">
+                            <div class="card-icon">🧠</div>
+                            <h3>英语词汇记忆挑战</h3>
+                            <p>英语词汇记忆挑战，趣味背单词。</p>
+                            <span class="tag">外语学习</span>
+                        </a>
+                        <a class="card" href="https://heeee.com/dancixiaoxiaole.html?url=biiii.com" target="_blank" rel="noopener">
+                            <div class="card-icon">🎮</div>
+                            <h3>中英文单词消消乐</h3>
+                            <p>中英文单词消消乐，趣味学单词。</p>
+                            <span class="tag">外语学习</span>
+                        </a>
+                        <a class="card" href="https://englishdaily.ai/?url=biiii.com" target="_blank" rel="noopener">
+                            <div class="card-icon">📰</div>
+                            <h3>English Daily</h3>
+                            <p>English Daily 英语学习平台，每日英语。</p>
+                            <span class="tag">外语学习</span>
+                        </a>
+                        <a class="card" href="https://www.wushiyin.com/?url=biiii.com" target="_blank" rel="noopener">
+                            <div class="card-icon">🇯🇵</div>
+                            <h3>日语五十音在线练习</h3>
+                            <p>日语五十音在线练习，轻松学日语。</p>
+                            <span class="tag">外语学习</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 面板：软件教程 -->
+                <div class="tab-panel" id="panel-learn-software" data-tab-group="learning">
+                    <div class="cards">
+                        <a class="card" href="https://rjzxw.com/" target="_blank" rel="noopener">
+                            <div class="card-icon">💻</div>
+                            <h3>软件自学网</h3>
+                            <p>软件自学网，各种软件教程学习。</p>
+                            <span class="tag">软件教程</span>
+                        </a>
+                        <a class="card" href="https://www.excelhome.net/" target="_blank" rel="noopener">
+                            <div class="card-icon">📊</div>
+                            <h3>ExcelHome</h3>
+                            <p>ExcelHome，Excel 学习与交流社区。</p>
+                            <span class="tag">软件教程</span>
+                        </a>
+                        <a class="card" href="https://systems-programming.org/database_zh/?url=biiii.com" target="_blank" rel="noopener">
+                            <div class="card-icon">🗄️</div>
+                            <h3>从零开始手搓数据库</h3>
+                            <p>从零开始手搓数据库，系统编程学习。</p>
+                            <span class="tag">软件教程</span>
+                        </a>
+                        <a class="card" href="https://www.16xx8.com/?url=biiii.com" target="_blank" rel="noopener">
+                            <div class="card-icon">🖌️</div>
+                            <h3>ps教程自学网</h3>
+                            <p>PS教程自学网，Photoshop 学习教程。</p>
+                            <span class="tag">软件教程</span>
+                        </a>
+                        <a class="card" href="https://www.yuque.com/94benyi/funeng?url=biiii.com" target="_blank" rel="noopener">
+                            <div class="card-icon">📗</div>
+                            <h3>Excel函数赋能手册</h3>
+                            <p>Excel 函数赋能手册，Excel 函数学习。</p>
+                            <span class="tag">软件教程</span>
+                        </a>
+                        <a class="card" href="https://www.adobe.com/cn/learn/photoshop" target="_blank" rel="noopener">
+                            <div class="card-icon">🎨</div>
+                            <h3>Adobe软件教程</h3>
+                            <p>Adobe 官方软件教程，Photoshop 学习。</p>
+                            <span class="tag">软件教程</span>
+                        </a>
+                        <a class="card" href="https://www.lanrenexcel.com/?url=biiii.com" target="_blank" rel="noopener">
+                            <div class="card-icon">📈</div>
+                            <h3>懒人Excel</h3>
+                            <p>懒人Excel，轻松学习 Excel 技巧。</p>
+                            <span class="tag">软件教程</span>
+                        </a>
+                        <a class="card" href="https://www.wps.cn/learning/?url=biiii.com" target="_blank" rel="noopener">
+                            <div class="card-icon">📘</div>
+                            <h3>WPS学堂</h3>
+                            <p>WPS学堂，WPS Office 学习教程。</p>
+                            <span class="tag">软件教程</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 面板：医学健康 -->
+                <div class="tab-panel" id="panel-learn-medical" data-tab-group="learning">
+                    <div class="cards">
+                        <a class="card" href="https://spanios.qdkf.net/zh?url=biiii.com" target="_blank" rel="noopener">
+                            <div class="card-icon">🏥</div>
+                            <h3>Spanios</h3>
+                            <p>Spanios 医学健康平台，健康知识学习。</p>
+                            <span class="tag">医学健康</span>
+                        </a>
+                        <a class="card" href="http://drug.ptger.cn/?url=biiii.com" target="_blank" rel="noopener">
+                            <div class="card-icon">💊</div>
+                            <h3>药物说明书大全</h3>
+                            <p>药物说明书大全，查询药品信息。</p>
+                            <span class="tag">医学健康</span>
+                        </a>
+                        <a class="card" href="https://m.youlai.cn/jijiu/?url=biiii.com" target="_blank" rel="noopener">
+                            <div class="card-icon">🚑</div>
+                            <h3>急救指南</h3>
+                            <p>急救指南，学习急救知识和技能。</p>
+                            <span class="tag">医学健康</span>
+                        </a>
+                        <a class="card" href="https://ask.nocode.com/?url=biiii.com" target="_blank" rel="noopener">
+                            <div class="card-icon">🩺</div>
+                            <h3>就诊问问</h3>
+                            <p>就诊问问，在线医疗咨询和健康知识。</p>
+                            <span class="tag">医学健康</span>
+                        </a>
+                        <a class="card" href="https://ixinqing.com/?url=biiii.com" target="_blank" rel="noopener">
+                            <div class="card-icon">💚</div>
+                            <h3>心晴网</h3>
+                            <p>心晴网，心理健康知识学习平台。</p>
+                            <span class="tag">医学健康</span>
+                        </a>
+                        <a class="card" href="https://www.a-hospital.com/?url=biiii.com" target="_blank" rel="noopener">
+                            <div class="card-icon">📖</div>
+                            <h3>A+医学百科</h3>
+                            <p>A+医学百科，医学知识百科全书。</p>
+                            <span class="tag">医学健康</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 面板：厨师菜谱 -->
+                <div class="tab-panel" id="panel-learn-cooking" data-tab-group="learning">
+                    <div class="cards">
+                        <a class="card" href="https://docs.cook.ninthfeast.com/?url=biiii.com" target="_blank" rel="noopener">
+                            <div class="card-icon">🍳</div>
+                            <h3>做饭指南</h3>
+                            <p>做饭指南，详细烹饪教程和菜谱。</p>
+                            <span class="tag">厨师菜谱</span>
+                        </a>
+                        <a class="card" href="https://heeee.com/coffee.html?url=biiii.com" target="_blank" rel="noopener">
+                            <div class="card-icon">☕</div>
+                            <h3>咖啡制作大师</h3>
+                            <p>咖啡制作大师，学习咖啡制作技巧。</p>
+                            <span class="tag">厨师菜谱</span>
+                        </a>
+                        <a class="card" href="https://www.dachu.co/?url=biiii.com" target="_blank" rel="noopener">
+                            <div class="card-icon">👨‍🍳</div>
+                            <h3>大厨网</h3>
+                            <p>大厨网，专业菜谱和烹饪教程。</p>
+                            <span class="tag">厨师菜谱</span>
+                        </a>
+                        <a class="card" href="https://eat.lz-t.top/?url=biiii.com" target="_blank" rel="noopener">
+                            <div class="card-icon">🍽️</div>
+                            <h3>一饭封神</h3>
+                            <p>一饭封神，美食菜谱和烹饪技巧。</p>
+                            <span class="tag">厨师菜谱</span>
+                        </a>
+                        <a class="card" href="https://bbqnotes.tw/?url=biiii.com" target="_blank" rel="noopener">
+                            <div class="card-icon">🍖</div>
+                            <h3>烤肉烧烤指南</h3>
+                            <p>烤肉烧烤指南，学习烧烤技巧和食谱。</p>
+                            <span class="tag">厨师菜谱</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 面板：中小学课程 -->
+                <div class="tab-panel" id="panel-learn-school" data-tab-group="learning">
+                    <div class="cards">
+                        <a class="card" href="https://gzenxx.com/?url=biiii.com" target="_blank" rel="noopener">
+                            <div class="card-icon">📐</div>
+                            <h3>高中学习网</h3>
+                            <p>高中学习网，高中课程学习资源。</p>
+                            <span class="tag">中小学课程</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 面板：音乐学习 -->
+                <div class="tab-panel" id="panel-learn-music" data-tab-group="learning">
+                    <div class="cards">
+                        <a class="card" href="https://www.sequencer64.com/sequencer/session" target="_blank" rel="noopener">
+                            <div class="card-icon">🥁</div>
+                            <h3>在线架子鼓</h3>
+                            <p>在线架子鼓，在线模拟架子鼓演奏。</p>
+                            <span class="tag">音乐学习</span>
+                        </a>
+                        <a class="card" href="https://www.autopiano.cn/" target="_blank" rel="noopener">
+                            <div class="card-icon">🎹</div>
+                            <h3>自由钢琴</h3>
+                            <p>自由钢琴，在线钢琴学习和演奏。</p>
+                            <span class="tag">音乐学习</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- 面板：其他 -->
+                <div class="tab-panel" id="panel-learn-other" data-tab-group="learning">
+                    <div class="cards">
+                        <a class="card" href="https://zh.sov101.ru/" target="_blank" rel="noopener">
+                            <div class="card-icon">📚</div>
+                            <h3>Z-Library</h3>
+                            <p>Z-Library 在线电子图书馆，海量电子书。</p>
+                            <span class="tag">其他</span>
+                        </a>
+                        <a class="card" href="https://zh.annas-archive.gl/?url=biiii.com" target="_blank" rel="noopener">
+                            <div class="card-icon">🗂️</div>
+                            <h3>安娜的档案</h3>
+                            <p>安娜的档案，海量电子书和学术资源。</p>
+                            <span class="tag">其他</span>
+                        </a>
+                    </div>
                 </div>
             </section>
 
@@ -1463,8 +2022,30 @@
         }
     }
 
-    // 所有标签按钮切换（每组独立）
-    document.querySelectorAll('.section-tabs').forEach(group => {
+    // 带 data-panel 的标签组：点击后切换对应面板内容
+    document.querySelectorAll('.section-tabs[data-tabs]').forEach(group => {
+        group.querySelectorAll('a[data-panel]').forEach(tab => {
+            tab.addEventListener('click', function (e) {
+                e.preventDefault();
+                const panelId = this.getAttribute('data-panel');
+
+                group.querySelectorAll('a').forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+
+                const section = group.closest('.section');
+                section.querySelectorAll('.tab-panel').forEach(panel => {
+                    if (panel.id === panelId) {
+                        panel.classList.add('active');
+                    } else {
+                        panel.classList.remove('active');
+                    }
+                });
+            });
+        });
+    });
+
+    // 其它纯样式切换的标签（没有 data-panel 的）
+    document.querySelectorAll('.section-tabs:not([data-tabs])').forEach(group => {
         group.querySelectorAll('a').forEach(tab => {
             tab.addEventListener('click', function (e) {
                 e.preventDefault();
