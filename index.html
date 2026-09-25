@@ -39,7 +39,7 @@
             transition: all 0.15s ease;
         }
 
-        /* ===== 顶部栏（参考截图：紧凑、左 Logo + 中间导航 + 右侧功能） ===== */
+        /* ===== 顶部栏 ===== */
         .top-bar {
             background: #17171f;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -188,7 +188,7 @@
             min-height: 0;
         }
 
-        /* ===== 左侧竖排导航（参考截图：图标 + 文字） ===== */
+        /* ===== 左侧竖排导航 ===== */
         .sidebar {
             position: fixed;
             top: 58px;
@@ -270,7 +270,7 @@
             min-width: 0;
         }
 
-        /* ===== 快捷入口 banner（参考截图顶部 5 个白卡） ===== */
+        /* ===== 快捷入口 banner ===== */
         .quick-banners {
             max-width: 1400px;
             margin: 0 auto;
@@ -325,7 +325,7 @@
             scroll-margin-top: 70px;
         }
 
-        /* ===== 板块标题（简洁版） ===== */
+        /* ===== 板块标题栏（普通滚动，不固定） ===== */
         .section-head {
             display: flex;
             align-items: center;
@@ -357,7 +357,7 @@
             stroke-linejoin: round;
         }
 
-        /* 子导航栏：单行滑动 */
+        /* 子导航栏：单行横向滑动 */
         .section-tabs {
             display: flex;
             align-items: center;
@@ -423,7 +423,7 @@
             border-radius: 2px;
         }
 
-        /* ===== 卡片网格（参考截图：卡片紧凑、图标左、文字右） ===== */
+        /* ===== 卡片网格 ===== */
         .cards {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
@@ -459,6 +459,7 @@
             justify-content: center;
             flex-shrink: 0;
             overflow: hidden;
+            font-size: 18px;
         }
 
         .card-icon img {
@@ -594,9 +595,6 @@
             .cards {
                 grid-template-columns: repeat(5, 1fr);
             }
-            .quick-banners {
-                grid-template-columns: repeat(5, 1fr);
-            }
         }
 
         @media (max-width: 1200px) {
@@ -610,9 +608,6 @@
 
         @media (max-width: 1000px) {
             .cards {
-                grid-template-columns: repeat(3, 1fr);
-            }
-            .quick-banners {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
@@ -939,14 +934,10 @@
 <!-- ===== 主体布局 ===== -->
 <div class="layout">
 
-    <!-- 左侧竖排导航 -->
+    <!-- 左侧竖排导航（已删除热门推荐） -->
     <aside class="sidebar">
         <nav class="sidebar-nav">
-            <a href="#" class="active">
-                <svg viewBox="0 0 24 24"><path d="M12 2l3 6 6 .9-4.5 4.3 1.1 6.3L12 16.5 6.4 19.5l1.1-6.3L3 8.9 9 8z"/></svg>
-                热门推荐
-            </a>
-            <a href="#ai">
+            <a href="#ai" class="active">
                 <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.2 4.2l2.8 2.8M17 17l2.8 2.8M1 12h4M19 12h4M4.2 19.8l2.8-2.8M17 7l2.8-2.8"/></svg>
                 AI工具库
             </a>
@@ -988,11 +979,10 @@
     <!-- 右侧主内容 -->
     <div class="main-wrapper">
 
-        <!-- 移动端顶部横排导航 -->
+        <!-- 移动端顶部横排导航（已删除热门推荐） -->
         <div class="mobile-topbar">
             <div class="mobile-nav">
-                <a href="#" class="active">热门推荐</a>
-                <a href="#ai">AI工具库</a>
+                <a href="#ai" class="active">AI工具库</a>
                 <a href="#movie">免费影视</a>
                 <a href="#learning">学习网站</a>
                 <a href="#tools">工具网站</a>
@@ -1004,7 +994,7 @@
             </div>
         </div>
 
-        <!-- 快捷入口 banner（顶部 5 个白卡） -->
+        <!-- 快捷入口 banner -->
         <div class="quick-banners">
             <a class="quick-banner" href="https://www.monkeycode.com" target="_blank" rel="noopener">
                 <img src="https://favicon.im/monkeycode.com" alt="MonkeyCode" loading="lazy">
@@ -1030,186 +1020,7 @@
 
         <main>
 
-            <!-- 影视 -->
-            <section class="section" id="movie">
-                <div class="section-head">
-                    <h2>
-                        <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
-                        免费影视
-                    </h2>
-                    <div class="section-tabs" data-tabs="movie">
-                        <a href="javascript:void(0)" class="active" data-panel="panel-online">在线观影</a>
-                        <a href="javascript:void(0)" data-panel="panel-drama">免费短剧</a>
-                        <a href="javascript:void(0)" data-panel="panel-anime">动漫网站</a>
-                        <a href="javascript:void(0)" data-panel="panel-doc">看纪录片</a>
-                    </div>
-                </div>
-
-                <div class="tab-panel active" id="panel-online" data-tab-group="movie">
-                    <div class="cards">
-                        <a class="card" href="https://gaze.red/" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/gaze.red" alt="注视影视" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>注视影视</h3>
-                                <p>在线观影平台</p>
-                            </div>
-                        </a>
-                        <a class="card" href="https://www.novipnoad.uk/" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/novipnoad.uk" alt="No视频" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>No视频</h3>
-                                <p>免费在线影视</p>
-                            </div>
-                        </a>
-                        <a class="card" href="https://juok3.top/" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/juok3.top" alt="剧OK" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>剧OK</h3>
-                                <p>影视在线观看</p>
-                            </div>
-                        </a>
-                        <a class="card" href="https://www.cz4k.com/" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/cz4k.com" alt="厂长资源" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>厂长资源</h3>
-                                <p>高清影视资源</p>
-                            </div>
-                        </a>
-                        <a class="card" href="https://www.xiguadh.com/" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/xiguadh.com" alt="西瓜影院" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>西瓜影院</h3>
-                                <p>免费在线影院</p>
-                            </div>
-                        </a>
-                        <a class="card" href="https://hanju99.cc/" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/hanju99.cc" alt="韩剧99" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>韩剧99</h3>
-                                <p>韩剧在线观看</p>
-                            </div>
-                        </a>
-                        <a class="card" href="https://hanju51.com/" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/hanju51.com" alt="韩剧网" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>韩剧网</h3>
-                                <p>看韩剧就上韩剧网</p>
-                            </div>
-                        </a>
-                        <a class="card" href="https://kpkuang.fyi/" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/kpkuang.fyi" alt="看片狂人" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>看片狂人</h3>
-                                <p>免费在线影视</p>
-                            </div>
-                        </a>
-                        <a class="card" href="https://wakp.xin/" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/wakp.xin" alt="挂片" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>挂片</h3>
-                                <p>在线影视网站</p>
-                            </div>
-                        </a>
-                        <a class="card" href="https://zlys9.top/" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/zlys9.top" alt="真狼影视" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>真狼影视</h3>
-                                <p>免费影视资源</p>
-                            </div>
-                        </a>
-                        <a class="card" href="https://www.deeyy.com/" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/deeyy.com" alt="DEE影院" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>DEE影院</h3>
-                                <p>在线影院免费看</p>
-                            </div>
-                        </a>
-                        <a class="card" href="https://www.yayadaohang.com/site/qqys01" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/yayadaohang.com" alt="千干影视" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>千干影视</h3>
-                                <p>影视导航站</p>
-                            </div>
-                        </a>
-                        <a class="card" href="https://www.xhkan.top/" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/xhkan.top" alt="星河影视" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>星河影视</h3>
-                                <p>在线影视平台</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="tab-panel" id="panel-drama" data-tab-group="movie">
-                    <div class="cards">
-                        <a class="card" href="https://kanju2.ai/" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/kanju2.ai" alt="看剧AI" loading="lazy"></div>
-                            <div class="card-body"><h3>看剧AI</h3><p>AI 智能短剧</p></div>
-                        </a>
-                        <a class="card" href="https://hongguoduanju.com/?ref=www.sbrdh.com" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/hongguoduanju.com" alt="红果短剧" loading="lazy"></div>
-                            <div class="card-body"><h3>红果短剧</h3><p>免费短剧平台</p></div>
-                        </a>
-                        <a class="card" href="https://trieuvieclam.com/" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/trieuvieclam.com" alt="短剧" loading="lazy"></div>
-                            <div class="card-body"><h3>短剧</h3><p>免费短剧在线看</p></div>
-                        </a>
-                        <a class="card" href="https://www.xpxxo.net/" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/xpxxo.net" alt="云短剧" loading="lazy"></div>
-                            <div class="card-body"><h3>云短剧</h3><p>云短剧平台</p></div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="tab-panel" id="panel-anime" data-tab-group="movie">
-                    <div class="cards">
-                        <a class="card" href="https://www.bimiacg14.net/" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/bimiacg14.net" alt="哔咪动漫" loading="lazy"></div>
-                            <div class="card-body"><h3>哔咪动漫</h3><p>海量动漫资源</p></div>
-                        </a>
-                        <a class="card" href="https://www.yinghuacd.com/" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/yinghuacd.com" alt="樱花动漫" loading="lazy"></div>
-                            <div class="card-body"><h3>樱花动漫</h3><p>专注动漫门户</p></div>
-                        </a>
-                        <a class="card" href="https://www.995dm.com/" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/995dm.com" alt="久久动漫" loading="lazy"></div>
-                            <div class="card-body"><h3>久久动漫</h3><p>免费在线观看</p></div>
-                        </a>
-                        <a class="card" href="https://cn.agekkkk.com/" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/agekkkk.com" alt="4K动漫" loading="lazy"></div>
-                            <div class="card-body"><h3>4K动漫</h3><p>高清在线观看</p></div>
-                        </a>
-                        <a class="card" href="https://www.acfun.cn/" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/acfun.cn" alt="AcFun" loading="lazy"></div>
-                            <div class="card-body"><h3>AcFun</h3><p>二次元动漫社区</p></div>
-                        </a>
-                        <a class="card" href="https://www.2rk.cc/" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/2rk.cc" alt="二矿动漫" loading="lazy"></div>
-                            <div class="card-body"><h3>二矿动漫</h3><p>动漫爱好者选择</p></div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="tab-panel" id="panel-doc" data-tab-group="movie">
-                    <div class="cards">
-                        <a class="card" href="http://www.docuchina.cn/" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/docuchina.cn" alt="中国纪录片网" loading="lazy"></div>
-                            <div class="card-body"><h3>中国纪录片网</h3><p>官方纪录片平台</p></div>
-                        </a>
-                        <a class="card" href="https://tv.cctv.com/yxg/index.shtml" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/cctv.com" alt="CCTV纪录片" loading="lazy"></div>
-                            <div class="card-body"><h3>CCTV纪录片</h3><p>优秀国产纪录片</p></div>
-                        </a>
-                        <a class="card" href="https://www.youku.com/ku/webjilupian" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/youku.com" alt="优酷纪录片" loading="lazy"></div>
-                            <div class="card-body"><h3>优酷纪录片</h3><p>海量纪录片观看</p></div>
-                        </a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- AI -->
+            <!-- AI（放第一位） -->
             <section class="section" id="ai">
                 <div class="section-head">
                     <h2>
@@ -1244,7 +1055,7 @@
 
                 <div class="tab-panel" id="panel-ai-comic" data-tab-group="ai">
                     <div class="cards">
-                        <a class="card" href="https://xyq.jianying.com/?utm_medium=paidads&utm_source=aitools&utm_campaign=hw_xyq_aikit" target="_blank" rel="noopener">
+                        <a class="card" href="https://xyq.jianying.com/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/jianying.com" alt="小云雀" loading="lazy"></div>
                             <div class="card-body"><h3>小云雀</h3><p>抖音 AI 短剧创作</p></div>
                         </a>
@@ -1346,6 +1157,146 @@
                         <a class="card" href="https://create.qianwen.com/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/qianwen.com" alt="千问" loading="lazy"></div>
                             <div class="card-body"><h3>千问</h3><p>智能生成图片内容</p></div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 影视 -->
+            <section class="section" id="movie">
+                <div class="section-head">
+                    <h2>
+                        <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+                        免费影视
+                    </h2>
+                    <div class="section-tabs" data-tabs="movie">
+                        <a href="javascript:void(0)" class="active" data-panel="panel-online">在线观影</a>
+                        <a href="javascript:void(0)" data-panel="panel-drama">免费短剧</a>
+                        <a href="javascript:void(0)" data-panel="panel-anime">动漫网站</a>
+                        <a href="javascript:void(0)" data-panel="panel-doc">看纪录片</a>
+                    </div>
+                </div>
+
+                <div class="tab-panel active" id="panel-online" data-tab-group="movie">
+                    <div class="cards">
+                        <a class="card" href="https://gaze.red/" target="_blank" rel="noopener">
+                            <div class="card-icon"><img src="https://favicon.im/gaze.red" alt="注视影视" loading="lazy"></div>
+                            <div class="card-body"><h3>注视影视</h3><p>在线观影平台</p></div>
+                        </a>
+                        <a class="card" href="https://www.novipnoad.uk/" target="_blank" rel="noopener">
+                            <div class="card-icon"><img src="https://favicon.im/novipnoad.uk" alt="No视频" loading="lazy"></div>
+                            <div class="card-body"><h3>No视频</h3><p>免费在线影视</p></div>
+                        </a>
+                        <a class="card" href="https://juok3.top/" target="_blank" rel="noopener">
+                            <div class="card-icon"><img src="https://favicon.im/juok3.top" alt="剧OK" loading="lazy"></div>
+                            <div class="card-body"><h3>剧OK</h3><p>影视在线观看</p></div>
+                        </a>
+                        <a class="card" href="https://www.cz4k.com/" target="_blank" rel="noopener">
+                            <div class="card-icon"><img src="https://favicon.im/cz4k.com" alt="厂长资源" loading="lazy"></div>
+                            <div class="card-body"><h3>厂长资源</h3><p>高清影视资源</p></div>
+                        </a>
+                        <a class="card" href="https://www.xiguadh.com/" target="_blank" rel="noopener">
+                            <div class="card-icon"><img src="https://favicon.im/xiguadh.com" alt="西瓜影院" loading="lazy"></div>
+                            <div class="card-body"><h3>西瓜影院</h3><p>免费在线影院</p></div>
+                        </a>
+                        <a class="card" href="https://hanju99.cc/" target="_blank" rel="noopener">
+                            <div class="card-icon"><img src="https://favicon.im/hanju99.cc" alt="韩剧99" loading="lazy"></div>
+                            <div class="card-body"><h3>韩剧99</h3><p>韩剧在线观看</p></div>
+                        </a>
+                        <a class="card" href="https://hanju51.com/" target="_blank" rel="noopener">
+                            <div class="card-icon"><img src="https://favicon.im/hanju51.com" alt="韩剧网" loading="lazy"></div>
+                            <div class="card-body"><h3>韩剧网</h3><p>看韩剧就上韩剧网</p></div>
+                        </a>
+                        <a class="card" href="https://kpkuang.fyi/" target="_blank" rel="noopener">
+                            <div class="card-icon"><img src="https://favicon.im/kpkuang.fyi" alt="看片狂人" loading="lazy"></div>
+                            <div class="card-body"><h3>看片狂人</h3><p>免费在线影视</p></div>
+                        </a>
+                        <a class="card" href="https://wakp.xin/" target="_blank" rel="noopener">
+                            <div class="card-icon"><img src="https://favicon.im/wakp.xin" alt="挂片" loading="lazy"></div>
+                            <div class="card-body"><h3>挂片</h3><p>在线影视网站</p></div>
+                        </a>
+                        <a class="card" href="https://zlys9.top/" target="_blank" rel="noopener">
+                            <div class="card-icon"><img src="https://favicon.im/zlys9.top" alt="真狼影视" loading="lazy"></div>
+                            <div class="card-body"><h3>真狼影视</h3><p>免费影视资源</p></div>
+                        </a>
+                        <a class="card" href="https://www.deeyy.com/" target="_blank" rel="noopener">
+                            <div class="card-icon"><img src="https://favicon.im/deeyy.com" alt="DEE影院" loading="lazy"></div>
+                            <div class="card-body"><h3>DEE影院</h3><p>在线影院免费看</p></div>
+                        </a>
+                        <a class="card" href="https://www.yayadaohang.com/site/qqys01" target="_blank" rel="noopener">
+                            <div class="card-icon"><img src="https://favicon.im/yayadaohang.com" alt="千干影视" loading="lazy"></div>
+                            <div class="card-body"><h3>千干影视</h3><p>影视导航站</p></div>
+                        </a>
+                        <a class="card" href="https://www.xhkan.top/" target="_blank" rel="noopener">
+                            <div class="card-icon"><img src="https://favicon.im/xhkan.top" alt="星河影视" loading="lazy"></div>
+                            <div class="card-body"><h3>星河影视</h3><p>在线影视平台</p></div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="panel-drama" data-tab-group="movie">
+                    <div class="cards">
+                        <a class="card" href="https://kanju2.ai/" target="_blank" rel="noopener">
+                            <div class="card-icon"><img src="https://favicon.im/kanju2.ai" alt="看剧AI" loading="lazy"></div>
+                            <div class="card-body"><h3>看剧AI</h3><p>AI 智能短剧</p></div>
+                        </a>
+                        <a class="card" href="https://hongguoduanju.com/" target="_blank" rel="noopener">
+                            <div class="card-icon"><img src="https://favicon.im/hongguoduanju.com" alt="红果短剧" loading="lazy"></div>
+                            <div class="card-body"><h3>红果短剧</h3><p>免费短剧平台</p></div>
+                        </a>
+                        <a class="card" href="https://trieuvieclam.com/" target="_blank" rel="noopener">
+                            <div class="card-icon"><img src="https://favicon.im/trieuvieclam.com" alt="短剧" loading="lazy"></div>
+                            <div class="card-body"><h3>短剧</h3><p>免费短剧在线看</p></div>
+                        </a>
+                        <a class="card" href="https://www.xpxxo.net/" target="_blank" rel="noopener">
+                            <div class="card-icon"><img src="https://favicon.im/xpxxo.net" alt="云短剧" loading="lazy"></div>
+                            <div class="card-body"><h3>云短剧</h3><p>云短剧平台</p></div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="panel-anime" data-tab-group="movie">
+                    <div class="cards">
+                        <a class="card" href="https://www.bimiacg14.net/" target="_blank" rel="noopener">
+                            <div class="card-icon"><img src="https://favicon.im/bimiacg14.net" alt="哔咪动漫" loading="lazy"></div>
+                            <div class="card-body"><h3>哔咪动漫</h3><p>海量动漫资源</p></div>
+                        </a>
+                        <a class="card" href="https://www.yinghuacd.com/" target="_blank" rel="noopener">
+                            <div class="card-icon"><img src="https://favicon.im/yinghuacd.com" alt="樱花动漫" loading="lazy"></div>
+                            <div class="card-body"><h3>樱花动漫</h3><p>专注动漫门户</p></div>
+                        </a>
+                        <a class="card" href="https://www.995dm.com/" target="_blank" rel="noopener">
+                            <div class="card-icon"><img src="https://favicon.im/995dm.com" alt="久久动漫" loading="lazy"></div>
+                            <div class="card-body"><h3>久久动漫</h3><p>免费在线观看</p></div>
+                        </a>
+                        <a class="card" href="https://cn.agekkkk.com/" target="_blank" rel="noopener">
+                            <div class="card-icon"><img src="https://favicon.im/agekkkk.com" alt="4K动漫" loading="lazy"></div>
+                            <div class="card-body"><h3>4K动漫</h3><p>高清在线观看</p></div>
+                        </a>
+                        <a class="card" href="https://www.acfun.cn/" target="_blank" rel="noopener">
+                            <div class="card-icon"><img src="https://favicon.im/acfun.cn" alt="AcFun" loading="lazy"></div>
+                            <div class="card-body"><h3>AcFun</h3><p>二次元动漫社区</p></div>
+                        </a>
+                        <a class="card" href="https://www.2rk.cc/" target="_blank" rel="noopener">
+                            <div class="card-icon"><img src="https://favicon.im/2rk.cc" alt="二矿动漫" loading="lazy"></div>
+                            <div class="card-body"><h3>二矿动漫</h3><p>动漫爱好者选择</p></div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="panel-doc" data-tab-group="movie">
+                    <div class="cards">
+                        <a class="card" href="http://www.docuchina.cn/" target="_blank" rel="noopener">
+                            <div class="card-icon"><img src="https://favicon.im/docuchina.cn" alt="中国纪录片网" loading="lazy"></div>
+                            <div class="card-body"><h3>中国纪录片网</h3><p>官方纪录片平台</p></div>
+                        </a>
+                        <a class="card" href="https://tv.cctv.com/yxg/index.shtml" target="_blank" rel="noopener">
+                            <div class="card-icon"><img src="https://favicon.im/cctv.com" alt="CCTV纪录片" loading="lazy"></div>
+                            <div class="card-body"><h3>CCTV纪录片</h3><p>优秀国产纪录片</p></div>
+                        </a>
+                        <a class="card" href="https://www.youku.com/ku/webjilupian" target="_blank" rel="noopener">
+                            <div class="card-icon"><img src="https://favicon.im/youku.com" alt="优酷纪录片" loading="lazy"></div>
+                            <div class="card-body"><h3>优酷纪录片</h3><p>海量纪录片观看</p></div>
                         </a>
                     </div>
                 </div>
@@ -1513,7 +1464,7 @@
                             <div class="card-body"><h3>My IELTS</h3><p>雅思学习备考</p></div>
                         </a>
                         <a class="card" href="https://heeee.com/yingyucihui.html" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/heeee.com" alt="英语词汇记忆" loading="lazy"></div>
+                            <div class="card-icon"><img src="https://favicon.im/heeee.com" alt="英语词汇" loading="lazy"></div>
                             <div class="card-body"><h3>英语词汇记忆挑战</h3><p>趣味背单词</p></div>
                         </a>
                         <a class="card" href="https://heeee.com/dancixiaoxiaole.html" target="_blank" rel="noopener">
