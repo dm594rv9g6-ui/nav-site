@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>三小仙 · 实用网站导航</title>
     <meta name="description" content="三小仙，一个发现好用 AI、工具、学习、软件、设计、开发、娱乐和搞钱网站的综合导航平台。">
-    <meta name="theme-color" content="#0b0b10">
+    <meta name="theme-color" content="#17171f">
     <style>
-        /* ===== 黑色主题基础 ===== */
+        /* ===== 基础 ===== */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -22,9 +22,9 @@
 
         body {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-            background: #0b0b10;
-            color: #e6e6f0;
-            line-height: 1.5;
+            background: #17171f;
+            color: #d8d8e0;
+            line-height: 1.45;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             display: flex;
@@ -36,75 +36,101 @@
         a {
             text-decoration: none;
             color: inherit;
-            transition: all 0.2s ease;
+            transition: all 0.15s ease;
         }
 
-        /* ===== 顶部固定栏 ===== */
+        /* ===== 顶部栏（参考截图：紧凑、左 Logo + 中间导航 + 右侧功能） ===== */
         .top-bar {
-            background: #0e0e16;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            padding: 0 18px;
-            height: 48px;
+            background: #17171f;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 0 20px;
+            height: 58px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             position: sticky;
             top: 0;
             z-index: 300;
-            font-size: 13px;
-            gap: 12px;
+            gap: 16px;
         }
 
         .top-bar-left {
             display: flex;
             align-items: center;
-            gap: 14px;
+            gap: 18px;
             min-width: 0;
         }
 
         .top-bar-logo {
-            font-size: 18px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            background: linear-gradient(135deg, #ffffff, #b0b0d0);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 8px;
             flex-shrink: 0;
+        }
+
+        .top-bar-logo-mark {
+            width: 30px;
+            height: 30px;
+            border-radius: 7px;
+            background: linear-gradient(135deg, #6a6aff, #a855f7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            font-weight: 800;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        .top-bar-logo-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .top-bar-logo-text .name {
+            font-size: 15px;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: 0.3px;
+        }
+
+        .top-bar-logo-text .domain {
+            font-size: 10px;
+            color: #6a6a80;
+            letter-spacing: 0.3px;
         }
 
         .top-bar-links {
             display: flex;
             align-items: center;
-            gap: 1px;
+            gap: 2px;
         }
 
         .top-bar-links a {
             display: flex;
             align-items: center;
-            gap: 4px;
-            color: #c0c0d5;
-            padding: 5px 8px;
-            border-radius: 5px;
+            gap: 5px;
+            color: #b8b8cc;
+            padding: 7px 12px;
+            border-radius: 6px;
             font-weight: 500;
             white-space: nowrap;
-            font-size: 12.5px;
-            transition: background 0.18s, color 0.18s;
+            font-size: 13px;
         }
 
         .top-bar-links a:hover {
-            background: rgba(255, 255, 255, 0.08);
-            color: #ffffff;
+            background: rgba(255, 255, 255, 0.06);
+            color: #fff;
         }
 
         .top-bar-links a svg {
-            width: 13px;
-            height: 13px;
+            width: 15px;
+            height: 15px;
             flex-shrink: 0;
             stroke: currentColor;
             fill: none;
-            stroke-width: 1.8;
+            stroke-width: 1.9;
             stroke-linecap: round;
             stroke-linejoin: round;
         }
@@ -112,44 +138,47 @@
         .top-bar-right {
             display: flex;
             align-items: center;
-            gap: 1px;
+            gap: 2px;
             flex-shrink: 0;
         }
 
         .top-bar-right a {
             display: flex;
             align-items: center;
-            gap: 4px;
-            color: #c0c0d5;
-            padding: 5px 8px;
-            border-radius: 5px;
+            gap: 5px;
+            color: #b8b8cc;
+            padding: 6px 10px;
+            border-radius: 6px;
             font-weight: 500;
             white-space: nowrap;
-            font-size: 12.5px;
-            transition: background 0.18s, color 0.18s;
+            font-size: 13px;
         }
 
         .top-bar-right a:hover {
-            background: rgba(255, 255, 255, 0.08);
-            color: #ffffff;
+            background: rgba(255, 255, 255, 0.06);
+            color: #fff;
         }
 
         .top-bar-right a svg {
-            width: 13px;
-            height: 13px;
+            width: 14px;
+            height: 14px;
             flex-shrink: 0;
             stroke: currentColor;
             fill: none;
-            stroke-width: 1.8;
+            stroke-width: 1.9;
             stroke-linecap: round;
             stroke-linejoin: round;
         }
 
+        .top-bar-right .icon-search svg,
         .top-bar-right .icon-wechat svg {
             stroke: none;
             fill: currentColor;
-            width: 15px;
-            height: 15px;
+        }
+
+        .top-bar-right .icon-search {
+            font-size: 17px;
+            padding: 6px 10px;
         }
 
         /* ===== 主体布局 ===== */
@@ -159,22 +188,22 @@
             min-height: 0;
         }
 
-        /* ===== 左侧竖排导航 ===== */
+        /* ===== 左侧竖排导航（参考截图：图标 + 文字） ===== */
         .sidebar {
             position: fixed;
-            top: 48px;
+            top: 58px;
             left: 0;
-            width: 130px;
-            height: calc(100vh - 48px);
-            background: #0e0e16;
-            border-right: 1px solid rgba(255, 255, 255, 0.06);
+            width: 148px;
+            height: calc(100vh - 58px);
+            background: #17171f;
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
             display: flex;
             flex-direction: column;
             padding: 10px 0;
             z-index: 200;
             overflow-y: auto;
             scrollbar-width: thin;
-            scrollbar-color: #2a2a40 #0e0e16;
+            scrollbar-color: #2a2a3c #17171f;
         }
 
         .sidebar::-webkit-scrollbar {
@@ -182,26 +211,12 @@
         }
 
         .sidebar::-webkit-scrollbar-track {
-            background: #0e0e16;
+            background: #17171f;
         }
 
         .sidebar::-webkit-scrollbar-thumb {
-            background: #2a2a40;
+            background: #2a2a3c;
             border-radius: 10px;
-        }
-
-        .sidebar::-webkit-scrollbar-thumb:hover {
-            background: #3a3a5a;
-        }
-
-        .sidebar-title {
-            font-size: 10px;
-            font-weight: 600;
-            color: #5a5a75;
-            letter-spacing: 1.2px;
-            text-transform: uppercase;
-            padding: 0 16px 6px;
-            margin-bottom: 1px;
         }
 
         .sidebar-nav {
@@ -214,205 +229,139 @@
         .sidebar-nav a {
             display: flex;
             align-items: center;
-            font-size: 12.5px;
+            gap: 8px;
+            font-size: 13px;
             font-weight: 500;
-            color: #a6a6be;
-            padding: 7px 12px;
-            border-radius: 6px;
+            color: #9a9ab0;
+            padding: 9px 12px;
+            border-radius: 7px;
             background: transparent;
-            transition: all 0.15s ease;
             letter-spacing: 0.1px;
-            font-family: inherit;
             line-height: 1.3;
         }
 
         .sidebar-nav a:hover {
-            background: rgba(255, 255, 255, 0.07);
-            color: #ffffff;
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
         }
 
         .sidebar-nav a.active {
-            background: rgba(255, 255, 255, 0.1);
-            color: #ffffff;
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
             font-weight: 600;
         }
 
-        /* ===== 侧边栏辅助菜单 ===== */
-        .sidebar-aux {
-            margin-top: 10px;
-            padding: 10px 8px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.06);
-        }
-
-        .sidebar-aux-title {
-            font-size: 9px;
-            font-weight: 600;
-            color: #4a4a60;
-            letter-spacing: 1.2px;
-            text-transform: uppercase;
-            padding: 0 8px 5px;
-        }
-
-        .sidebar-aux-links {
-            display: flex;
-            flex-direction: column;
-            gap: 1px;
-        }
-
-        .sidebar-aux-links a {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 11px;
-            font-weight: 450;
-            color: #7a7a95;
-            padding: 5px 12px;
-            border-radius: 5px;
-            transition: all 0.15s ease;
-            letter-spacing: 0.1px;
-        }
-
-        .sidebar-aux-links a:hover {
-            background: rgba(255, 255, 255, 0.05);
-            color: #c0c0d5;
-        }
-
-        .sidebar-aux-links a svg {
-            width: 11px;
-            height: 11px;
+        .sidebar-nav a svg {
+            width: 16px;
+            height: 16px;
             flex-shrink: 0;
             stroke: currentColor;
             fill: none;
-            stroke-width: 1.8;
+            stroke-width: 1.7;
             stroke-linecap: round;
             stroke-linejoin: round;
+            opacity: 0.85;
         }
 
         /* ===== 右侧主内容区 ===== */
         .main-wrapper {
-            margin-left: 130px;
+            margin-left: 148px;
             flex: 1;
             min-width: 0;
         }
 
-        /* ===== Hero 区域（极简紧凑） ===== */
-        .hero {
+        /* ===== 快捷入口 banner（参考截图顶部 5 个白卡） ===== */
+        .quick-banners {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 14px 18px 10px;
+            padding: 14px 20px 8px;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 8px;
+        }
+
+        .quick-banner {
+            background: #23232e;
+            border-radius: 6px;
+            padding: 10px 12px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-            flex-wrap: wrap;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #d0d0e0;
+            transition: all 0.15s ease;
+            min-height: 44px;
         }
 
-        .hero-left {
-            display: flex;
-            align-items: baseline;
-            gap: 10px;
-            flex-wrap: wrap;
+        .quick-banner:hover {
+            background: #2a2a38;
+            color: #fff;
         }
 
-        .hero h1 {
-            font-size: 17px;
-            font-weight: 700;
-            letter-spacing: -0.2px;
-            color: #f0f0fa;
-            line-height: 1.2;
-        }
-
-        .hero p {
-            color: #6e6e88;
-            font-size: 11.5px;
-            font-weight: 400;
-        }
-
-        /* ===== 搜索框（传统风格，小尺寸） ===== */
-        .search-box {
-            position: relative;
+        .quick-banner img {
+            width: 20px;
+            height: 20px;
+            object-fit: contain;
+            border-radius: 4px;
             flex-shrink: 0;
         }
 
-        .search-box input {
-            width: 240px;
-            height: 32px;
-            border: 1px solid #2a2a3c;
-            border-radius: 7px;
-            padding: 0 12px;
-            font-size: 12px;
-            outline: none;
-            background: #14141f;
-            transition: border 0.2s, box-shadow 0.3s;
-            color: #e6e6f0;
-            font-weight: 450;
-        }
-
-        .search-box input::placeholder {
-            color: #5a5a75;
-            font-weight: 400;
-        }
-
-        .search-box input:focus {
-            border-color: #5a5a80;
-            box-shadow: 0 0 0 3px rgba(90, 90, 140, 0.15);
+        .quick-banner span {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         /* ===== 主体结构 ===== */
         main {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 0 18px 30px;
+            padding: 0 20px 40px;
         }
 
         .section {
-            margin-bottom: 18px;
-            scroll-margin-top: 50px;
+            margin-bottom: 16px;
+            scroll-margin-top: 70px;
         }
 
-        /* ===== 突出标题栏：板块标题 + 子导航 ===== */
+        /* ===== 板块标题（简洁版） ===== */
         .section-head {
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-bottom: 8px;
-            padding: 7px 10px;
-            background: linear-gradient(90deg, #171724 0%, #131320 60%, transparent 100%);
-            border-left: 2.5px solid #e8465a;
-            border-radius: 6px;
-            position: relative;
+            margin-bottom: 10px;
+            padding: 8px 2px;
             min-width: 0;
         }
 
-        .section-head::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, rgba(232, 70, 90, 0.4), rgba(232, 70, 90, 0.08), transparent);
-        }
-
         .section-head h2 {
-            font-size: 14px;
-            font-weight: 800;
-            letter-spacing: -0.1px;
-            color: #ffffff;
+            font-size: 15px;
+            font-weight: 700;
+            color: #f0f0fa;
             display: flex;
             align-items: center;
-            gap: 4px;
+            gap: 6px;
             flex-shrink: 0;
             white-space: nowrap;
             margin: 0;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
         }
 
-        /* 子导航栏：单行不换行 + 可横向滑动 + 隐藏滚动条 */
+        .section-head h2 svg {
+            width: 16px;
+            height: 16px;
+            stroke: #8a8aa5;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* 子导航栏：单行滑动 */
         .section-tabs {
             display: flex;
             align-items: center;
-            gap: 3px;
+            gap: 4px;
             flex-wrap: nowrap;
             flex: 1;
             min-width: 0;
@@ -421,10 +370,10 @@
             scrollbar-width: none;
             -ms-overflow-style: none;
             -webkit-overflow-scrolling: touch;
-            padding: 1px 1px;
+            padding: 1px;
             scroll-behavior: smooth;
-            mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 20px), transparent 100%);
-            -webkit-mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 20px), transparent 100%);
+            mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 24px), transparent 100%);
+            -webkit-mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 24px), transparent 100%);
         }
 
         .section-tabs::-webkit-scrollbar {
@@ -437,83 +386,84 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 11px;
+            padding: 4px 11px;
+            border-radius: 6px;
+            font-size: 12px;
             font-weight: 500;
-            color: #9a9ab5;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            color: #8a8aa5;
+            background: transparent;
+            border: 1px solid transparent;
             white-space: nowrap;
-            transition: all 0.15s ease;
-            letter-spacing: 0.1px;
             cursor: pointer;
-            line-height: 1.6;
+            line-height: 1.5;
             flex-shrink: 0;
+            position: relative;
         }
 
         .section-tabs a:hover {
-            color: #ffffff;
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.15);
+            color: #d0d0e0;
+            background: rgba(255, 255, 255, 0.04);
         }
 
         .section-tabs a.active {
-            color: #ffffff;
-            background: #e8465a;
-            border-color: #e8465a;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.06);
             font-weight: 600;
-            box-shadow: 0 2px 8px rgba(232, 70, 90, 0.35);
         }
 
-        /* ===== 卡片网格（参照图片风格：更紧凑的小卡片） ===== */
+        .section-tabs a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 18px;
+            height: 2px;
+            background: #e8465a;
+            border-radius: 2px;
+        }
+
+        /* ===== 卡片网格（参考截图：卡片紧凑、图标左、文字右） ===== */
         .cards {
             display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 5px;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 8px;
         }
 
         .card {
-            background: #14141f;
-            border: 1px solid #1e1e30;
-            border-radius: 6px;
-            padding: 8px 10px;
-            transition: all 0.15s ease;
+            background: #23232e;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            padding: 10px 12px;
             display: flex;
             align-items: center;
-            gap: 8px;
-            min-height: 46px;
+            gap: 10px;
+            min-height: 56px;
+            transition: all 0.15s ease;
             overflow: hidden;
         }
 
         .card:hover {
-            border-color: #34345a;
-            background: #1a1a28;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+            background: #2a2a38;
+            border-color: rgba(255, 255, 255, 0.06);
+            transform: translateY(-1px);
         }
 
         .card-icon {
-            width: 26px;
-            height: 26px;
-            border-radius: 6px;
-            background: #1e1e30;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: #1a1a24;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 14px;
             flex-shrink: 0;
-            transition: background 0.2s;
             overflow: hidden;
         }
 
-        .card:hover .card-icon {
-            background: #26263f;
-        }
-
-        /* 自动加载的真实网站图标 */
         .card-icon img {
-            width: 20px;
-            height: 20px;
+            width: 22px;
+            height: 22px;
             object-fit: contain;
             display: block;
             border-radius: 4px;
@@ -524,14 +474,13 @@
             min-width: 0;
             display: flex;
             flex-direction: column;
-            gap: 1px;
+            gap: 2px;
         }
 
         .card h3 {
-            font-size: 11.5px;
+            font-size: 13px;
             font-weight: 600;
-            letter-spacing: -0.1px;
-            color: #e8e8f5;
+            color: #e8e8f0;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -539,8 +488,8 @@
         }
 
         .card p {
-            color: #6e6e88;
-            font-size: 10px;
+            color: #7a7a90;
+            font-size: 11px;
             line-height: 1.3;
             font-weight: 400;
             white-space: nowrap;
@@ -563,82 +512,57 @@
 
         /* ===== 搞钱专区 ===== */
         .money {
-            background: #0d0d14;
+            background: #1c1c26;
             border-radius: 10px;
-            padding: 12px 12px 10px;
-            color: #fff;
-            border: 1px solid #1a1a2a;
-        }
-
-        .money .section-head {
-            background: linear-gradient(90deg, #1e1e2e 0%, #181826 60%, transparent 100%);
-            border-left-color: #f5a623;
-        }
-
-        .money .section-head::after {
-            background: linear-gradient(90deg, rgba(245, 166, 35, 0.4), rgba(245, 166, 35, 0.08), transparent);
+            padding: 14px 14px 12px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
         }
 
         .money .section-head h2 {
-            color: #ffffff;
+            color: #fff;
         }
 
         .money .cards {
-            margin-top: 8px;
+            margin-top: 10px;
         }
 
         .money .card {
-            background: #111119;
-            border-color: #1e1e30;
+            background: #23232e;
         }
 
         .money .card:hover {
-            border-color: #3a3a5a;
-            background: #151522;
-        }
-
-        .money .card-icon {
-            background: #1a1a2a;
-        }
-
-        .money .card h3 {
-            color: #f0f0fa;
-        }
-
-        .money .card p {
-            color: #6e6e88;
+            background: #2a2a38;
         }
 
         /* ===== 底部 ===== */
         footer {
-            border-top: 1px solid #1a1a28;
-            background: #0b0b10;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            background: #17171f;
             text-align: center;
-            padding: 14px 14px;
-            color: #5a5a75;
-            font-size: 11px;
+            padding: 16px 14px;
+            color: #5a5a70;
+            font-size: 11.5px;
             font-weight: 400;
-            letter-spacing: 0.2px;
         }
 
         /* ===== 移动端顶部导航替代 ===== */
         .mobile-topbar {
             display: none;
             position: sticky;
-            top: 48px;
+            top: 58px;
             z-index: 250;
-            background: rgba(11, 11, 16, 0.92);
+            background: rgba(23, 23, 31, 0.95);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-            padding: 6px 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 8px 12px;
         }
 
         .mobile-nav {
             display: flex;
-            gap: 3px;
+            gap: 4px;
             overflow-x: auto;
-            padding-bottom: 2px;
+            padding-bottom: 3px;
             scrollbar-width: none;
             -ms-overflow-style: none;
             -webkit-overflow-scrolling: touch;
@@ -650,10 +574,10 @@
 
         .mobile-nav a {
             flex-shrink: 0;
-            font-size: 11px;
+            font-size: 12px;
             font-weight: 500;
-            color: #a6a6be;
-            padding: 3px 9px;
+            color: #9a9ab0;
+            padding: 5px 12px;
             border-radius: 30px;
             background: rgba(255, 255, 255, 0.04);
             white-space: nowrap;
@@ -661,26 +585,35 @@
 
         .mobile-nav a:hover,
         .mobile-nav a.active {
-            background: rgba(255, 255, 255, 0.12);
-            color: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
         }
 
         /* ===== 响应式 ===== */
         @media (max-width: 1400px) {
             .cards {
-                grid-template-columns: repeat(6, 1fr);
+                grid-template-columns: repeat(5, 1fr);
+            }
+            .quick-banners {
+                grid-template-columns: repeat(5, 1fr);
             }
         }
 
         @media (max-width: 1200px) {
             .cards {
-                grid-template-columns: repeat(5, 1fr);
+                grid-template-columns: repeat(4, 1fr);
+            }
+            .quick-banners {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
         @media (max-width: 1000px) {
             .cards {
-                grid-template-columns: repeat(4, 1fr);
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .quick-banners {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
@@ -698,13 +631,9 @@
             }
 
             .top-bar {
-                padding: 0 12px;
-                height: 46px;
-                gap: 8px;
-            }
-
-            .top-bar-logo {
-                font-size: 17px;
+                padding: 0 14px;
+                height: 52px;
+                gap: 10px;
             }
 
             .top-bar-links a:nth-child(2),
@@ -712,116 +641,86 @@
                 display: none;
             }
 
-            .hero {
-                padding: 12px 14px 8px;
-            }
-
-            .hero h1 {
-                font-size: 15px;
-            }
-
-            .search-box input {
-                width: 100%;
-                min-width: 180px;
-            }
-
-            .hero-left {
-                flex: 1;
-            }
-
-            .search-box {
-                flex: 1;
-                max-width: 280px;
-            }
-
             main {
-                padding: 0 14px 22px;
+                padding: 0 14px 30px;
+            }
+
+            .quick-banners {
+                padding: 12px 14px 6px;
             }
 
             .sidebar {
-                top: 46px;
-                height: calc(100vh - 46px);
+                top: 52px;
+                height: calc(100vh - 52px);
             }
 
             .mobile-topbar {
-                top: 46px;
+                top: 52px;
             }
         }
 
-        /* ===== 手机端优化：保持和 PC 类似的多列紧凑排版 ===== */
+        /* ===== 手机端：2 列紧凑卡片 ===== */
         @media (max-width: 700px) {
             .top-bar {
-                padding: 0 10px;
-                height: 44px;
-                gap: 6px;
-            }
-
-            .top-bar-logo {
-                font-size: 16px;
-            }
-
-            .top-bar-links a {
-                padding: 4px 6px;
-                font-size: 11.5px;
-            }
-
-            .top-bar-right a {
-                padding: 4px 6px;
-                font-size: 11.5px;
-            }
-
-            .top-bar-links a svg,
-            .top-bar-right a svg {
-                width: 13px;
-                height: 13px;
-            }
-
-            .mobile-topbar {
-                top: 44px;
-                padding: 5px 8px;
-            }
-
-            .mobile-nav {
-                gap: 2px;
-            }
-
-            .mobile-nav a {
-                font-size: 10.5px;
-                padding: 3px 8px;
-            }
-
-            .hero {
-                padding: 10px 10px 8px;
+                padding: 0 12px;
+                height: 50px;
                 gap: 8px;
             }
 
-            .hero-left {
-                gap: 6px;
-            }
-
-            .hero h1 {
-                font-size: 14px;
-            }
-
-            .hero p {
-                font-size: 10.5px;
-            }
-
-            .search-box {
-                max-width: none;
-                width: 100%;
-            }
-
-            .search-box input {
-                width: 100%;
-                height: 30px;
-                padding: 0 10px;
-                font-size: 11.5px;
+            .top-bar-logo-mark {
+                width: 26px;
+                height: 26px;
+                font-size: 13px;
                 border-radius: 6px;
             }
 
+            .top-bar-logo-text .name {
+                font-size: 14px;
+            }
+
+            .top-bar-logo-text .domain {
+                display: none;
+            }
+
+            .top-bar-links a {
+                padding: 5px 8px;
+                font-size: 12px;
+            }
+
+            .top-bar-right a {
+                padding: 5px 7px;
+                font-size: 12px;
+            }
+
+            .mobile-topbar {
+                top: 50px;
+                padding: 6px 10px;
+            }
+
+            .mobile-nav a {
+                font-size: 11.5px;
+                padding: 4px 10px;
+            }
+
             main {
-                padding: 0 8px 18px;
+                padding: 0 10px 20px;
+            }
+
+            .quick-banners {
+                padding: 10px 10px 4px;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 6px;
+            }
+
+            .quick-banner {
+                min-height: 40px;
+                padding: 8px 10px;
+                font-size: 11.5px;
+            }
+
+            .quick-banner img {
+                width: 18px;
+                height: 18px;
             }
 
             .section {
@@ -829,74 +728,65 @@
             }
 
             .section-head {
-                gap: 6px;
-                margin-bottom: 6px;
-                padding: 6px 8px;
-                border-left-width: 2.5px;
-                border-radius: 5px;
+                gap: 8px;
+                margin-bottom: 8px;
+                padding: 4px 2px;
             }
 
             .section-head h2 {
-                font-size: 12.5px;
-                gap: 3px;
+                font-size: 13.5px;
             }
 
-            .section-tabs {
-                gap: 2px;
+            .section-head h2 svg {
+                width: 14px;
+                height: 14px;
             }
 
             .section-tabs a {
-                padding: 1px 6px;
-                font-size: 10px;
-                border-radius: 3px;
+                padding: 3px 9px;
+                font-size: 11px;
+                border-radius: 5px;
             }
 
-            /* 手机端也是 2 列紧凑卡片，和 PC 保持一致的视觉语言 */
             .cards {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 4px;
+                gap: 6px;
             }
 
             .card {
-                padding: 7px 8px;
-                min-height: 42px;
-                gap: 6px;
-                border-radius: 5px;
+                padding: 9px 10px;
+                min-height: 52px;
+                gap: 8px;
+                border-radius: 7px;
             }
 
             .card-icon {
-                width: 22px;
-                height: 22px;
-                font-size: 12px;
-                border-radius: 5px;
+                width: 28px;
+                height: 28px;
+                border-radius: 7px;
             }
 
             .card-icon img {
-                width: 18px;
-                height: 18px;
-                border-radius: 3px;
+                width: 20px;
+                height: 20px;
             }
 
             .card h3 {
-                font-size: 11px;
+                font-size: 12px;
             }
 
             .card p {
-                font-size: 9.5px;
+                font-size: 10px;
             }
 
             .money {
-                padding: 10px 8px 8px;
+                padding: 12px 10px 10px;
                 border-radius: 8px;
             }
 
-            .money .cards {
-                margin-top: 6px;
-            }
-
             footer {
-                padding: 12px 10px;
-                font-size: 10.5px;
+                padding: 14px 12px;
+                font-size: 11px;
             }
         }
 
@@ -905,77 +795,86 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
+            .quick-banners {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
             .card {
-                padding: 6px 7px;
-                min-height: 40px;
-                gap: 5px;
+                padding: 8px 9px;
+                min-height: 48px;
+                gap: 6px;
             }
 
             .card-icon {
-                width: 20px;
-                height: 20px;
-                font-size: 11px;
+                width: 26px;
+                height: 26px;
             }
 
             .card-icon img {
-                width: 16px;
-                height: 16px;
+                width: 18px;
+                height: 18px;
             }
 
             .card h3 {
-                font-size: 10.5px;
+                font-size: 11.5px;
             }
 
             .card p {
-                font-size: 9px;
+                font-size: 9.5px;
             }
 
             .section-head h2 {
-                font-size: 12px;
+                font-size: 13px;
             }
 
             .section-tabs a {
-                padding: 1px 5px;
-                font-size: 9.5px;
+                padding: 2px 8px;
+                font-size: 10.5px;
             }
         }
 
-        /* 滚动条深色 */
+        /* 滚动条 */
         ::-webkit-scrollbar {
             width: 8px;
             height: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #0b0b10;
+            background: #17171f;
             border-radius: 10px;
         }
         ::-webkit-scrollbar-thumb {
-            background: #2a2a40;
+            background: #2a2a3c;
             border-radius: 10px;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #3a3a5a;
+            background: #3a3a50;
         }
 
         ::selection {
-            background: #2a2a50;
-            color: #ffffff;
+            background: #3a3a60;
+            color: #fff;
         }
 
         a:focus-visible {
             outline: 2px solid #5a5a90;
             outline-offset: 2px;
-            border-radius: 5px;
+            border-radius: 6px;
         }
     </style>
 </head>
 
 <body>
 
-<!-- ===== 顶部固定栏 ===== -->
+<!-- ===== 顶部栏 ===== -->
 <header class="top-bar">
     <div class="top-bar-left">
-        <div class="top-bar-logo">三小仙</div>
+        <div class="top-bar-logo">
+            <div class="top-bar-logo-mark">三</div>
+            <div class="top-bar-logo-text">
+                <span class="name">三小仙</span>
+                <span class="domain">sanxiaoxian.com</span>
+            </div>
+        </div>
         <nav class="top-bar-links">
             <a href="#">
                 <svg viewBox="0 0 24 24">
@@ -1022,10 +921,16 @@
             </svg>
             <span>视频</span>
         </a>
-        <a href="#" class="icon-wechat" aria-label="微信">
+        <a href="#" aria-label="微信">
             <svg viewBox="0 0 24 24">
                 <path d="M9.5 4C5.4 4 2 6.9 2 10.5c0 2 1 3.8 2.7 5L4 18l2.6-1.3c.9.3 1.9.4 2.9.4.3 0 .6 0 .9-.1-.2-.6-.3-1.2-.3-1.8 0-3.6 3.1-6.5 7-6.5.3 0 .6 0 .9.1C17.5 6 13.9 4 9.5 4z"/>
                 <path d="M22 15.5c0-2.8-2.7-5-6-5s-6 2.2-6 5 2.7 5 6 5c.7 0 1.4-.1 2-.3l1.8.9-.4-1.6c1.6-1 2.6-2.5 2.6-4z"/>
+            </svg>
+        </a>
+        <a href="#" class="icon-search" aria-label="搜索">
+            <svg viewBox="0 0 24 24">
+                <circle cx="11" cy="11" r="7"/>
+                <path d="M21 21l-4.35-4.35"/>
             </svg>
         </a>
     </div>
@@ -1036,65 +941,48 @@
 
     <!-- 左侧竖排导航 -->
     <aside class="sidebar">
-        <div class="sidebar-title">导航菜单</div>
         <nav class="sidebar-nav">
-            <a href="#" class="active">首页</a>
-            <a href="#movie">影视</a>
-            <a href="#ai">AI</a>
-            <a href="#tools">工具</a>
-            <a href="#learning">学习</a>
-            <a href="#software">软件</a>
-            <a href="#design">设计</a>
-            <a href="#development">开发</a>
-            <a href="#entertainment">娱乐</a>
-            <a href="#money">搞钱</a>
+            <a href="#" class="active">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3 6 6 .9-4.5 4.3 1.1 6.3L12 16.5 6.4 19.5l1.1-6.3L3 8.9 9 8z"/></svg>
+                热门推荐
+            </a>
+            <a href="#ai">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.2 4.2l2.8 2.8M17 17l2.8 2.8M1 12h4M19 12h4M4.2 19.8l2.8-2.8M17 7l2.8-2.8"/></svg>
+                AI工具库
+            </a>
+            <a href="#movie">
+                <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+                免费影视
+            </a>
+            <a href="#learning">
+                <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                学习网站
+            </a>
+            <a href="#tools">
+                <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                工具网站
+            </a>
+            <a href="#software">
+                <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                软件下载
+            </a>
+            <a href="#design">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
+                图片工具
+            </a>
+            <a href="#development">
+                <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                开发工具
+            </a>
+            <a href="#entertainment">
+                <svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4M8 10v4M15 12h.01M18 12h.01"/></svg>
+                娱乐网站
+            </a>
+            <a href="#money">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v12M15.5 9.5c-.5-1.5-2-2.5-3.5-2.5-1.9 0-3.5 1.3-3.5 3s1.6 3 3.5 3 3.5 1.3 3.5 3-1.6 3-3.5 3c-1.5 0-3-1-3.5-2.5"/></svg>
+                搞钱项目
+            </a>
         </nav>
-
-        <div class="sidebar-aux">
-            <div class="sidebar-aux-title">快捷功能</div>
-            <div class="sidebar-aux-links">
-                <a href="#">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M3 10.5L12 3l9 7.5"/>
-                        <path d="M5 9.5V21h14V9.5"/>
-                    </svg>
-                    返回首页
-                </a>
-                <a href="#">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
-                    </svg>
-                    意见反馈
-                </a>
-                <a href="#">
-                    <svg viewBox="0 0 24 24">
-                        <rect x="2" y="4" width="20" height="16" rx="2"/>
-                        <path d="M2 8l10 6 10-6"/>
-                    </svg>
-                    联系站长
-                </a>
-                <a href="#">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M3 10v4a1 1 0 0 0 1 1h2l4 4V5L6 9H4a1 1 0 0 0-1 1z"/>
-                        <path d="M15 8a4 4 0 0 1 0 8"/>
-                    </svg>
-                    站内公告
-                </a>
-                <a href="#">
-                    <svg viewBox="0 0 24 24">
-                        <circle cx="12" cy="12" r="9"/>
-                        <path d="M12 8v8M8 12h8"/>
-                    </svg>
-                    友情链接
-                </a>
-                <a href="#">
-                    <svg viewBox="0 0 24 24">
-                        <path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
-                    </svg>
-                    更新日志
-                </a>
-            </div>
-        </div>
     </aside>
 
     <!-- 右侧主内容 -->
@@ -1103,42 +991,52 @@
         <!-- 移动端顶部横排导航 -->
         <div class="mobile-topbar">
             <div class="mobile-nav">
-                <a href="#" class="active">首页</a>
-                <a href="#movie">影视</a>
-                <a href="#ai">AI</a>
-                <a href="#tools">工具</a>
-                <a href="#learning">学习</a>
-                <a href="#software">软件</a>
-                <a href="#design">设计</a>
-                <a href="#development">开发</a>
-                <a href="#entertainment">娱乐</a>
-                <a href="#money">搞钱</a>
+                <a href="#" class="active">热门推荐</a>
+                <a href="#ai">AI工具库</a>
+                <a href="#movie">免费影视</a>
+                <a href="#learning">学习网站</a>
+                <a href="#tools">工具网站</a>
+                <a href="#software">软件下载</a>
+                <a href="#design">图片工具</a>
+                <a href="#development">开发工具</a>
+                <a href="#entertainment">娱乐网站</a>
+                <a href="#money">搞钱项目</a>
             </div>
         </div>
 
-        <!-- 首页标题栏（极简） -->
-        <section class="hero">
-            <div class="hero-left">
-                <h1>发现好用的网站</h1>
-                <p>三小仙 · 简单好用的网站导航</p>
-            </div>
-            <div class="search-box">
-                <input
-                    type="text"
-                    id="searchInput"
-                    placeholder="搜索网站、工具、AI、学习资源..."
-                    onkeydown="searchWebsite(event)"
-                    aria-label="搜索网站"
-                >
-            </div>
-        </section>
+        <!-- 快捷入口 banner（顶部 5 个白卡） -->
+        <div class="quick-banners">
+            <a class="quick-banner" href="https://www.monkeycode.com" target="_blank" rel="noopener">
+                <img src="https://favicon.im/monkeycode.com" alt="MonkeyCode" loading="lazy">
+                <span>MonkeyCode-免费AI编程平台</span>
+            </a>
+            <a class="quick-banner" href="#ai" target="_self">
+                <img src="https://favicon.im/doubao.com" alt="AI工具" loading="lazy">
+                <span>免费AI工具大全</span>
+            </a>
+            <a class="quick-banner" href="#ai" target="_self">
+                <img src="https://favicon.im/islide.cc" alt="AI PPT" loading="lazy">
+                <span>AI免费生成PPT</span>
+            </a>
+            <a class="quick-banner" href="#" target="_self">
+                <img src="https://favicon.im/taobao.com" alt="潮牌" loading="lazy">
+                <span>莆田潮牌鞋服</span>
+            </a>
+            <a class="quick-banner" href="#tools" target="_self">
+                <img src="https://favicon.im/github.com" alt="下载工具" loading="lazy">
+                <span>全平台视频下载工具</span>
+            </a>
+        </div>
 
         <main>
 
             <!-- 影视 -->
             <section class="section" id="movie">
                 <div class="section-head">
-                    <h2>🎥 影视</h2>
+                    <h2>
+                        <svg viewBox="0 0 24 24"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+                        免费影视
+                    </h2>
                     <div class="section-tabs" data-tabs="movie">
                         <a href="javascript:void(0)" class="active" data-panel="panel-online">在线观影</a>
                         <a href="javascript:void(0)" data-panel="panel-drama">免费短剧</a>
@@ -1247,31 +1145,19 @@
                     <div class="cards">
                         <a class="card" href="https://kanju2.ai/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/kanju2.ai" alt="看剧AI" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>看剧AI</h3>
-                                <p>AI 智能短剧</p>
-                            </div>
+                            <div class="card-body"><h3>看剧AI</h3><p>AI 智能短剧</p></div>
                         </a>
                         <a class="card" href="https://hongguoduanju.com/?ref=www.sbrdh.com" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/hongguoduanju.com" alt="红果短剧" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>红果短剧</h3>
-                                <p>免费短剧平台</p>
-                            </div>
+                            <div class="card-body"><h3>红果短剧</h3><p>免费短剧平台</p></div>
                         </a>
                         <a class="card" href="https://trieuvieclam.com/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/trieuvieclam.com" alt="短剧" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>短剧</h3>
-                                <p>免费短剧在线看</p>
-                            </div>
+                            <div class="card-body"><h3>短剧</h3><p>免费短剧在线看</p></div>
                         </a>
                         <a class="card" href="https://www.xpxxo.net/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/xpxxo.net" alt="云短剧" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>云短剧</h3>
-                                <p>云短剧平台</p>
-                            </div>
+                            <div class="card-body"><h3>云短剧</h3><p>云短剧平台</p></div>
                         </a>
                     </div>
                 </div>
@@ -1280,45 +1166,27 @@
                     <div class="cards">
                         <a class="card" href="https://www.bimiacg14.net/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/bimiacg14.net" alt="哔咪动漫" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>哔咪动漫</h3>
-                                <p>海量动漫资源</p>
-                            </div>
+                            <div class="card-body"><h3>哔咪动漫</h3><p>海量动漫资源</p></div>
                         </a>
                         <a class="card" href="https://www.yinghuacd.com/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/yinghuacd.com" alt="樱花动漫" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>樱花动漫</h3>
-                                <p>专注动漫门户</p>
-                            </div>
+                            <div class="card-body"><h3>樱花动漫</h3><p>专注动漫门户</p></div>
                         </a>
                         <a class="card" href="https://www.995dm.com/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/995dm.com" alt="久久动漫" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>久久动漫</h3>
-                                <p>免费在线观看</p>
-                            </div>
+                            <div class="card-body"><h3>久久动漫</h3><p>免费在线观看</p></div>
                         </a>
                         <a class="card" href="https://cn.agekkkk.com/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/agekkkk.com" alt="4K动漫" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>4K动漫</h3>
-                                <p>高清在线观看</p>
-                            </div>
+                            <div class="card-body"><h3>4K动漫</h3><p>高清在线观看</p></div>
                         </a>
                         <a class="card" href="https://www.acfun.cn/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/acfun.cn" alt="AcFun" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>AcFun</h3>
-                                <p>二次元动漫社区</p>
-                            </div>
+                            <div class="card-body"><h3>AcFun</h3><p>二次元动漫社区</p></div>
                         </a>
                         <a class="card" href="https://www.2rk.cc/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/2rk.cc" alt="二矿动漫" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>二矿动漫</h3>
-                                <p>动漫爱好者选择</p>
-                            </div>
+                            <div class="card-body"><h3>二矿动漫</h3><p>动漫爱好者选择</p></div>
                         </a>
                     </div>
                 </div>
@@ -1327,24 +1195,15 @@
                     <div class="cards">
                         <a class="card" href="http://www.docuchina.cn/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/docuchina.cn" alt="中国纪录片网" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>中国纪录片网</h3>
-                                <p>官方纪录片平台</p>
-                            </div>
+                            <div class="card-body"><h3>中国纪录片网</h3><p>官方纪录片平台</p></div>
                         </a>
                         <a class="card" href="https://tv.cctv.com/yxg/index.shtml" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/cctv.com" alt="CCTV纪录片" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>CCTV纪录片</h3>
-                                <p>优秀国产纪录片</p>
-                            </div>
+                            <div class="card-body"><h3>CCTV纪录片</h3><p>优秀国产纪录片</p></div>
                         </a>
                         <a class="card" href="https://www.youku.com/ku/webjilupian" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/youku.com" alt="优酷纪录片" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>优酷纪录片</h3>
-                                <p>海量纪录片观看</p>
-                            </div>
+                            <div class="card-body"><h3>优酷纪录片</h3><p>海量纪录片观看</p></div>
                         </a>
                     </div>
                 </div>
@@ -1353,7 +1212,10 @@
             <!-- AI -->
             <section class="section" id="ai">
                 <div class="section-head">
-                    <h2>🤖 AI</h2>
+                    <h2>
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.2 4.2l2.8 2.8M17 17l2.8 2.8M1 12h4M19 12h4M4.2 19.8l2.8-2.8M17 7l2.8-2.8"/></svg>
+                        AI工具库
+                    </h2>
                     <div class="section-tabs" data-tabs="ai">
                         <a href="javascript:void(0)" class="active" data-panel="panel-ai-chat">对话</a>
                         <a href="javascript:void(0)" data-panel="panel-ai-comic">AI漫剧制作</a>
@@ -1367,24 +1229,15 @@
                     <div class="cards">
                         <a class="card" href="https://oai.oooai.cc/list/#/register?inviter=PUW386" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/oooai.cc" alt="GPT 国内直连" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>GPT 国内直连</h3>
-                                <p>ChatGPT 直连入口</p>
-                            </div>
+                            <div class="card-body"><h3>GPT 国内直连</h3><p>ChatGPT 直连入口</p></div>
                         </a>
                         <a class="card" href="https://www.doubao.com" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/doubao.com" alt="豆包" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>豆包</h3>
-                                <p>中文 AI 助手</p>
-                            </div>
+                            <div class="card-body"><h3>豆包</h3><p>中文 AI 助手</p></div>
                         </a>
                         <a class="card" href="https://www.deepseek.com" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/deepseek.com" alt="DeepSeek" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>DeepSeek</h3>
-                                <p>AI 对话推理编程</p>
-                            </div>
+                            <div class="card-body"><h3>DeepSeek</h3><p>AI 对话推理编程</p></div>
                         </a>
                     </div>
                 </div>
@@ -1393,172 +1246,106 @@
                     <div class="cards">
                         <a class="card" href="https://xyq.jianying.com/?utm_medium=paidads&utm_source=aitools&utm_campaign=hw_xyq_aikit" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/jianying.com" alt="小云雀" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>小云雀</h3>
-                                <p>抖音 AI 短剧创作</p>
-                            </div>
+                            <div class="card-body"><h3>小云雀</h3><p>抖音 AI 短剧创作</p></div>
                         </a>
-                        <a class="card" href="https://seko.sensetime.com/explore?cg_click_id=10128dcf-4d3f-4d23-9d63-a739e3468afd&cgv=j7n63zyn1g&utm=cg" target="_blank" rel="noopener">
+                        <a class="card" href="https://seko.sensetime.com/explore" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/sensetime.com" alt="Seko" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>Seko</h3>
-                                <p>商汤 AI 漫剧平台</p>
-                            </div>
+                            <div class="card-body"><h3>Seko</h3><p>商汤 AI 漫剧平台</p></div>
                         </a>
-                        <a class="card" href="https://www.updream.cn/?cg_click_id=2fd2e70e-2fa2-4600-96f3-7aa438ee3210&cgv=9we240xngo&utm=cg" target="_blank" rel="noopener">
+                        <a class="card" href="https://www.updream.cn/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/updream.cn" alt="Updream" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>Updream</h3>
-                                <p>AI 漫剧制作平台</p>
-                            </div>
+                            <div class="card-body"><h3>Updream</h3><p>AI 漫剧制作平台</p></div>
                         </a>
                         <a class="card" href="https://aw.jiaxunai.cn/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/jiaxunai.cn" alt="知漫剧" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>知漫剧</h3>
-                                <p>智能生成漫画短剧</p>
-                            </div>
+                            <div class="card-body"><h3>知漫剧</h3><p>智能生成漫画短剧</p></div>
                         </a>
                         <a class="card" href="https://aw.jiaxunai.cn/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/jiaxunai.cn" alt="蛙蛙漫剧" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>蛙蛙漫剧</h3>
-                                <p>轻松制作漫剧</p>
-                            </div>
+                            <div class="card-body"><h3>蛙蛙漫剧</h3><p>轻松制作漫剧</p></div>
                         </a>
                     </div>
                 </div>
 
                 <div class="tab-panel" id="panel-ai-ppt" data-tab-group="ai">
                     <div class="cards">
-                        <a class="card" href="https://www.islide.cc/?mtm_campaign=aikit-CZQD" target="_blank" rel="noopener">
+                        <a class="card" href="https://www.islide.cc/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/islide.cc" alt="iSlide PPT" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>iSlide PPT</h3>
-                                <p>AI PPT 生成工具</p>
-                            </div>
+                            <div class="card-body"><h3>iSlide PPT</h3><p>AI PPT 生成工具</p></div>
                         </a>
-                        <a class="card" href="https://zhiwen.xfyun.cn/home?from=aitool37" target="_blank" rel="noopener">
+                        <a class="card" href="https://zhiwen.xfyun.cn/home" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/xfyun.cn" alt="讯飞智文" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>讯飞智文</h3>
-                                <p>科大讯飞 AI PPT</p>
-                            </div>
+                            <div class="card-body"><h3>讯飞智文</h3><p>科大讯飞 AI PPT</p></div>
                         </a>
-                        <a class="card" href="https://www.cappt.cc/?mtm_campaign=CZQD-aikit-tg0030-100000" target="_blank" rel="noopener">
+                        <a class="card" href="https://www.cappt.cc/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/cappt.cc" alt="咔片PPT" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>咔片PPT</h3>
-                                <p>一键生成精美 PPT</p>
-                            </div>
+                            <div class="card-body"><h3>咔片PPT</h3><p>一键生成精美 PPT</p></div>
                         </a>
-                        <a class="card" href="https://www.gaoding.com/contents?q=PPT&hmsr=ai-kit-ai-kit-ppt--ppt-ppt-bdqd&utm_source=ai-kit" target="_blank" rel="noopener">
+                        <a class="card" href="https://www.gaoding.com/contents?q=PPT" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/gaoding.com" alt="稿定PPT" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>稿定PPT</h3>
-                                <p>海量模板快速出稿</p>
-                            </div>
+                            <div class="card-body"><h3>稿定PPT</h3><p>海量模板快速出稿</p></div>
                         </a>
-                        <a class="card" href="https://modao.cc/feature/aippt.html?utm_channel=wl&utm_source=referrals&utm_keyword=aikit" target="_blank" rel="noopener">
+                        <a class="card" href="https://modao.cc/feature/aippt.html" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/modao.cc" alt="墨刀AIPPT" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>墨刀AIPPT</h3>
-                                <p>智能生成演示文稿</p>
-                            </div>
+                            <div class="card-body"><h3>墨刀AIPPT</h3><p>智能生成演示文稿</p></div>
                         </a>
-                        <a class="card" href="https://modao.cc/feature/aippt.html?utm_channel=wl&utm_source=referrals&utm_keyword=aikit" target="_blank" rel="noopener">
+                        <a class="card" href="https://modao.cc/feature/aippt.html" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/modao.cc" alt="Gamma AI PPT" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>Gamma AI PPT</h3>
-                                <p>智能创作演示文稿</p>
-                            </div>
+                            <div class="card-body"><h3>Gamma AI PPT</h3><p>智能创作演示文稿</p></div>
                         </a>
                     </div>
                 </div>
 
                 <div class="tab-panel" id="panel-ai-paper" data-tab-group="ai">
                     <div class="cards">
-                        <a class="card" href="https://wawawriter.com/app/?cg_click_id=eeb3e297-2761-4d95-b9a9-180d9115e6f4&cgv=dqndmywn2z&utm=cg&utm_source=aiweb" target="_blank" rel="noopener">
+                        <a class="card" href="https://wawawriter.com/app/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/wawawriter.com" alt="蛙蛙写作" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>蛙蛙写作</h3>
-                                <p>AI 写作论文助手</p>
-                            </div>
+                            <div class="card-body"><h3>蛙蛙写作</h3><p>AI 写作论文助手</p></div>
                         </a>
-                        <a class="card" href="https://www.gaoding.com/image?hmsr=aikit-aikit-writer--writer-writer-bdqd&utm_source=aikit" target="_blank" rel="noopener">
+                        <a class="card" href="https://www.gaoding.com/image" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/gaoding.com" alt="稿定AI文案" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>稿定AI文案</h3>
-                                <p>智能生成文案</p>
-                            </div>
+                            <div class="card-body"><h3>稿定AI文案</h3><p>智能生成文案</p></div>
                         </a>
-                        <a class="card" href="https://www.xljsci.com/?channelCode=TvhaLa" target="_blank" rel="noopener">
+                        <a class="card" href="https://www.xljsci.com/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/xljsci.com" alt="小绿鲸" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>小绿鲸</h3>
-                                <p>AI 论文助手</p>
-                            </div>
+                            <div class="card-body"><h3>小绿鲸</h3><p>AI 论文助手</p></div>
                         </a>
                         <a class="card" href="https://www.ailw8.com/paper/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/ailw8.com" alt="零零AI论文助手" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>零零AI论文助手</h3>
-                                <p>辅助论文写作</p>
-                            </div>
+                            <div class="card-body"><h3>零零AI论文助手</h3><p>辅助论文写作</p></div>
                         </a>
-                        <a class="card" href="https://app.qinyanai.com/?sourceCode=mu17e8&land_id=fe6a0a67dee0f68ccb5f451fe020d5da" target="_blank" rel="noopener">
+                        <a class="card" href="https://app.qinyanai.com/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/qinyanai.com" alt="沁言学术" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>沁言学术</h3>
-                                <p>AI 论文写作助手</p>
-                            </div>
+                            <div class="card-body"><h3>沁言学术</h3><p>AI 论文写作助手</p></div>
                         </a>
                         <a class="card" href="https://www.gradpen.com/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/gradpen.com" alt="GradPeni论文" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>GradPeni论文</h3>
-                                <p>智能论文写作</p>
-                            </div>
+                            <div class="card-body"><h3>GradPeni论文</h3><p>智能论文写作</p></div>
                         </a>
                     </div>
                 </div>
 
                 <div class="tab-panel" id="panel-ai-image" data-tab-group="ai">
                     <div class="cards">
-                        <a class="card" href="https://www.gaoding.com/image?hmsr=aikit-aikit-image--image-image-bdqd&utm_source=aikit" target="_blank" rel="noopener">
+                        <a class="card" href="https://www.gaoding.com/image" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/gaoding.com" alt="稿定-AI绘画" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>稿定-AI绘画</h3>
-                                <p>智能生成图片插画</p>
-                            </div>
+                            <div class="card-body"><h3>稿定-AI绘画</h3><p>智能生成图片插画</p></div>
                         </a>
-                        <a class="card" href="https://jimeng.jianying.com/ai-tool/home/?utm_medium=aitools&utm_source=aijuhe&utm_campaign=null&utm_content=hw_jm_aijuhe1" target="_blank" rel="noopener">
+                        <a class="card" href="https://jimeng.jianying.com/ai-tool/home/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/jianying.com" alt="即梦AI" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>即梦AI</h3>
-                                <p>智能生成高质量图</p>
-                            </div>
+                            <div class="card-body"><h3>即梦AI</h3><p>智能生成高质量图</p></div>
                         </a>
-                        <a class="card" href="https://www.ihuiwa.com/invite?huiwaInviteCode=EU5UFL&catId=1" target="_blank" rel="noopener">
+                        <a class="card" href="https://www.ihuiwa.com/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/ihuiwa.com" alt="绘蛙-AI生图" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>绘蛙-AI生图</h3>
-                                <p>轻松生成图片素材</p>
-                            </div>
+                            <div class="card-body"><h3>绘蛙-AI生图</h3><p>轻松生成图片素材</p></div>
                         </a>
-                        <a class="card" href="https://www.xingliu.art/?cg_click_id=de32eabd-f32d-4a8a-bc13-5eb496cb7bde&cgv=rpexyo4k90&sourceid=005903&utm=cg" target="_blank" rel="noopener">
+                        <a class="card" href="https://www.xingliu.art/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/xingliu.art" alt="星流" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>星流</h3>
-                                <p>智能生成艺术图片</p>
-                            </div>
+                            <div class="card-body"><h3>星流</h3><p>智能生成艺术图片</p></div>
                         </a>
                         <a class="card" href="https://create.qianwen.com/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/qianwen.com" alt="千问" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>千问</h3>
-                                <p>智能生成图片内容</p>
-                            </div>
+                            <div class="card-body"><h3>千问</h3><p>智能生成图片内容</p></div>
                         </a>
                     </div>
                 </div>
@@ -1567,7 +1354,10 @@
             <!-- 工具 -->
             <section class="section" id="tools">
                 <div class="section-head">
-                    <h2>🛠 工具</h2>
+                    <h2>
+                        <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+                        工具网站
+                    </h2>
                     <div class="section-tabs" data-tabs="tools">
                         <a href="javascript:void(0)" class="active" data-panel="panel-tool-pdf">PDF转换</a>
                         <a href="javascript:void(0)" data-panel="panel-tool-video">视频处理</a>
@@ -1580,45 +1370,27 @@
                     <div class="cards">
                         <a class="card" href="https://www.ilovepdf.com/zh-cn" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/ilovepdf.com" alt="iLovePDF" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>iLovePDF</h3>
-                                <p>免费 PDF 处理工具</p>
-                            </div>
+                            <div class="card-body"><h3>iLovePDF</h3><p>免费 PDF 处理工具</p></div>
                         </a>
                         <a class="card" href="https://www.fileeagle.com/pdfeagle/en" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/fileeagle.com" alt="PDF Eagle" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>PDF Eagle</h3>
-                                <p>PDF 编辑和转换</p>
-                            </div>
+                            <div class="card-body"><h3>PDF Eagle</h3><p>PDF 编辑和转换</p></div>
                         </a>
                         <a class="card" href="https://pdfcandy.com/cn/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/pdfcandy.com" alt="PDF Candy" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>PDF Candy</h3>
-                                <p>免费 PDF 工具集</p>
-                            </div>
+                            <div class="card-body"><h3>PDF Candy</h3><p>免费 PDF 工具集</p></div>
                         </a>
                         <a class="card" href="https://www.aconvert.com/cn/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/aconvert.com" alt="在线文档转换" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>在线文档转换</h3>
-                                <p>多种格式转换</p>
-                            </div>
+                            <div class="card-body"><h3>在线文档转换</h3><p>多种格式转换</p></div>
                         </a>
-                        <a class="card" href="https://imging.ai/?url=biiii.com" target="_blank" rel="noopener">
+                        <a class="card" href="https://imging.ai/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/imging.ai" alt="Imglng图映" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>Imglng图映</h3>
-                                <p>AI 图片处理工具</p>
-                            </div>
+                            <div class="card-body"><h3>Imglng图映</h3><p>AI 图片处理工具</p></div>
                         </a>
-                        <a class="card" href="https://www.ilovepdfapp.com/?url=biiii.com" target="_blank" rel="noopener">
+                        <a class="card" href="https://www.ilovepdfapp.com/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/ilovepdfapp.com" alt="iLovePDF App" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>iLovePDF App</h3>
-                                <p>PDF 处理便捷入口</p>
-                            </div>
+                            <div class="card-body"><h3>iLovePDF App</h3><p>PDF 处理便捷入口</p></div>
                         </a>
                     </div>
                 </div>
@@ -1627,52 +1399,31 @@
                     <div class="cards">
                         <a class="card" href="https://greenvideo.cc/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/greenvideo.cc" alt="GreenVideo" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>GreenVideo</h3>
-                                <p>在线视频处理工具</p>
-                            </div>
+                            <div class="card-body"><h3>GreenVideo</h3><p>在线视频处理工具</p></div>
                         </a>
                         <a class="card" href="https://snapany.com/zh" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/snapany.com" alt="SnapAny" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>SnapAny</h3>
-                                <p>视频下载和处理</p>
-                            </div>
+                            <div class="card-body"><h3>SnapAny</h3><p>视频下载和处理</p></div>
                         </a>
                         <a class="card" href="https://www.xtdowner.com/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/xtdowner.com" alt="小天短视频工具" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>小天短视频工具</h3>
-                                <p>短视频在线下载</p>
-                            </div>
+                            <div class="card-body"><h3>小天短视频工具</h3><p>短视频在线下载</p></div>
                         </a>
                         <a class="card" href="https://www.67tool.com/video/compress" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/67tool.com" alt="视频压缩" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>视频压缩</h3>
-                                <p>在线视频压缩</p>
-                            </div>
+                            <div class="card-body"><h3>视频压缩</h3><p>在线视频压缩</p></div>
                         </a>
                         <a class="card" href="https://vv.netnr.eu.org/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/netnr.eu.org" alt="zme解析" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>zme解析</h3>
-                                <p>多平台视频解析</p>
-                            </div>
+                            <div class="card-body"><h3>zme解析</h3><p>多平台视频解析</p></div>
                         </a>
                         <a class="card" href="https://ezremove.ai/zh/watermark-remover/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/ezremove.ai" alt="EzRemove" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>EzRemove</h3>
-                                <p>AI 去水印工具</p>
-                            </div>
+                            <div class="card-body"><h3>EzRemove</h3><p>AI 去水印工具</p></div>
                         </a>
-                        <a class="card" href="https://dy.kukutool.com/?go=www.9ghao.com" target="_blank" rel="noopener">
+                        <a class="card" href="https://dy.kukutool.com/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/kukutool.com" alt="KuKuTool去水印" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>KuKuTool去水印</h3>
-                                <p>短视频去水印</p>
-                            </div>
+                            <div class="card-body"><h3>KuKuTool去水印</h3><p>短视频去水印</p></div>
                         </a>
                     </div>
                 </div>
@@ -1681,24 +1432,15 @@
                     <div class="cards">
                         <a class="card" href="https://texttospeech.im/zh-CN" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/texttospeech.im" alt="免费文本转语音" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>免费文本转语音</h3>
-                                <p>多种语音可选</p>
-                            </div>
+                            <div class="card-body"><h3>免费文本转语音</h3><p>多种语音可选</p></div>
                         </a>
-                        <a class="card" href="https://ttsomni.com/zh?url=biiii.com" target="_blank" rel="noopener">
+                        <a class="card" href="https://ttsomni.com/zh" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/ttsomni.com" alt="TTS Omni" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>TTS Omni</h3>
-                                <p>在线语音合成工具</p>
-                            </div>
+                            <div class="card-body"><h3>TTS Omni</h3><p>在线语音合成工具</p></div>
                         </a>
                         <a class="card" href="https://yueyin.zhipianbang.com/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/zhipianbang.com" alt="悦音配音" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>悦音配音</h3>
-                                <p>智能语音合成配音</p>
-                            </div>
+                            <div class="card-body"><h3>悦音配音</h3><p>智能语音合成配音</p></div>
                         </a>
                     </div>
                 </div>
@@ -1707,17 +1449,11 @@
                     <div class="cards">
                         <a class="card" href="https://www.linshi-email.com/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/linshi-email.com" alt="临时邮箱" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>临时邮箱</h3>
-                                <p>保护隐私避免垃圾</p>
-                            </div>
+                            <div class="card-body"><h3>临时邮箱</h3><p>保护隐私避免垃圾</p></div>
                         </a>
                         <a class="card" href="https://futurecv.cn/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/futurecv.cn" alt="未来简历" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>未来简历</h3>
-                                <p>快速生成专业简历</p>
-                            </div>
+                            <div class="card-body"><h3>未来简历</h3><p>快速生成专业简历</p></div>
                         </a>
                     </div>
                 </div>
@@ -1726,16 +1462,18 @@
             <!-- 学习 -->
             <section class="section" id="learning">
                 <div class="section-head">
-                    <h2>📚 学习</h2>
+                    <h2>
+                        <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+                        学习网站
+                    </h2>
                     <div class="section-tabs" data-tabs="learning">
                         <a href="javascript:void(0)" class="active" data-panel="panel-learn-platform">综合平台</a>
                         <a href="javascript:void(0)" data-panel="panel-learn-language">外语学习</a>
                         <a href="javascript:void(0)" data-panel="panel-learn-software">软件教程</a>
                         <a href="javascript:void(0)" data-panel="panel-learn-medical">医学健康</a>
                         <a href="javascript:void(0)" data-panel="panel-learn-cooking">厨师菜谱</a>
-                        <a href="javascript:void(0)" data-panel="panel-learn-school">中小学课程</a>
                         <a href="javascript:void(0)" data-panel="panel-learn-music">音乐学习</a>
-                        <a href="javascript:void(0)" data-panel="panel-learn-other">其他</a>
+                        <a href="javascript:void(0)" data-panel="panel-learn-other">电子书</a>
                     </div>
                 </div>
 
@@ -1743,31 +1481,19 @@
                     <div class="cards">
                         <a class="card" href="https://www.51zxw.net/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/51zxw.net" alt="我要自学网" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>我要自学网</h3>
-                                <p>综合在线学习</p>
-                            </div>
+                            <div class="card-body"><h3>我要自学网</h3><p>综合在线学习</p></div>
                         </a>
                         <a class="card" href="https://study.163.com/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/163.com" alt="网易云课堂" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>网易云课堂</h3>
-                                <p>成人终身学习</p>
-                            </div>
+                            <div class="card-body"><h3>网易云课堂</h3><p>成人终身学习</p></div>
                         </a>
                         <a class="card" href="https://www.xuetangx.com/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/xuetangx.com" alt="学堂在线" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>学堂在线</h3>
-                                <p>优质在线课程</p>
-                            </div>
+                            <div class="card-body"><h3>学堂在线</h3><p>优质在线课程</p></div>
                         </a>
                         <a class="card" href="https://www.icourses.cn/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/icourses.cn" alt="爱课程" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>爱课程</h3>
-                                <p>中国大学MOOC</p>
-                            </div>
+                            <div class="card-body"><h3>爱课程</h3><p>中国大学MOOC</p></div>
                         </a>
                     </div>
                 </div>
@@ -1775,60 +1501,32 @@
                 <div class="tab-panel" id="panel-learn-language" data-tab-group="learning">
                     <div class="cards">
                         <a class="card" href="https://moocs.unipus.cn/" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/unipus.cn" alt="中国高校外语慕课" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>中国高校外语慕课</h3>
-                                <p>优质外语课程</p>
-                            </div>
+                            <div class="card-icon"><img src="https://favicon.im/unipus.cn" alt="外语慕课" loading="lazy"></div>
+                            <div class="card-body"><h3>中国高校外语慕课</h3><p>优质外语课程</p></div>
                         </a>
-                        <a class="card" href="https://echo-type.app/?url=biiii.com" target="_blank" rel="noopener">
+                        <a class="card" href="https://echo-type.app/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/echo-type.app" alt="EchoType" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>EchoType</h3>
-                                <p>在线打字练习</p>
-                            </div>
+                            <div class="card-body"><h3>EchoType</h3><p>在线打字练习</p></div>
                         </a>
-                        <a class="card" href="https://ogden.munch.love/?url=biiii.com" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/munch.love" alt="Ogden's English" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>Ogden's English</h3>
-                                <p>基础英语学习</p>
-                            </div>
-                        </a>
-                        <a class="card" href="https://hefengxian.com/my-ielts/?url=biiii.com#/" target="_blank" rel="noopener">
+                        <a class="card" href="https://hefengxian.com/my-ielts/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/hefengxian.com" alt="My IELTS" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>My IELTS</h3>
-                                <p>雅思学习备考</p>
-                            </div>
+                            <div class="card-body"><h3>My IELTS</h3><p>雅思学习备考</p></div>
                         </a>
-                        <a class="card" href="https://heeee.com/yingyucihui.html?url=biiii.com" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/heeee.com" alt="英语词汇记忆挑战" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>英语词汇记忆挑战</h3>
-                                <p>趣味背单词</p>
-                            </div>
+                        <a class="card" href="https://heeee.com/yingyucihui.html" target="_blank" rel="noopener">
+                            <div class="card-icon"><img src="https://favicon.im/heeee.com" alt="英语词汇记忆" loading="lazy"></div>
+                            <div class="card-body"><h3>英语词汇记忆挑战</h3><p>趣味背单词</p></div>
                         </a>
-                        <a class="card" href="https://heeee.com/dancixiaoxiaole.html?url=biiii.com" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/heeee.com" alt="中英文单词消消乐" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>中英文单词消消乐</h3>
-                                <p>趣味学单词</p>
-                            </div>
+                        <a class="card" href="https://heeee.com/dancixiaoxiaole.html" target="_blank" rel="noopener">
+                            <div class="card-icon"><img src="https://favicon.im/heeee.com" alt="单词消消乐" loading="lazy"></div>
+                            <div class="card-body"><h3>中英文单词消消乐</h3><p>趣味学单词</p></div>
                         </a>
-                        <a class="card" href="https://englishdaily.ai/?url=biiii.com" target="_blank" rel="noopener">
+                        <a class="card" href="https://englishdaily.ai/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/englishdaily.ai" alt="English Daily" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>English Daily</h3>
-                                <p>每日英语学习</p>
-                            </div>
+                            <div class="card-body"><h3>English Daily</h3><p>每日英语学习</p></div>
                         </a>
-                        <a class="card" href="https://www.wushiyin.com/?url=biiii.com" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/wushiyin.com" alt="日语五十音在线练习" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>日语五十音在线练习</h3>
-                                <p>轻松学日语</p>
-                            </div>
+                        <a class="card" href="https://www.wushiyin.com/" target="_blank" rel="noopener">
+                            <div class="card-icon"><img src="https://favicon.im/wushiyin.com" alt="日语五十音" loading="lazy"></div>
+                            <div class="card-body"><h3>日语五十音在线练习</h3><p>轻松学日语</p></div>
                         </a>
                     </div>
                 </div>
@@ -1837,158 +1535,77 @@
                     <div class="cards">
                         <a class="card" href="https://rjzxw.com/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/rjzxw.com" alt="软件自学网" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>软件自学网</h3>
-                                <p>各种软件教程</p>
-                            </div>
+                            <div class="card-body"><h3>软件自学网</h3><p>各种软件教程</p></div>
                         </a>
                         <a class="card" href="https://www.excelhome.net/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/excelhome.net" alt="ExcelHome" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>ExcelHome</h3>
-                                <p>Excel 学习社区</p>
-                            </div>
+                            <div class="card-body"><h3>ExcelHome</h3><p>Excel 学习社区</p></div>
                         </a>
-                        <a class="card" href="https://systems-programming.org/database_zh/?url=biiii.com" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/systems-programming.org" alt="手搓数据库" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>手搓数据库</h3>
-                                <p>系统编程学习</p>
-                            </div>
-                        </a>
-                        <a class="card" href="https://www.16xx8.com/?url=biiii.com" target="_blank" rel="noopener">
+                        <a class="card" href="https://www.16xx8.com/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/16xx8.com" alt="ps教程自学网" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>ps教程自学网</h3>
-                                <p>PS 学习教程</p>
-                            </div>
-                        </a>
-                        <a class="card" href="https://www.yuque.com/94benyi/funeng?url=biiii.com" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/yuque.com" alt="Excel函数手册" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>Excel函数手册</h3>
-                                <p>Excel 函数学习</p>
-                            </div>
+                            <div class="card-body"><h3>ps教程自学网</h3><p>PS 学习教程</p></div>
                         </a>
                         <a class="card" href="https://www.adobe.com/cn/learn/photoshop" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/adobe.com" alt="Adobe软件教程" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>Adobe软件教程</h3>
-                                <p>PS 学习</p>
-                            </div>
+                            <div class="card-body"><h3>Adobe软件教程</h3><p>PS 学习</p></div>
                         </a>
-                        <a class="card" href="https://www.lanrenexcel.com/?url=biiii.com" target="_blank" rel="noopener">
+                        <a class="card" href="https://www.lanrenexcel.com/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/lanrenexcel.com" alt="懒人Excel" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>懒人Excel</h3>
-                                <p>轻松学 Excel</p>
-                            </div>
+                            <div class="card-body"><h3>懒人Excel</h3><p>轻松学 Excel</p></div>
                         </a>
-                        <a class="card" href="https://www.wps.cn/learning/?url=biiii.com" target="_blank" rel="noopener">
+                        <a class="card" href="https://www.wps.cn/learning/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/wps.cn" alt="WPS学堂" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>WPS学堂</h3>
-                                <p>WPS 学习教程</p>
-                            </div>
+                            <div class="card-body"><h3>WPS学堂</h3><p>WPS 学习教程</p></div>
                         </a>
                     </div>
                 </div>
 
                 <div class="tab-panel" id="panel-learn-medical" data-tab-group="learning">
                     <div class="cards">
-                        <a class="card" href="https://spanios.qdkf.net/zh?url=biiii.com" target="_blank" rel="noopener">
+                        <a class="card" href="https://spanios.qdkf.net/zh" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/qdkf.net" alt="Spanios" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>Spanios</h3>
-                                <p>健康知识学习</p>
-                            </div>
+                            <div class="card-body"><h3>Spanios</h3><p>健康知识学习</p></div>
                         </a>
-                        <a class="card" href="http://drug.ptger.cn/?url=biiii.com" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/ptger.cn" alt="药物说明书大全" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>药物说明书大全</h3>
-                                <p>查询药品信息</p>
-                            </div>
+                        <a class="card" href="http://drug.ptger.cn/" target="_blank" rel="noopener">
+                            <div class="card-icon"><img src="https://favicon.im/ptger.cn" alt="药物说明书" loading="lazy"></div>
+                            <div class="card-body"><h3>药物说明书大全</h3><p>查询药品信息</p></div>
                         </a>
-                        <a class="card" href="https://m.youlai.cn/jijiu/?url=biiii.com" target="_blank" rel="noopener">
+                        <a class="card" href="https://m.youlai.cn/jijiu/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/youlai.cn" alt="急救指南" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>急救指南</h3>
-                                <p>学习急救知识</p>
-                            </div>
+                            <div class="card-body"><h3>急救指南</h3><p>学习急救知识</p></div>
                         </a>
-                        <a class="card" href="https://ask.nocode.com/?url=biiii.com" target="_blank" rel="noopener">
+                        <a class="card" href="https://ask.nocode.com/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/nocode.com" alt="就诊问问" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>就诊问问</h3>
-                                <p>在线医疗咨询</p>
-                            </div>
+                            <div class="card-body"><h3>就诊问问</h3><p>在线医疗咨询</p></div>
                         </a>
-                        <a class="card" href="https://ixinqing.com/?url=biiii.com" target="_blank" rel="noopener">
+                        <a class="card" href="https://ixinqing.com/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/ixinqing.com" alt="心晴网" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>心晴网</h3>
-                                <p>心理健康知识</p>
-                            </div>
+                            <div class="card-body"><h3>心晴网</h3><p>心理健康知识</p></div>
                         </a>
-                        <a class="card" href="https://www.a-hospital.com/?url=biiii.com" target="_blank" rel="noopener">
+                        <a class="card" href="https://www.a-hospital.com/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/a-hospital.com" alt="A+医学百科" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>A+医学百科</h3>
-                                <p>医学知识百科</p>
-                            </div>
+                            <div class="card-body"><h3>A+医学百科</h3><p>医学知识百科</p></div>
                         </a>
                     </div>
                 </div>
 
                 <div class="tab-panel" id="panel-learn-cooking" data-tab-group="learning">
                     <div class="cards">
-                        <a class="card" href="https://docs.cook.ninthfeast.com/?url=biiii.com" target="_blank" rel="noopener">
+                        <a class="card" href="https://docs.cook.ninthfeast.com/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/ninthfeast.com" alt="做饭指南" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>做饭指南</h3>
-                                <p>详细烹饪教程</p>
-                            </div>
+                            <div class="card-body"><h3>做饭指南</h3><p>详细烹饪教程</p></div>
                         </a>
-                        <a class="card" href="https://heeee.com/coffee.html?url=biiii.com" target="_blank" rel="noopener">
+                        <a class="card" href="https://heeee.com/coffee.html" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/heeee.com" alt="咖啡制作大师" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>咖啡制作大师</h3>
-                                <p>学习咖啡制作</p>
-                            </div>
+                            <div class="card-body"><h3>咖啡制作大师</h3><p>学习咖啡制作</p></div>
                         </a>
-                        <a class="card" href="https://www.dachu.co/?url=biiii.com" target="_blank" rel="noopener">
+                        <a class="card" href="https://www.dachu.co/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/dachu.co" alt="大厨网" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>大厨网</h3>
-                                <p>专业菜谱教程</p>
-                            </div>
+                            <div class="card-body"><h3>大厨网</h3><p>专业菜谱教程</p></div>
                         </a>
-                        <a class="card" href="https://eat.lz-t.top/?url=biiii.com" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/lz-t.top" alt="一饭封神" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>一饭封神</h3>
-                                <p>美食菜谱技巧</p>
-                            </div>
-                        </a>
-                        <a class="card" href="https://bbqnotes.tw/?url=biiii.com" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/bbqnotes.tw" alt="烤肉烧烤指南" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>烤肉烧烤指南</h3>
-                                <p>烧烤技巧食谱</p>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="tab-panel" id="panel-learn-school" data-tab-group="learning">
-                    <div class="cards">
-                        <a class="card" href="https://gzenxx.com/?url=biiii.com" target="_blank" rel="noopener">
-                            <div class="card-icon"><img src="https://favicon.im/gzenxx.com" alt="高中学习网" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>高中学习网</h3>
-                                <p>高中课程学习</p>
-                            </div>
+                        <a class="card" href="https://bbqnotes.tw/" target="_blank" rel="noopener">
+                            <div class="card-icon"><img src="https://favicon.im/bbqnotes.tw" alt="烤肉烧烤" loading="lazy"></div>
+                            <div class="card-body"><h3>烤肉烧烤指南</h3><p>烧烤技巧食谱</p></div>
                         </a>
                     </div>
                 </div>
@@ -1997,17 +1614,11 @@
                     <div class="cards">
                         <a class="card" href="https://www.sequencer64.com/sequencer/session" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/sequencer64.com" alt="在线架子鼓" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>在线架子鼓</h3>
-                                <p>在线模拟演奏</p>
-                            </div>
+                            <div class="card-body"><h3>在线架子鼓</h3><p>在线模拟演奏</p></div>
                         </a>
                         <a class="card" href="https://www.autopiano.cn/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/autopiano.cn" alt="自由钢琴" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>自由钢琴</h3>
-                                <p>在线钢琴演奏</p>
-                            </div>
+                            <div class="card-body"><h3>自由钢琴</h3><p>在线钢琴演奏</p></div>
                         </a>
                     </div>
                 </div>
@@ -2016,17 +1627,11 @@
                     <div class="cards">
                         <a class="card" href="https://zh.sov101.ru/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/sov101.ru" alt="Z-Library" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>Z-Library</h3>
-                                <p>电子书在线图书馆</p>
-                            </div>
+                            <div class="card-body"><h3>Z-Library</h3><p>电子书在线图书馆</p></div>
                         </a>
-                        <a class="card" href="https://zh.annas-archive.gl/?url=biiii.com" target="_blank" rel="noopener">
+                        <a class="card" href="https://zh.annas-archive.gl/" target="_blank" rel="noopener">
                             <div class="card-icon"><img src="https://favicon.im/annas-archive.gl" alt="安娜的档案" loading="lazy"></div>
-                            <div class="card-body">
-                                <h3>安娜的档案</h3>
-                                <p>电子书学术资源</p>
-                            </div>
+                            <div class="card-body"><h3>安娜的档案</h3><p>电子书学术资源</p></div>
                         </a>
                     </div>
                 </div>
@@ -2035,7 +1640,10 @@
             <!-- 软件 -->
             <section class="section" id="software">
                 <div class="section-head">
-                    <h2>💻 软件</h2>
+                    <h2>
+                        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                        软件下载
+                    </h2>
                     <div class="section-tabs">
                         <a href="#software" class="active">系统</a>
                         <a href="#software">办公</a>
@@ -2047,31 +1655,19 @@
                 <div class="cards">
                     <a class="card" href="https://www.microsoft.com" target="_blank" rel="noopener">
                         <div class="card-icon"><img src="https://favicon.im/microsoft.com" alt="Microsoft" loading="lazy"></div>
-                        <div class="card-body">
-                            <h3>Microsoft</h3>
-                            <p>Windows Office</p>
-                        </div>
+                        <div class="card-body"><h3>Microsoft</h3><p>Windows Office</p></div>
                     </a>
                     <a class="card" href="https://www.apple.com" target="_blank" rel="noopener">
                         <div class="card-icon"><img src="https://favicon.im/apple.com" alt="Apple" loading="lazy"></div>
-                        <div class="card-body">
-                            <h3>Apple</h3>
-                            <p>iPhone Mac iPad</p>
-                        </div>
+                        <div class="card-body"><h3>Apple</h3><p>iPhone Mac iPad</p></div>
                     </a>
                     <a class="card" href="https://www.mozilla.org" target="_blank" rel="noopener">
                         <div class="card-icon"><img src="https://favicon.im/mozilla.org" alt="Firefox" loading="lazy"></div>
-                        <div class="card-body">
-                            <h3>Firefox</h3>
-                            <p>开源浏览器</p>
-                        </div>
+                        <div class="card-body"><h3>Firefox</h3><p>开源浏览器</p></div>
                     </a>
                     <a class="card" href="https://www.google.com/chrome/" target="_blank" rel="noopener">
                         <div class="card-icon"><img src="https://favicon.im/google.com" alt="Chrome" loading="lazy"></div>
-                        <div class="card-body">
-                            <h3>Chrome</h3>
-                            <p>Google 浏览器</p>
-                        </div>
+                        <div class="card-body"><h3>Chrome</h3><p>Google 浏览器</p></div>
                     </a>
                 </div>
             </section>
@@ -2079,7 +1675,10 @@
             <!-- 设计 -->
             <section class="section" id="design">
                 <div class="section-head">
-                    <h2>🎨 设计</h2>
+                    <h2>
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
+                        图片工具
+                    </h2>
                     <div class="section-tabs">
                         <a href="#design" class="active">UI</a>
                         <a href="#design">平面</a>
@@ -2091,31 +1690,19 @@
                 <div class="cards">
                     <a class="card" href="https://www.figma.com" target="_blank" rel="noopener">
                         <div class="card-icon"><img src="https://favicon.im/figma.com" alt="Figma" loading="lazy"></div>
-                        <div class="card-body">
-                            <h3>Figma</h3>
-                            <p>在线 UI 产品设计</p>
-                        </div>
+                        <div class="card-body"><h3>Figma</h3><p>在线 UI 产品设计</p></div>
                     </a>
                     <a class="card" href="https://www.canva.com" target="_blank" rel="noopener">
                         <div class="card-icon"><img src="https://favicon.im/canva.com" alt="Canva" loading="lazy"></div>
-                        <div class="card-body">
-                            <h3>Canva</h3>
-                            <p>快速制作海报图片</p>
-                        </div>
+                        <div class="card-body"><h3>Canva</h3><p>快速制作海报图片</p></div>
                     </a>
                     <a class="card" href="https://www.adobe.com" target="_blank" rel="noopener">
                         <div class="card-icon"><img src="https://favicon.im/adobe.com" alt="Adobe" loading="lazy"></div>
-                        <div class="card-body">
-                            <h3>Adobe</h3>
-                            <p>专业设计视频工具</p>
-                        </div>
+                        <div class="card-body"><h3>Adobe</h3><p>专业设计视频工具</p></div>
                     </a>
                     <a class="card" href="https://www.photopea.com" target="_blank" rel="noopener">
                         <div class="card-icon"><img src="https://favicon.im/photopea.com" alt="Photopea" loading="lazy"></div>
-                        <div class="card-body">
-                            <h3>Photopea</h3>
-                            <p>在线图片编辑工具</p>
-                        </div>
+                        <div class="card-body"><h3>Photopea</h3><p>在线图片编辑工具</p></div>
                     </a>
                 </div>
             </section>
@@ -2123,7 +1710,10 @@
             <!-- 开发 -->
             <section class="section" id="development">
                 <div class="section-head">
-                    <h2>👨‍💻 开发</h2>
+                    <h2>
+                        <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        开发工具
+                    </h2>
                     <div class="section-tabs">
                         <a href="#development" class="active">代码</a>
                         <a href="#development">文档</a>
@@ -2135,31 +1725,19 @@
                 <div class="cards">
                     <a class="card" href="https://github.com" target="_blank" rel="noopener">
                         <div class="card-icon"><img src="https://favicon.im/github.com" alt="GitHub" loading="lazy"></div>
-                        <div class="card-body">
-                            <h3>GitHub</h3>
-                            <p>代码托管开发协作</p>
-                        </div>
+                        <div class="card-body"><h3>GitHub</h3><p>代码托管开发协作</p></div>
                     </a>
                     <a class="card" href="https://stackoverflow.com" target="_blank" rel="noopener">
                         <div class="card-icon"><img src="https://favicon.im/stackoverflow.com" alt="Stack Overflow" loading="lazy"></div>
-                        <div class="card-body">
-                            <h3>Stack Overflow</h3>
-                            <p>程序员问答社区</p>
-                        </div>
+                        <div class="card-body"><h3>Stack Overflow</h3><p>程序员问答社区</p></div>
                     </a>
                     <a class="card" href="https://developer.mozilla.org" target="_blank" rel="noopener">
                         <div class="card-icon"><img src="https://favicon.im/mozilla.org" alt="MDN" loading="lazy"></div>
-                        <div class="card-body">
-                            <h3>MDN</h3>
-                            <p>Web 开发技术文档</p>
-                        </div>
+                        <div class="card-body"><h3>MDN</h3><p>Web 开发技术文档</p></div>
                     </a>
                     <a class="card" href="https://codepen.io" target="_blank" rel="noopener">
                         <div class="card-icon"><img src="https://favicon.im/codepen.io" alt="CodePen" loading="lazy"></div>
-                        <div class="card-body">
-                            <h3>CodePen</h3>
-                            <p>在线编写前端代码</p>
-                        </div>
+                        <div class="card-body"><h3>CodePen</h3><p>在线编写前端代码</p></div>
                     </a>
                 </div>
             </section>
@@ -2167,7 +1745,10 @@
             <!-- 娱乐 -->
             <section class="section" id="entertainment">
                 <div class="section-head">
-                    <h2>🎮 娱乐</h2>
+                    <h2>
+                        <svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 12h4M8 10v4M15 12h.01M18 12h.01"/></svg>
+                        娱乐网站
+                    </h2>
                     <div class="section-tabs">
                         <a href="#entertainment" class="active">视频</a>
                         <a href="#entertainment">音乐</a>
@@ -2178,31 +1759,19 @@
                 <div class="cards">
                     <a class="card" href="https://www.youtube.com" target="_blank" rel="noopener">
                         <div class="card-icon"><img src="https://favicon.im/youtube.com" alt="YouTube" loading="lazy"></div>
-                        <div class="card-body">
-                            <h3>YouTube</h3>
-                            <p>全球视频内容平台</p>
-                        </div>
+                        <div class="card-body"><h3>YouTube</h3><p>全球视频内容平台</p></div>
                     </a>
                     <a class="card" href="https://open.spotify.com" target="_blank" rel="noopener">
                         <div class="card-icon"><img src="https://favicon.im/spotify.com" alt="Spotify" loading="lazy"></div>
-                        <div class="card-body">
-                            <h3>Spotify</h3>
-                            <p>音乐和播客平台</p>
-                        </div>
+                        <div class="card-body"><h3>Spotify</h3><p>音乐和播客平台</p></div>
                     </a>
                     <a class="card" href="https://www.netflix.com" target="_blank" rel="noopener">
                         <div class="card-icon"><img src="https://favicon.im/netflix.com" alt="Netflix" loading="lazy"></div>
-                        <div class="card-body">
-                            <h3>Netflix</h3>
-                            <p>影视流媒体平台</p>
-                        </div>
+                        <div class="card-body"><h3>Netflix</h3><p>影视流媒体平台</p></div>
                     </a>
                     <a class="card" href="https://store.steampowered.com" target="_blank" rel="noopener">
                         <div class="card-icon"><img src="https://favicon.im/steampowered.com" alt="Steam" loading="lazy"></div>
-                        <div class="card-body">
-                            <h3>Steam</h3>
-                            <p>电脑游戏平台</p>
-                        </div>
+                        <div class="card-body"><h3>Steam</h3><p>电脑游戏平台</p></div>
                     </a>
                 </div>
             </section>
@@ -2210,7 +1779,10 @@
             <!-- 搞钱 -->
             <section class="section money" id="money">
                 <div class="section-head">
-                    <h2>💰 搞钱</h2>
+                    <h2>
+                        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v12M15.5 9.5c-.5-1.5-2-2.5-3.5-2.5-1.9 0-3.5 1.3-3.5 3s1.6 3 3.5 3 3.5 1.3 3.5 3-1.6 3-3.5 3c-1.5 0-3-1-3.5-2.5"/></svg>
+                        搞钱项目
+                    </h2>
                     <div class="section-tabs">
                         <a href="#money" class="active">副业</a>
                         <a href="#money">AI变现</a>
@@ -2221,46 +1793,28 @@
                 </div>
                 <div class="cards">
                     <a class="card" href="#">
-                        <div class="card-icon">🚀</div>
-                        <div class="card-body">
-                            <h3>副业项目</h3>
-                            <p>副业方向和项目</p>
-                        </div>
+                        <div class="card-icon" style="font-size:18px;">🚀</div>
+                        <div class="card-body"><h3>副业项目</h3><p>副业方向和项目</p></div>
                     </a>
                     <a class="card" href="#">
-                        <div class="card-icon">🤖</div>
-                        <div class="card-body">
-                            <h3>AI赚钱</h3>
-                            <p>AI 服务和商业机会</p>
-                        </div>
+                        <div class="card-icon" style="font-size:18px;">🤖</div>
+                        <div class="card-body"><h3>AI赚钱</h3><p>AI 服务和商业机会</p></div>
                     </a>
                     <a class="card" href="#">
-                        <div class="card-icon">📱</div>
-                        <div class="card-body">
-                            <h3>自媒体</h3>
-                            <p>内容创作流量变现</p>
-                        </div>
+                        <div class="card-icon" style="font-size:18px;">📱</div>
+                        <div class="card-body"><h3>自媒体</h3><p>内容创作流量变现</p></div>
                     </a>
                     <a class="card" href="#">
-                        <div class="card-icon">🛒</div>
-                        <div class="card-body">
-                            <h3>电商</h3>
-                            <p>电商平台运营资源</p>
-                        </div>
+                        <div class="card-icon" style="font-size:18px;">🛒</div>
+                        <div class="card-body"><h3>电商</h3><p>电商平台运营资源</p></div>
                     </a>
                     <a class="card" href="#">
-                        <div class="card-icon">💻</div>
-                        <div class="card-body">
-                            <h3>技能变现</h3>
-                            <p>技能变成收入</p>
-                        </div>
+                        <div class="card-icon" style="font-size:18px;">💻</div>
+                        <div class="card-body"><h3>技能变现</h3><p>技能变成收入</p></div>
                     </a>
                     <a class="card" href="#">
-                        <div class="card-icon">🌍</div>
-                        <div class="card-body">
-                            <h3>海外项目</h3>
-                            <p>海外平台商业机会</p>
-                        </div>
+                        <div class="card-icon" style="font-size:18px;">🌍</div>
+                        <div class="card-body"><h3>海外项目</h3><p>海外平台商业机会</p></div>
                     </a>
                 </div>
             </section>
@@ -2276,17 +1830,6 @@
 </div>
 
 <script>
-    function searchWebsite(event) {
-        if (event.key === "Enter") {
-            const input = document.getElementById("searchInput");
-            const keyword = input.value.trim();
-            if (keyword !== "") {
-                const url = "https://www.baidu.com/s?wd=" + encodeURIComponent(keyword);
-                window.open(url, "_blank", "noopener,noreferrer");
-            }
-        }
-    }
-
     // 带 data-panel 的标签组：点击后切换对应面板内容
     document.querySelectorAll('.section-tabs[data-tabs]').forEach(group => {
         group.querySelectorAll('a[data-panel]').forEach(tab => {
@@ -2306,7 +1849,6 @@
                     }
                 });
 
-                // 让被点击的标签滚动到可视区域内
                 this.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
             });
         });
